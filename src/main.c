@@ -13,7 +13,7 @@ int		main(int ac, char **av)
 			break ;
 		if (line[0] != '\0')
 			add_history(line);
-		printf("%s\n", line);
+		launch_executable(line);
 		free(line);
 	}
 	return (0);
