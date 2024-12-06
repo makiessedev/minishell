@@ -1,6 +1,6 @@
 NAME = minishell
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I./include
 SRC = main.c
 FILES = $(addprefix ./src/, $(SRC))
 OBJ = $(FILES:.c=.o)
