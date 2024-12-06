@@ -53,3 +53,6 @@ dkms.conf
 
 # executable
 minishell
+
+#objs
+obj
