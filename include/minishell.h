@@ -7,6 +7,6 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 
-void	launch_executable(char *cmd);
+void	launch_executable(char *full_cmds);
 
 #endif
