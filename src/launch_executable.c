@@ -31,4 +31,38 @@ void	launch_executable(char *cmd)
 			printf("minishell: %s: No such file or directory\n", cmd);
 		}
 	}
+	else
+	{
+		int	i;
+
+		i = 0;
+		while (envp[i])
+		{
+			char	*path;
+			char	*tmp;
+
+			tmp = ft_strjoin(envp[i], "/");
+			path = ft_strjoin(tmp, cmds[0]);
+			free(tmp);
+			if (access(path, X_OK) == 0)
+			{
+				pid = fork();
+				if (pid == 0)
+				{
+					execve(path, cmds, envp);
+					printf("minishell: %s: Execution failed\n", cmd);
+					exit(EXIT_FAILURE);
+				}
+				else if (pid > 0)
+					waitpid(pid, NULL, 0);
+				else
+					printf("minishell: %s: Fork failed\n", cmd);
+				break ;
+			}
+			free(path);
+			i++;
+		}
+		if (!envp[i])
+			printf("minishell: %s: Command not found\n", cmd);
+	}
 }
