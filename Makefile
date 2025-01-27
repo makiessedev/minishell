@@ -1,12 +1,12 @@
 NAME = minishell
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./include -I./libft
+CFLAGS = -Wall -Wextra -Werror -I./include -I./libs/libft
 SRC = main.c launch_executable.c
 FILES = $(addprefix ./src/, $(SRC))
 OBJ_DIR = ./obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 HEADER = ./include/minishell.h
-LIBFT_DIR = ./libft
+LIBFT_DIR = ./libs/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 $(OBJ_DIR)/%.o: ./src/%.c $(HEADER)
