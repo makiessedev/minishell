@@ -26,7 +26,7 @@ static bool setup_workdir(t_minishell *minishell_data)
 static bool init_setup(t_minishell *minishell_data, char **envp)
 {
 	minishell_data->envp = envp;
-	if (!setup_workdir(minishell_data->current_workdir))
+	if (!setup_workdir(minishell_data))
 		return (false);
 	return (true);
 }
@@ -34,14 +34,14 @@ static bool init_setup(t_minishell *minishell_data, char **envp)
 int		main(int ac, char **av, char **envp)
 {
 	char		*line;
-	t_minishell	*minisheel_data;
+	t_minishell	minisheel_data;
 
 	if (ac != 1 || av[1])
 	{
 		ft_putstr_fd("minishell: No arguments are allowed\n", 2);
 		return (1);
 	}
-	init_setup(minisheel_data, envp);
+	init_setup(&minisheel_data, envp);
 
 	while (1)
 	{
