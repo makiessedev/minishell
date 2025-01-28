@@ -51,7 +51,7 @@ int		main(int ac, char **av, char **envp)
 			continue ; // review this in the future and free minishell_data to prevent leaks
 		if (input_user[0] != '\0')
 			add_history(input_user);
-		launch_executable(input_user);
+		launch_executable(input_user); // this is trash only for testing purposes
 		free(input_user);
 	}
 	return (0);
