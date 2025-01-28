@@ -14,4 +14,5 @@ typedef struct s_minishell
     char	**envp;
     char   *current_workdir;
     char   *old_workdir;
+    int     last_command_exit_code;
 }	t_minishell;

@@ -48,7 +48,7 @@ int		main(int ac, char **av, char **envp)
 	{
 		input_user = readline("minishell$ ");
 		if (!input_user)
-			break ;
+			break ; // in the future free minishell_data to prevent leaks
 		if (input_user[0] != '\0')
 			add_history(input_user);
 		launch_executable(input_user);
