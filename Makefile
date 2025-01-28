@@ -1,7 +1,8 @@
 NAME = minishell
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I./include -I./libs/libft
-SRC = main.c launch_executable.c
+ENVIRONMENTS_FILES = get_var_index.c get_var_value.c is_existing_var.c
+SRC = main.c launch_executable.c $(addprefix environment/, $(ENVIRONMENTS_FILES))
 FILES = $(addprefix ./src/, $(SRC))
 OBJ_DIR = ./obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
@@ -10,7 +11,7 @@ LIBFT_DIR = ./libs/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 $(OBJ_DIR)/%.o: ./src/%.c $(HEADER)
-	mkdir -p $(OBJ_DIR)
+	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) $(HEADER) $(LIBFT)
