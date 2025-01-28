@@ -4,6 +4,7 @@
 #include "libft.h"
 #include "macros_structs.h"
 #include "environment.h"
+#include "tokenization.h"
 #include <stdio.h>
 #include <readline/readline.h>
 #include <readline/history.h>

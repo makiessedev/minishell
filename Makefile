@@ -2,7 +2,10 @@ NAME = minishell
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I./include -I./libs/libft
 ENVIRONMENTS_FILES = get_var_index.c get_var_value.c is_existing_var.c
-SRC = main.c launch_executable.c $(addprefix environment/, $(ENVIRONMENTS_FILES))
+TOKENIZATION_FILES = is_only_space.c
+SRC = main.c launch_executable.c \
+	$(addprefix environment/, $(ENVIRONMENTS_FILES)) \
+	$(addprefix tokenization/, $(TOKENIZATION_FILES))
 FILES = $(addprefix ./src/, $(SRC))
 OBJ_DIR = ./obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
