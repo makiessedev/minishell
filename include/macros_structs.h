@@ -8,3 +8,10 @@
 # ifndef PATH_SIZE
 #  define PATH_SIZE (1024*4)
 # endif
+
+typedef struct s_minishell
+{
+    char	**envp;
+    char   *current_workdir;
+    char   *old_workdir;
+}	t_minishell;
