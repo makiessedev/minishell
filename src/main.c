@@ -33,7 +33,7 @@ static bool init_setup(t_minishell *minishell_data, char **envp)
 
 int		main(int ac, char **av, char **envp)
 {
-	char		*line;
+	char		*input_user;
 	t_minishell	minisheel_data;
 
 	if (ac != 1 || av[1])
@@ -41,17 +41,18 @@ int		main(int ac, char **av, char **envp)
 		ft_putstr_fd("minishell: No arguments are allowed\n", 2);
 		return (1);
 	}
-	init_setup(&minisheel_data, envp);
+	if (!init_setup(&minisheel_data, envp))
+		return (1);
 
 	while (1)
 	{
-		line = readline("minishell$ ");
-		if (!line)
+		input_user = readline("minishell$ ");
+		if (!input_user)
 			break ;
-		if (line[0] != '\0')
-			add_history(line);
-		launch_executable(line);
-		free(line);
+		if (input_user[0] != '\0')
+			add_history(input_user);
+		launch_executable(input_user);
+		free(input_user);
 	}
 	return (0);
 }
