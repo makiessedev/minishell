@@ -1,5 +1,5 @@
-#ifndef STDBOOL_H_
-#define STDBOOL_H_
+#ifndef STDBOOL_H
+#define STDBOOL_H
 # define bool int
 # define true 1
 # define false 0
@@ -22,6 +22,16 @@ typedef enum {
     NORMAL_MODE,
     DOUBLE_QUOTE,
     SINGLE_QUOTE,
-}   e_quote_controller
+}   e_quote_controller;
 
-enum e_
+typedef enum {
+    SPACE_TOKEN,
+    PIPE_TOKEN,
+    HEREDOC_TOKEN,
+    APPEND_TOKEN,
+    INPUT_TOKEN,
+    REDIRECT_TOKEN,
+    WORD_TOKEN,
+    VAR_TOKEN,
+    END_TOKEN,
+}   e_tokens
