@@ -28,8 +28,9 @@ int set_status_quote(t_minishell *minisheel_data, int i)
 	return (user_input_status_quote);
 }
 
-void save_word_token()
+void save_word_token(t_minishell minishell_data, int i, int user_input_start)
 {
+
 
 }
 
@@ -71,7 +72,7 @@ int save_token(t_minishell *minisheel_data, int user_input_start, int *i)
 	if (token_type)
 	{
 		if (*i != 0 && get_separator_token(minisheel_data, *i - 1) == false)
-			save_word_token();
+			save_word_token(minisheel_data, *i, user_input_start);
 		if (
 			token_type == PIPE_TOKEN || token_type == REDIRECT_TOKEN || 
 			token_type == INPUT_TOKEN || token_type == APPEND_TOKEN ||
@@ -102,9 +103,8 @@ static bool parse(t_minishell	*minisheel_data)
 	{
 		user_input_status_quote = set_status_quote(minisheel_data)
 		if (minisheel_data->input_user[i] == ' ' && user_input_status_quote == NORMAL_MODE)
-		{
 			user_input_start = save_token(minisheel_data, user_input_start, &i)
-		}
+		
 	}
 	if (user_input_status_quote != NORMAL_MODE)
 		return (ft_putstr_fd("minishell: unexpected unclose quotes \"'\" or '\"'"), false)
