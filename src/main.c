@@ -50,7 +50,7 @@ int		main(int ac, char **av, char **envp)
 			continue ; // review this in the future and free minishell_data to prevent leaks
 		if (minisheel_data.input_user[0] != '\0')
 			add_history(input_user);
-		parse_input_and_execute(&minisheel_data); // this function is trash only for testing purposes
+		parse_input_and_execute(&minisheel_data);
 		free(input_user); // review later
 	}
 	return (0);
