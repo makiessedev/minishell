@@ -33,7 +33,6 @@ static bool init_setup(t_minishell *minishell_data, char **envp)
 
 int		main(int ac, char **av, char **envp)
 {
-	char		*input_user;
 	t_minishell	minisheel_data;
 
 	if (ac != 1 || av[1])
@@ -46,13 +45,13 @@ int		main(int ac, char **av, char **envp)
 
 	while (1)
 	{
-		input_user = readline("minishell$ ");
-		if (!input_user || is_only_space(input_user))
+		minisheel_data.input_user = readline("minishell$ ");
+		if (!minisheel_data.input_user || is_only_space(minisheel_data.input_user))
 			continue ; // review this in the future and free minishell_data to prevent leaks
-		if (input_user[0] != '\0')
+		if (minisheel_data.input_user[0] != '\0')
 			add_history(input_user);
-		launch_executable(input_user); // this function is trash only for testing purposes
-		free(input_user);
+		parse_input_and_execute(&minisheel_data); // this function is trash only for testing purposes
+		free(input_user); // review later
 	}
 	return (0);
 }

@@ -10,5 +10,6 @@
 #include <readline/history.h>
 
 void	launch_executable(char *full_cmds);
+bool	parse_input_and_execute(t_minishell	minisheel_data);
 
 #endif

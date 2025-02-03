@@ -11,8 +11,17 @@
 
 typedef struct s_minishell
 {
-    char	**envp;
-    char   *current_workdir;
-    char   *old_workdir;
+    char    **envp;
+    char    *current_workdir;
+    char    *old_workdir;
     int     last_command_exit_code;
+    char    *input_user;
 }	t_minishell;
+
+typedef enum {
+    NORMAL_MODE,
+    DOUBLE_QUOTE,
+    SINGLE_QUOTE,
+}   e_quote_controller
+
+enum e_
