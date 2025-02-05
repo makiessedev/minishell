@@ -9,6 +9,18 @@
 #  define PATH_SIZE (1024*4)
 # endif
 
+typedef struct s_token
+{	
+	char			*token;
+	char			*backup_token;
+	bool			var_exists;
+	int				type;
+	int				status;
+	bool			join;
+	struct s_token	*prev;
+	struct s_token	*next;
+}	t_token;
+
 typedef struct s_minishell
 {
     char    **envp;
