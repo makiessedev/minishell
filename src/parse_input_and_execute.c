@@ -28,15 +28,47 @@ int set_status_quote(t_minishell *minisheel_data, int i)
 	return (user_input_status_quote);
 }
 
-void save_word_token(t_minishell minishell_data, int i, int user_input_start)
+void save_word_token(t_token **lst_token, t_minishell *data, int index, int user_input_start)
 {
+	int		i;
+	char	*str;
+	t_token *token;
 
-
+	i = 0;
+	str = malloc(sizeof(char) * (index - user_input_start + 1));
+	if (!str)
+		return (1);
+	while (user_input_start < index)
+	{
+		str[i] = str[user_input_start];
+		user_input_start++;
+		i++;
+	}
+	str[i] = '\0';
+	token = new_token(str, ft_strdup(token), WORD_TOKEN, NORMAL_MODE);
+	add_token(lst_token, token);
+	return (0);
 }
 
-void save_separator_token()
+void save_separator_token(t_token **lst_token, t_minishell *data, int index, int token_type)
 {
+	int		i;
+	char	*token;
+	int		token_length;
 
+	i = 0;
+	if (token_type == APPEND_TOKEN || token_type == HEREDOC_TOKEN)
+		token_length = 2;
+	else
+		token_length = 1;
+	token = malloc(sizeof(char) * (token_length + 1));
+	if (!token)
+		return (1);
+	while (i < token_length)
+		token[i++] = str[index++];
+	token[i] = '\0';
+	lst_add_back_token(lst_token, lst_new_token(token, NULL, token_type, NORMAL_MODE));
+	return (0);
 }
 
 int get_separator_token(t_minishell *minishell_data, int i)

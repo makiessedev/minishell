@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-t_token	*new_token(char *token, char *backup_token, int type, int status)
+t_token	*new_token(char *token, char *backup_token, int token_type, int token_status)
 {
 	t_token	*node;
 
@@ -10,8 +10,8 @@ t_token	*new_token(char *token, char *backup_token, int type, int status)
 	node->token = token;
 	node->str_backup = backup_token;
 	node->var_exists = false;
-	node->type = type;
-	node->status = status;
+	node->type = token_type;
+	node->status = token_status;
 	node->join = false;
 	node->prev = NULL;
 	node->next = NULL;

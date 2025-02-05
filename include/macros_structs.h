@@ -28,6 +28,7 @@ typedef struct s_minishell
     char    *old_workdir;
     int     last_command_exit_code;
     char    *input_user;
+    t_token *token;
 }	t_minishell;
 
 typedef enum {
