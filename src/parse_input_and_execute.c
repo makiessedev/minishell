@@ -104,14 +104,14 @@ int save_token(t_minishell *minisheel_data, int user_input_start, int *i)
 	if (token_type)
 	{
 		if (*i != 0 && get_separator_token(minisheel_data, *i - 1) == false)
-			save_word_token(minisheel_data, *i, user_input_start);
+			save_word_token(&minisheel_data->token, minisheel_data, *i, user_input_start);
 		if (
 			token_type == PIPE_TOKEN || token_type == REDIRECT_TOKEN || 
 			token_type == INPUT_TOKEN || token_type == APPEND_TOKEN ||
 			token_type == HEREDOC_TOKEN || token_type == END_TOKEN 
 		)
 		{
-			save_separator_token();
+			save_separator_token(&minisheel_data->token, minisheel_data, *i, token_type);
 			if (token_type == APPEND_TOKEN || token_type == HEREDOC_TOKEN)
 				(*i)++;
 		}
