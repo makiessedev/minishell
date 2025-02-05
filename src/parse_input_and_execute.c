@@ -6,6 +6,7 @@ void	parse_input_and_execute(t_minishell	*minisheel_data)
 		minisheel_data->last_command_exit_code = execute(minisheel_data);
 	else
 		minisheel_data->last_command_exit_code = 1;
+	// Not forget to free minishell_data
 }
 
 int set_status_quote(t_minishell *minisheel_data, int i)
@@ -28,7 +29,7 @@ int set_status_quote(t_minishell *minisheel_data, int i)
 	return (user_input_status_quote);
 }
 
-void save_word_token(t_token **lst_token, t_minishell *data, int index, int user_input_start)
+int save_word_token(t_token **lst_token, t_minishell *data, int index, int user_input_start)
 {
 	int		i;
 	char	*str;
@@ -40,7 +41,7 @@ void save_word_token(t_token **lst_token, t_minishell *data, int index, int user
 		return (1);
 	while (user_input_start < index)
 	{
-		str[i] = str[user_input_start];
+		str[i] = data->input_user[user_input_start];
 		user_input_start++;
 		i++;
 	}
@@ -50,7 +51,7 @@ void save_word_token(t_token **lst_token, t_minishell *data, int index, int user
 	return (0);
 }
 
-void save_separator_token(t_token **lst_token, t_minishell *data, int index, int token_type)
+int save_separator_token(t_token **lst_token, t_minishell *data, int index, int token_type)
 {
 	int		i;
 	char	*token;
@@ -145,5 +146,6 @@ static bool parse(t_minishell	*minisheel_data)
 
 static int	execute(t_minishell	*minisheel_data)
 {
+	if (parse())
 
 }
