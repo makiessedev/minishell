@@ -1,5 +1,36 @@
 #include "minishell.h"
 
+static bool parse(t_minishell	*minisheel_data)
+{
+	int i;
+	int user_input_len;
+	int user_input_start;
+	int user_input_status_quote;
+
+	i = -1;
+	user_input_start = 0;
+	user_input_len = ft_strlen(minisheel_data->input_user);
+	user_input_status_quote = NORMAL_MODE;
+	while (++i <= user_input_len)
+	{
+		user_input_status_quote = set_status_quote(minisheel_data, i, user_input_status_quote);
+		if (minisheel_data->input_user[i] == ' ' && user_input_status_quote == NORMAL_MODE)
+			user_input_start = save_token(minisheel_data, user_input_start, &i);
+		
+	}
+	if (user_input_status_quote != NORMAL_MODE)
+		return (ft_putstr_fd("minishell: unexpected unclose quotes \"'\" or '\"'", 2), false);
+	return (true);
+}
+
+static int	execute(t_minishell	*minisheel_data)
+{
+	(void)minisheel_data;
+	if (1)
+		return (1);
+	return (0);
+}
+
 void	parse_input_and_execute(t_minishell	*minisheel_data)
 {
 	if (parse(minisheel_data))
@@ -9,9 +40,8 @@ void	parse_input_and_execute(t_minishell	*minisheel_data)
 	// Not forget to free minishell_data
 }
 
-int set_status_quote(t_minishell *minisheel_data, int i)
+int set_status_quote(t_minishell *minisheel_data, int i, int user_input_status_quote)
 {
-	int user_input_status_quote;
 	if (minisheel_data->input_user[i] == '"')
 	{
 		if (user_input_status_quote == NORMAL_MODE)
@@ -46,7 +76,7 @@ int save_word_token(t_token **lst_token, t_minishell *data, int index, int user_
 		i++;
 	}
 	str[i] = '\0';
-	token = new_token(str, ft_strdup(token), WORD_TOKEN, NORMAL_MODE);
+	token = new_token(str, ft_strdup(str), WORD_TOKEN, NORMAL_MODE);
 	add_token(lst_token, token);
 	return (0);
 }
@@ -66,9 +96,9 @@ int save_separator_token(t_token **lst_token, t_minishell *data, int index, int 
 	if (!token)
 		return (1);
 	while (i < token_length)
-		token[i++] = str[index++];
+		token[i++] = data->input_user[index++];
 	token[i] = '\0';
-	lst_add_back_token(lst_token, lst_new_token(token, NULL, token_type, NORMAL_MODE));
+	add_token(lst_token, new_token(token, NULL, token_type, NORMAL_MODE));
 	return (0);
 }
 
@@ -77,7 +107,7 @@ int get_separator_token(t_minishell *minishell_data, int i)
 	char *input_user;
 	int token;
 	
-	input_user = minishell_data->input_user 
+	input_user = minishell_data->input_user;
 	if ((input_user[i] >= 9 && input_user[i] <= 13) || input_user[i] == 32)
 		token = SPACE_TOKEN;
 	else if (input_user[i] == '|')
@@ -93,7 +123,7 @@ int get_separator_token(t_minishell *minishell_data, int i)
 	else if (input_user[i] == '\0')
 		token = END_TOKEN;
 	else
-		return (false)
+		return (false);
 	return (token);
 }
 
@@ -119,33 +149,4 @@ int save_token(t_minishell *minisheel_data, int user_input_start, int *i)
 		user_input_start = (*i) + 1;
 	}
 	return (user_input_start);
-}
-
-static bool parse(t_minishell	*minisheel_data)
-{
-	int i;
-	int user_input_len;
-	int user_input_start;
-	int user_input_status_quote;
-
-	i = -1;
-	user_input_start = 0;
-	user_input_len = ft_strlen(minisheel_data->input_user);
-	user_input_status_quote = NORMAL_MODE;
-	while (++i <= user_input_len)
-	{
-		user_input_status_quote = set_status_quote(minisheel_data)
-		if (minisheel_data->input_user[i] == ' ' && user_input_status_quote == NORMAL_MODE)
-			user_input_start = save_token(minisheel_data, user_input_start, &i)
-		
-	}
-	if (user_input_status_quote != NORMAL_MODE)
-		return (ft_putstr_fd("minishell: unexpected unclose quotes \"'\" or '\"'"), false)
-	return (true)
-}
-
-static int	execute(t_minishell	*minisheel_data)
-{
-	if (parse())
-
 }

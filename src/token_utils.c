@@ -8,7 +8,7 @@ t_token	*new_token(char *token, char *backup_token, int token_type, int token_st
 	if (!node)
 		return (NULL);
 	node->token = token;
-	node->str_backup = backup_token;
+	node->backup_token = backup_token;
 	node->var_exists = false;
 	node->type = token_type;
 	node->status = token_status;
@@ -25,29 +25,29 @@ void	add_token(t_token **lst, t_token *token)
 	start = *lst;
 	if (start == NULL)
 	{
-		*lst = new_node;
+		*lst = token;
 		return ;
 	}
-	if (lst && *lst && new_node)
+	if (lst && *lst && token)
 	{
 		while (start->next != NULL)
 			start = start->next;
-		start->next = new_node;
-		new_node->prev = start;
+		start->next = token;
+		token->prev = start;
 	}
 }
 
 void	delete_token(t_token *lst, void (*del)(void *))
 {
-	if (del && lst && lst->str)
+	if (del && lst && lst->token)
 	{	
-		(*del)(lst->str);
-		lst->str = NULL;
+		(*del)(lst->token);
+		lst->token = NULL;
 	}
-	if (del && lst && lst->str_backup)
+	if (del && lst && lst->backup_token)
 	{	
-		(*del)(lst->str_backup);
-		lst->str_backup = NULL;
+		(*del)(lst->backup_token);
+		lst->backup_token = NULL;
 	}
 	if (lst->prev)
 		lst->prev->next = lst->next;
@@ -64,7 +64,7 @@ void	clear_token(t_token **lst, void (*del)(void *))
 	while (*lst != NULL)
 	{
 		tmp = (*lst)->next;
-		lstdelone_token(*lst, del);
+		delone_token(*lst, del);
 		*lst = tmp;
 	}
 }

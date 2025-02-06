@@ -47,4 +47,4 @@ typedef enum {
     WORD_TOKEN,
     VAR_TOKEN,
     END_TOKEN,
-}   e_tokens
+}   e_tokens;

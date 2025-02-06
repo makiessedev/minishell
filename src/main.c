@@ -49,9 +49,9 @@ int		main(int ac, char **av, char **envp)
 		if (!minisheel_data.input_user || is_only_space(minisheel_data.input_user))
 			continue ; // review this in the future and free minishell_data to prevent leaks
 		if (minisheel_data.input_user[0] != '\0')
-			add_history(input_user);
+			add_history(minisheel_data.input_user);
 		parse_input_and_execute(&minisheel_data);
-		free(input_user); // review later
+		free(minisheel_data.input_user); // review later
 	}
 	return (0);
 }

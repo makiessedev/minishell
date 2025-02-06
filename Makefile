@@ -3,7 +3,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -I./include -I./libs/libft
 ENVIRONMENTS_FILES = get_var_index.c get_var_value.c is_existing_var.c
 TOKENIZATION_FILES = is_only_space.c
-SRC = main.c launch_executable.c \
+SRC = main.c launch_executable.c frees_utils.c \
+	parse_input_and_execute.c token_utils.c \
 	$(addprefix environment/, $(ENVIRONMENTS_FILES)) \
 	$(addprefix tokenization/, $(TOKENIZATION_FILES))
 FILES = $(addprefix ./src/, $(SRC))
