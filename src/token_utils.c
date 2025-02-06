@@ -64,7 +64,7 @@ void	clear_token(t_token **lst, void (*del)(void *))
 	while (*lst != NULL)
 	{
 		tmp = (*lst)->next;
-		delone_token(*lst, del);
+		delete_token(*lst, del);
 		*lst = tmp;
 	}
 }
