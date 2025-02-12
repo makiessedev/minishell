@@ -16,20 +16,20 @@ static bool parse(t_minishell	*minisheel_data)
 		user_input_status_quote = set_status_quote(minisheel_data, i, user_input_status_quote);
 		if (minisheel_data->input_user[i] == ' ' && user_input_status_quote == NORMAL_MODE)
 			user_input_start = save_token(minisheel_data, user_input_start, &i);
-		
+
 	}
 	if (user_input_status_quote != NORMAL_MODE)
 		return (ft_putstr_fd("minishell: unexpected unclose quotes \"'\" or '\"'", 2), false);
 	return (true);
 }
 
-static int	execute(t_minishell	*minisheel_data)
+/* static int	execute(t_minishell	*minisheel_data)
 {
 	(void)minisheel_data;
 	if (1)
 		return (1);
 	return (0);
-}
+} */
 
 void	parse_input_and_execute(t_minishell	*minisheel_data)
 {
@@ -106,7 +106,7 @@ int get_separator_token(t_minishell *minishell_data, int i)
 {
 	char *input_user;
 	int token;
-	
+
 	input_user = minishell_data->input_user;
 	if ((input_user[i] >= 9 && input_user[i] <= 13) || input_user[i] == 32)
 		token = SPACE_TOKEN;
@@ -137,9 +137,9 @@ int save_token(t_minishell *minisheel_data, int user_input_start, int *i)
 		if (*i != 0 && get_separator_token(minisheel_data, *i - 1) == false)
 			save_word_token(&minisheel_data->token, minisheel_data, *i, user_input_start);
 		if (
-			token_type == PIPE_TOKEN || token_type == REDIRECT_TOKEN || 
+			token_type == PIPE_TOKEN || token_type == REDIRECT_TOKEN ||
 			token_type == INPUT_TOKEN || token_type == APPEND_TOKEN ||
-			token_type == HEREDOC_TOKEN || token_type == END_TOKEN 
+			token_type == HEREDOC_TOKEN || token_type == END_TOKEN
 		)
 		{
 			save_separator_token(&minisheel_data->token, minisheel_data, *i, token_type);
