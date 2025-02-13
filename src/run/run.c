@@ -1,8 +1,6 @@
 #include "minishell.h"
 
-int	g_last_exit_code;
-
-static int	get_children(t_data *data)
+static int	get_children(t_minishell *data)
 {
 	pid_t	wpid;
 	int		status;
@@ -27,7 +25,7 @@ static int	get_children(t_data *data)
 	return (status);
 }
 
-static int	create_children(t_data *data)
+static int	create_children(t_minishell *data)
 {
 	t_command	*cmd;
 
@@ -44,7 +42,7 @@ static int	create_children(t_data *data)
 	return (get_children(data));
 }
 
-static int	prep_for_exec(t_data *data)
+static int	prep_for_exec(t_minishell *data)
 {
 	if (!data || !data->cmd)
 		return (EXIT_SUCCESS);
@@ -60,7 +58,7 @@ static int	prep_for_exec(t_data *data)
 	return (CMD_NOT_FOUND);
 }
 
-int	execute(t_data *data)
+int	execute(t_minishell *data)
 {
 	int	ret;
 

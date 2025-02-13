@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	unset_builtin(t_data *data, char **args)
+int	unset_builtin(t_minishell *data, char **args)
 {
 	int	i;
 	int	idx;
@@ -17,7 +17,7 @@ int	unset_builtin(t_data *data, char **args)
 		}
 		else
 		{
-			idx = get_env_var_index(data->env, args[i]);
+			idx = get_env_var_index(data->envp, args[i]);
 			if (idx != -1)
 				remove_env_var(data, idx);
 		}

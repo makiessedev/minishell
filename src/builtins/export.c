@@ -13,7 +13,7 @@ static char	**get_key_value_pair(char *arg)
 	return (tmp);
 }
 
-int	export_builtin(t_data *data, char **args)
+int	export_builtin(t_minishell *data, char **args)
 {
 	int		i;
 	char	**tmp;

@@ -36,12 +36,12 @@ static int	ft_atoi_long(const char *str, bool *error)
 	return (num * neg);
 }
 
-static int	get_exit_code(char *arg, bool *error)
+static int	get_exit_code(t_minishell *data, char *arg, bool *error)
 {
 	unsigned long long	i;
 
 	if (!arg)
-		return (g_last_exit_code);
+		return (data->last_command_exit_code);
 	i = 0;
 	while (ft_isspace(arg[i]))
 		i++;
@@ -61,7 +61,7 @@ static int	get_exit_code(char *arg, bool *error)
 	return (i % 256);
 }
 
-static bool	is_quiet_mode(t_data *data)
+static bool	is_quiet_mode(t_minishell *data)
 {
 	t_command	*cmd;
 
@@ -73,7 +73,7 @@ static bool	is_quiet_mode(t_data *data)
 	return (false);
 }
 
-int	exit_builtin(t_data *data, char **args)
+int	exit_builtin(t_minishell *data, char **args)
 {
 	int		exit_code;
 	bool	error;
@@ -81,13 +81,13 @@ int	exit_builtin(t_data *data, char **args)
 
 	quiet = is_quiet_mode(data);
 	error = false;
-	if (!quiet && data->interactive)
+	if (!quiet)
 		ft_putendl_fd("exit", 2);
 	if (!args || !args[1])
-		exit_code = g_last_exit_code;
+		exit_code = data->last_command_exit_code;
 	else
 	{
-		exit_code = get_exit_code(args[1], &error);
+		exit_code = get_exit_code(data, args[1], &error);
 		if (error)
 			exit_code = errmsg_cmd("exit", args[1],
 					"numeric argument required", 2);

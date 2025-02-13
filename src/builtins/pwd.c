@@ -1,14 +1,14 @@
 #include "minishell.h"
 
-int	pwd_builtin(t_data *data, char **args)
+int	pwd_builtin(t_minishell *data, char **args)
 {
 	char	buf[PATH_MAX];
 	char	*cwd;
 
 	(void)args;
-	if (data->working_dir)
+	if (data->current_workdir)
 	{
-		ft_putendl_fd(data->working_dir, STDOUT_FILENO);
+		ft_putendl_fd(data->current_workdir, STDOUT_FILENO);
 		return (EXIT_SUCCESS);
 	}
 	cwd = getcwd(buf, PATH_MAX);

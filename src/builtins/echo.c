@@ -36,7 +36,7 @@ static void	echo_print_args(char **args, bool n_flag, int i)
 	}
 }
 
-int	echo_builtin(t_data *data, char **args)
+int	echo_builtin(t_minishell *data, char **args)
 {
 	int		i;
 	bool	n_flag;
