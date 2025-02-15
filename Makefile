@@ -3,7 +3,7 @@ NAME	= minishell
 CC		= clang
 CFLAGS	= -Werror -Wextra -Wall -gdwarf-4 -g
 
-SRC_PATH = ./sources/
+SRC_PATH = ./src/
 OBJ_PATH = ./objects/
 INC_PATH = ./headers/
 SRC		= 	main.c \
@@ -54,8 +54,7 @@ SRC		= 	main.c \
 			utils/error.c \
 			utils/cleanup.c \
 			utils/ft_is_space.c \
-			signals/signal.c \
-			debug/debug.c
+			signals/signal.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
@@ -78,7 +77,6 @@ $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)/utils
 	mkdir -p $(OBJ_PATH)/redirections
 	mkdir -p $(OBJ_PATH)/signals
-	mkdir -p $(OBJ_PATH)/debug
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INC)

@@ -1,0 +1,10 @@
+bool	is_var_compliant(char c);
+int	var_length(char *str);
+char	*identify_var(char *str);
+int	count_len(char *str, int count, int i);
+bool	quotes_in_string(char *str);
+int	handle_quotes(t_data *data);
+int	remove_quotes(t_token **token_node);
+char	*recover_val(t_token *token, char *str, t_data *data);
+int	replace_var(t_token **token_node, char *var_value, int index);
+char	*replace_str_heredoc(char *str, char *var_value, int index);

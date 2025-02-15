@@ -27,14 +27,6 @@ static int	get_children(t_data *data)
 	return (status);
 }
 
-/* create_children:
-*	Creates a child process for each command to execute, except in the
-*	case of a builtin command that is not piped, which executes in the
-*	main process (no children created in this case).
-*	Returns true when a process was created for each command or when a
-*	builtin was executed alone.
-*	Returns false if there was a fork error.
-*/
 static int	create_children(t_data *data)
 {
 	t_command	*cmd;
@@ -52,12 +44,6 @@ static int	create_children(t_data *data)
 	return (get_children(data));
 }
 
-/* prep_for_exec:
-*	Prepares the command list for execution, creates pipes
-*	and checks the input and output files.
-*	Returns false in case of error, true if all is ready to
-*	execute.
-*/
 static int	prep_for_exec(t_data *data)
 {
 	if (!data || !data->cmd)
@@ -74,12 +60,6 @@ static int	prep_for_exec(t_data *data)
 	return (CMD_NOT_FOUND);
 }
 
-/* execute:
-*	Executes the given commands by creating children processes
-*	and waiting for them to terminate.
-*	Returns the exit code of the last child to terminate. Or
-*	exit code 1 in case of failure in the child creation process.
-*/
 int	execute(t_data *data)
 {
 	int	ret;
