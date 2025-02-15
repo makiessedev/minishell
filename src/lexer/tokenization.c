@@ -10,18 +10,18 @@ int	tokenization(t_data *data, char *str)
 	i = -1;
 	start = 0;
 	end = ft_strlen(str);
-	status = DEFAULT;
+	status = NORMAL_MODE;
 	while (++i <= end)
 	{
 		status = set_status(status, str, i);
-		if (status == DEFAULT)
+		if (status == NORMAL_MODE)
 			start = save_word_or_sep(&i, str, start, data);
 	}
-	if (status != DEFAULT)
+	if (status != NORMAL_MODE)
 	{
-		if (status == DQUOTE)
+		if (status == DOUBLE_QUOTE)
 			errmsg("unexpected EOF while looking for matching", "\"", true);
-		else if (status == SQUOTE)
+		else if (status == SINGLE_QUOTE)
 			errmsg("unexpected EOF while looking for matching", "\'", true);
 		errmsg("syntax error", "unexpected end of file", false);
 		return (1);

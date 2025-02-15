@@ -64,20 +64,20 @@ typedef struct s_data
 	pid_t		pid;
 }	t_data;
 
-enum e_token_types {
-	SPACES = 1,
-	WORD,
-	VAR,
-	PIPE,
-	INPUT,
-	TRUNC,
-	HEREDOC,
-	APPEND,
-	END
-};
+typedef enum {
+	SPACES_TOKEN = 1,
+	WORD_TOKEN,
+	VAR_TOKEN,
+	PIPE_TOKEN,
+	INPUT_TOKEN,
+	REDIRECT_TOKEN,
+	HEREDOC_TOKEN,
+	APPEND_TOKEN,
+	END_TOKEN
+}	e_token_types;
 
-enum e_quoting_status {
-	DEFAULT,
-	SQUOTE,
-	DQUOTE
-};
+typedef enum {
+	NORMAL_MODE,
+  DOUBLE_QUOTE,
+  SINGLE_QUOTE,
+} e_quoting_status;

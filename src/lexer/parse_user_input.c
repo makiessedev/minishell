@@ -25,7 +25,7 @@ bool	parse_user_input(t_data *data)
 	add_history(data->user_input);
 	if (tokenization(data, data->user_input) == FAILURE)
 		return (false);
-	if (data->token->type == END)
+	if (data->token->type == END_TOKEN)
 		return (false);
 	if (check_if_var(&data->token) == FAILURE)
 		return (false);

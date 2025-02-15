@@ -25,25 +25,25 @@ void	create_commands(t_data *data, t_token *token)
 	t_token	*temp;
 
 	temp = token;
-	if (temp->type == END)
+	if (temp->type == END_TOKEN)
 		return ;
 	while (temp->next != NULL)
 	{
 		if (temp == token)
 			lst_add_back_cmd(&data->cmd, lst_new_cmd(false));
-		if (temp->type == WORD || temp->type == VAR)
+		if (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 			parse_word(&data->cmd, &temp);
-		else if (temp->type == INPUT)
+		else if (temp->type == INPUT_TOKEN)
 			parse_input(&data->cmd, &temp);
-		else if (temp->type == TRUNC)
+		else if (temp->type == REDIRECT_TOKEN)
 			parse_trunc(&data->cmd, &temp);
-		else if (temp->type == HEREDOC)
+		else if (temp->type == HEREDOC_TOKEN)
 			parse_heredoc(data, &data->cmd, &temp);
-		else if (temp->type == APPEND)
+		else if (temp->type == APPEND_TOKEN)
 			parse_append(&data->cmd, &temp);
-		else if (temp->type == PIPE)
+		else if (temp->type == PIPE_TOKEN)
 			parse_pipe(&data->cmd, &temp);
-		else if (temp->type == END)
+		else if (temp->type == END_TOKEN)
 			break ;
 	}
 	prep_no_arg_commands(data);

@@ -2,14 +2,14 @@
 
 static void	update_status(t_token **token_node, char c)
 {
-	if (c == '\'' && (*token_node)->status == DEFAULT)
-		(*token_node)->status = SQUOTE;
-	else if (c == '\"' && (*token_node)->status == DEFAULT)
-		(*token_node)->status = DQUOTE;
-	else if (c == '\'' && (*token_node)->status == SQUOTE)
-		(*token_node)->status = DEFAULT;
-	else if (c == '\"' && (*token_node)->status == DQUOTE)
-		(*token_node)->status = DEFAULT;
+	if (c == '\'' && (*token_node)->status == NORMAL_MODE)
+		(*token_node)->status = SINGLE_QUOTE;
+	else if (c == '\"' && (*token_node)->status == NORMAL_MODE)
+		(*token_node)->status = DOUBLE_QUOTE;
+	else if (c == '\'' && (*token_node)->status == SINGLE_QUOTE)
+		(*token_node)->status = NORMAL_MODE;
+	else if (c == '\"' && (*token_node)->status == DOUBLE_QUOTE)
+		(*token_node)->status = NORMAL_MODE;
 }
 
 static bool	is_next_char_a_sep(char c)
@@ -40,7 +40,7 @@ int	var_expander(t_data *data, t_token **token_lst)
 	temp = *token_lst;
 	while (temp)
 	{
-		if (temp->type == VAR)
+		if (temp->type == VAR_TOKEN)
 		{
 			i = 0;
 			while (temp->str[i])
@@ -49,7 +49,7 @@ int	var_expander(t_data *data, t_token **token_lst)
 				if (temp->str[i] == '$'
 					&& is_next_char_a_sep(temp->str[i + 1]) == false
 					&& var_between_quotes(temp->str, i) == false
-					&& (temp->status == DEFAULT || temp->status == DQUOTE))
+					&& (temp->status == NORMAL_MODE || temp->status == DOUBLE_QUOTE))
 					replace_var(&temp,
 						recover_val(temp, temp->str + i, data), i);
 				else

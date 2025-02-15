@@ -3,16 +3,16 @@
 static void	change_status_to_quote(t_token **token_node, int *i)
 {
 	if ((*token_node)->str[*i] == '\'')
-		(*token_node)->status = SQUOTE;
+		(*token_node)->status = SINGLE_QUOTE;
 	if ((*token_node)->str[*i] == '\"')
-		(*token_node)->status = DQUOTE;
+		(*token_node)->status = DOUBLE_QUOTE;
 	(*i)++;
 }
 
 static bool	if_quotes_and_default(t_token **token_node, int i)
 {
 	if (((*token_node)->str[i] == '\'' || (*token_node)->str[i] == '\"')
-		&& (*token_node)->status == DEFAULT)
+		&& (*token_node)->status == NORMAL_MODE)
 		return (true);
 	else
 		return (false);
@@ -20,10 +20,10 @@ static bool	if_quotes_and_default(t_token **token_node, int i)
 
 static bool	change_back_to_default(t_token **token_node, int *i)
 {
-	if (((*token_node)->str[*i] == '\'' && (*token_node)->status == SQUOTE)
-		|| ((*token_node)->str[*i] == '\"' && (*token_node)->status == DQUOTE))
+	if (((*token_node)->str[*i] == '\'' && (*token_node)->status == SINGLE_QUOTE)
+		|| ((*token_node)->str[*i] == '\"' && (*token_node)->status == DOUBLE_QUOTE))
 	{
-		(*token_node)->status = DEFAULT;
+		(*token_node)->status = NORMAL_MODE;
 		(*i)++;
 		return (true);
 	}

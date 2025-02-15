@@ -5,7 +5,7 @@ int	count_arguments(t_token *temp)
 	int	i;
 
 	i = 0;
-	while (temp && (temp->type == WORD || temp->type == VAR))
+	while (temp && (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN))
 	{
 		i++;
 		temp = temp->next;
@@ -29,7 +29,7 @@ int	create_args_default_mode(t_token **token_node, t_command *last_cmd)
 	i = 0;
 	last_cmd->args[i] = ft_strdup(last_cmd->command);
 	i++;
-	while (temp->type == WORD || temp->type == VAR)
+	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 	{
 		last_cmd->args[i] = ft_strdup(temp->str);
 		i++;
@@ -53,7 +53,7 @@ static char	**copy_default_in_new_tab(
 		new_tab[i] = last_cmd->args[i];
 		i++;
 	}
-	while (temp->type == WORD || temp->type == VAR)
+	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 	{
 		new_tab[i] = ft_strdup(temp->str);
 		i++;
@@ -72,7 +72,7 @@ int	add_args_default_mode(t_token **token_node, t_command *last_cmd)
 
 	i = 0;
 	temp = *token_node;
-	while (temp->type == WORD || temp->type == VAR)
+	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 	{
 		i++;
 		temp = temp->next;

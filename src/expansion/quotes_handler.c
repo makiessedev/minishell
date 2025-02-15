@@ -7,19 +7,19 @@ int	count_len(char *str, int count, int i)
 	status = 0;
 	while (str[i])
 	{
-		if ((str[i] == '\'' || str[i] == '\"') && status == DEFAULT)
+		if ((str[i] == '\'' || str[i] == '\"') && status == NORMAL_MODE)
 		{
 			if (str[i] == '\'')
-				status = SQUOTE;
+				status = SINGLE_QUOTE;
 			if (str[i] == '\"')
-				status = DQUOTE;
+				status = DOUBLE_QUOTE;
 			i++;
 			continue ;
 		}
-		else if ((str[i] == '\'' && status == SQUOTE)
-			|| (str[i] == '\"' && status == DQUOTE))
+		else if ((str[i] == '\'' && status == SINGLE_QUOTE)
+			|| (str[i] == '\"' && status == DOUBLE_QUOTE))
 		{
-			status = DEFAULT;
+			status = NORMAL_MODE;
 			i++;
 			continue ;
 		}
@@ -51,7 +51,7 @@ int	handle_quotes(t_data *data)
 	while (temp)
 	{
 		if (quotes_in_string(temp->str) == true
-			&& (!temp->prev || (temp->prev && temp->prev->type != HEREDOC)))
+			&& (!temp->prev || (temp->prev && temp->prev->type != HEREDOC_TOKEN)))
 			remove_quotes(&temp);
 		temp = temp->next;
 	}

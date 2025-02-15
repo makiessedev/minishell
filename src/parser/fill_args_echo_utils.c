@@ -7,7 +7,7 @@ char	*join_vars(t_token **token_node)
 
 	temp = *token_node;
 	str = ft_strdup(temp->str);
-	while (temp->type == VAR && temp->next->type == VAR
+	while (temp->type == VAR_TOKEN && temp->next->type == VAR_TOKEN
 		&& temp->next->join == true)
 	{
 		str = ft_strjoin(str, temp->next->str);
@@ -22,11 +22,11 @@ int	count_args(t_token *temp)
 	int	i;
 
 	i = 0;
-	while (temp && (temp->type == WORD || temp->type == VAR))
+	while (temp && (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN))
 	{
-		if (temp->type == VAR && temp->join == true)
+		if (temp->type == VAR_TOKEN && temp->join == true)
 		{
-			while (temp->type == VAR && temp->join == true)
+			while (temp->type == VAR_TOKEN && temp->join == true)
 				temp = temp->next;
 			i++;
 		}
@@ -50,7 +50,7 @@ char	**copy_in_new_tab(int len, char **new_tab,
 		new_tab[i] = last_cmd->args[i];
 		i++;
 	}
-	while (tmp->type == WORD || tmp->type == VAR)
+	while (tmp->type == WORD_TOKEN || tmp->type == VAR_TOKEN)
 	{
 		if (tmp->join == true)
 			new_tab[i] = join_vars(&tmp);
@@ -68,9 +68,9 @@ void	remove_empty_var_args(t_token **tokens)
 	t_token	*temp;
 
 	temp = *tokens;
-	while (temp->type == WORD || temp->type == VAR)
+	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 	{
-		if (temp->type == VAR && temp->str[0] == '\0'
+		if (temp->type == VAR_TOKEN && temp->str[0] == '\0'
 			&& temp->var_exists == false)
 		{
 			temp = temp->next;
