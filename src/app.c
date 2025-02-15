@@ -4,6 +4,7 @@ void	bootstrap(t_data *data)
 {
 	while (1)
 	{
+    set_signals_interactive();
 		data->user_input = readline(PROMPT);
 		if (parse_user_input(data) == true)
 			g_last_exit_code = execute(data);

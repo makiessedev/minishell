@@ -6,7 +6,7 @@ CFLAGS	= -Werror -Wextra -Wall
 SRC_PATH = ./src/
 OBJ_PATH = ./temp/
 INC_PATH = ./headers/
-SRC		= 	main.c \
+SRC		= 	main.c app.c \
 			utils/init_data.c \
 			env/env.c \
 			env/env_set.c \
