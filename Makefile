@@ -1,10 +1,10 @@
 NAME	= minishell
 
 CC		= clang
-CFLAGS	= -Werror -Wextra -Wall -gdwarf-4 -g
+CFLAGS	= -Werror -Wextra -Wall
 
 SRC_PATH = ./src/
-OBJ_PATH = ./objects/
+OBJ_PATH = ./temp/
 INC_PATH = ./headers/
 SRC		= 	main.c \
 			utils/init_data.c \
@@ -96,5 +96,3 @@ fclean: clean
 	make -C $(LIBFT_PATH) fclean
 
 re: fclean all
-
-.PHONY: all re clean fclean

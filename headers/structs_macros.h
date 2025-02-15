@@ -11,6 +11,13 @@
 # define SUCCESS 0
 # define FAILURE 1
 
+#ifndef STDBOOL_H
+#define STDBOOL_H
+# define bool int
+# define true 1
+# define false 0
+#endif
+
 typedef struct s_token
 {
 	char			*str;
