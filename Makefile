@@ -1,6 +1,6 @@
 NAME	= minishell
 
-CC		= clang
+CC		= gcc
 CFLAGS	= -Werror -Wextra -Wall
 
 SRC_PATH = ./src/
