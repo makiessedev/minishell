@@ -1,71 +1,102 @@
-NAME = minishell
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./include -I./libs/libft
+NAME	= minishell
 
-ENVIRONMENTS_FILES = get_var_index.c get_var_value.c is_existing_var.c \
-											env_set.c env.c
+CC		= clang
+CFLAGS	= -Werror -Wextra -Wall -gdwarf-4 -g
 
-EXPANSION = identify_var.c quotes_handler.c quotes_remover.c recover_value.c \
-						replace_var.c var_expander.c var_expander_utils.c
+SRC_PATH = ./sources/
+OBJ_PATH = ./objects/
+INC_PATH = ./headers/
+SRC		= 	main.c \
+			utils/init_data.c \
+			env/env.c \
+			env/env_set.c \
+			lexer/parse_user_input.c \
+			lexer/tokenization.c \
+			lexer/tokenization_utils.c \
+			lexer/check_if_var.c \
+			lexer/lexer_grammar.c \
+			lexer/token_lst_utils.c \
+			lexer/token_lst_utils_2.c \
+			expansion/var_expander.c \
+			expansion/var_expander_utils.c \
+			expansion/identify_var.c \
+			expansion/quotes_handler.c \
+			expansion/quotes_remover.c \
+			expansion/recover_value.c \
+			expansion/replace_var.c \
+			parser/create_commands.c \
+			parser/parse_word.c \
+			parser/fill_args_echo.c \
+			parser/fill_args_echo_utils.c \
+			parser/fill_args_default.c \
+			parser/parse_input.c \
+			parser/parse_trunc.c \
+			parser/parse_append.c \
+			parser/parse_heredoc.c \
+			parser/parse_heredoc_utils.c \
+			parser/parse_pipe.c \
+			parser/cmd_lst_utils.c \
+			parser/cmd_lst_utils_cleanup.c \
+			builtins/export_builtin.c \
+			builtins/unset_builtin.c \
+			builtins/cd_builtin.c \
+			builtins/env_builtin.c \
+			builtins/pwd_builtin.c \
+			builtins/echo_builtin.c \
+			builtins/exit_builtin.c \
+			execution/execute.c \
+			execution/execute_cmd.c \
+			execution/execute_utils.c \
+			execution/parse_path.c \
+			redirections/pipe.c \
+			redirections/file_io.c \
+			utils/exit.c \
+			utils/error.c \
+			utils/cleanup.c \
+			utils/ft_is_space.c \
+			signals/signal.c \
+			debug/debug.c
+SRCS	= $(addprefix $(SRC_PATH), $(SRC))
+OBJ		= $(SRC:.c=.o)
+OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
+INC		= -I $(INC_PATH) -I $(LIBFT_PATH)
 
-TOKENIZATION_FILES = is_only_space.c
+LIBFT_PATH = ./libs/libft/
+LIBFT = ./libs/libft/libft.a
 
-RUN_FILES = parse_path.c run_command.c run_utils.c run.c
+all: $(OBJ_PATH) $(LIBFT) $(NAME)
 
-LEXER_FILES = check_if_var.c lexer_grammar.c parse_user_input.c \
-							token_lst_utils_2.c token_lst_utils.c tokenization.c
+$(OBJ_PATH):
+	mkdir -p $(OBJ_PATH)
+	mkdir -p $(OBJ_PATH)/builtins
+	mkdir -p $(OBJ_PATH)/lexer
+	mkdir -p $(OBJ_PATH)/expansion
+	mkdir -p $(OBJ_PATH)/parser
+	mkdir -p $(OBJ_PATH)/testing
+	mkdir -p $(OBJ_PATH)/env
+	mkdir -p $(OBJ_PATH)/execution
+	mkdir -p $(OBJ_PATH)/utils
+	mkdir -p $(OBJ_PATH)/redirections
+	mkdir -p $(OBJ_PATH)/signals
+	mkdir -p $(OBJ_PATH)/debug
 
-PARSER_FILES = cmd_lst_utils_cleanup.c cmd_lst_utils.c create_commands.c \
-					fill_args_default.c fill_args_echo_utils.c fill_args_echo.c \
-					parse_append.c parse_heredoc_utils.c parse_heredoc.c parse_input.c \
-					parse_pipe.c parse_trunc.c parse_word.c
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
-BUILTINS_FILES = cd.c echo.c env.c exit.c export.c pwd.c unset.c
-
-REDIRECT_FILES = file_io.c pipes.c
-
-SIGNALS_FILES = signal.c
-
-UTILS_FILES = cleanup.c error.c exit.c init_data.c
-
-SRC = main.c launch_executable.c \
-	parse_input_and_execute.c token_utils.c \
-	$(addprefix run/, $(RUN_FILES)) \
-	$(addprefix environment/, $(ENVIRONMENTS_FILES)) \
-	$(addprefix tokenization/, $(TOKENIZATION_FILES)) \
-	$(addprefix expansion/, $(EXPANSION)) \
-	$(addprefix lexer/, $(LEXER_FILES)) \
-	$(addprefix parser/, $(PARSER_FILES)) \
-	$(addprefix redirect/, $(REDIRECT_FILES)) \
-	$(addprefix signals/, $(SIGNALS_FILES)) \
-	$(addprefix utils/, $(UTILS_FILES)) \
-	$(addprefix builtins/, $(BUILTINS_FILES)) \
-
-FILES = $(addprefix ./src/, $(SRC))
-OBJ_DIR = ./obj
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
-HEADER = ./include/minishell.h
-LIBFT_DIR = ./libs/libft
-LIBFT = $(LIBFT_DIR)/libft.a
-
-$(OBJ_DIR)/%.o: ./src/%.c $(HEADER)
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME): $(OBJ) $(HEADER) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -L$(LIBFT_DIR) -lft -lreadline
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC) $(LIBFT) -l readline
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
-
-all: $(NAME)
+	make -C $(LIBFT_PATH)
 
 clean:
-	rm -rf $(OBJ_DIR)
-	make -C $(LIBFT_DIR) clean
+	rm -rf $(OBJ_PATH)
+	make -C $(LIBFT_PATH) clean
 
 fclean: clean
-	rm -rf $(NAME)
-	make -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
+	make -C $(LIBFT_PATH) fclean
 
 re: fclean all
+
+.PHONY: all re clean fclean
