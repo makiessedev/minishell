@@ -1,0 +1,13 @@
+void	free_data(t_data *data, bool clear_history);
+void	close_fds(t_command *cmds, bool close_backups);
+void	free_io(t_io_fds *io);
+void	free_str_tab(char **tab);
+void	free_ptr(void *ptr);
+char	*join_strs(char *str, char *add);
+int	errmsg_cmd(char *command, char *detail, char *error_message, int error_nb);
+void	errmsg(char *errmsg, char *detail, int quotes);
+bool	usage_message(bool return_val);
+void	exit_shell(t_data *data, int exno);
+int	ft_isspace(int c);
+bool	init_data(t_data *data, char **env);
+void	init_io(t_command *cmd);

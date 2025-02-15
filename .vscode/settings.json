@@ -4,6 +4,8 @@
     "array": "cpp",
     "string": "cpp",
     "string_view": "cpp",
-    "minishell.h": "c"
+    "minishell.h": "c",
+    "libft.h": "c",
+    "_lexer_header.h": "c"
   }
 }
