@@ -1,1 +1,0 @@
-void	set_signals_interactive(void);

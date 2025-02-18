@@ -87,7 +87,7 @@ bool	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
 	line = NULL;
 	while (1)
 	{
-		set_signals_interactive();
+		signals_manager();
 		line = readline(">");
 		if (!evaluate_heredoc_line(main_data, &line, io, &ret))
 			break ;

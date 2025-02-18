@@ -53,8 +53,7 @@ SRC		= 	main.c app.c \
 			utils/exit.c \
 			utils/error.c \
 			utils/cleanup.c \
-			utils/ft_is_space.c \
-			signals/signal.c
+			utils/ft_is_space.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))

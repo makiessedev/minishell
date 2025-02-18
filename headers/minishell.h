@@ -20,13 +20,13 @@
 # include "../src/lexer/_lexer_header.h"
 # include "../src/parser/_parser_header.h"
 # include "../src/redirections/_redirections_header.h"
-# include "../src/signals/_signals_header.h"
 # include "../src/utils/_utils_header.h"
 
 
 extern int	g_last_exit_code;
 
 void	bootstrap(t_main *main_data);
+void	signals_manager(void);
 
 #endif
 
