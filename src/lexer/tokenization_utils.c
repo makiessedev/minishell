@@ -83,7 +83,7 @@ int	set_status(int status, char *str, int i)
 	return (status);
 }
 
-int	save_word_or_sep(int *i, char *str, int start, t_data *data)
+int	save_word_or_sep(int *i, char *str, int start, t_main *main_data)
 {
 	int	type;
 
@@ -91,11 +91,11 @@ int	save_word_or_sep(int *i, char *str, int start, t_data *data)
 	if (type)
 	{
 		if ((*i) != 0 && is_separator(str, (*i) - 1) == 0)
-			save_word(&data->token, str, (*i), start);
+			save_word(&main_data->token, str, (*i), start);
 		if (type == APPEND_TOKEN || type == HEREDOC_TOKEN || type == PIPE_TOKEN
 			|| type == INPUT_TOKEN || type == REDIRECT_TOKEN || type == END_TOKEN)
 		{
-			save_separator(&data->token, str, (*i), type);
+			save_separator(&main_data->token, str, (*i), type);
 			if (type == APPEND_TOKEN || type == HEREDOC_TOKEN)
 				(*i)++;
 		}

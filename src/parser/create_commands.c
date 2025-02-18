@@ -1,12 +1,12 @@
 #include "minishell.h"
 
-static void	prep_no_arg_commands(t_data *data)
+static void	prep_no_arg_commands(t_main *main_data)
 {
 	t_command	*cmd;
 
-	if (!data || !data->cmd)
+	if (!main_data || !main_data->cmd)
 		return ;
-	cmd = data->cmd;
+	cmd = main_data->cmd;
 	while (cmd && cmd->command)
 	{
 		if (!cmd->args)
@@ -17,10 +17,10 @@ static void	prep_no_arg_commands(t_data *data)
 		}
 		cmd = cmd->next;
 	}
-	cmd = lst_last_cmd(data->cmd);
+	cmd = lst_last_cmd(main_data->cmd);
 }
 
-void	create_commands(t_data *data, t_token *token)
+void	create_commands(t_main *main_data, t_token *token)
 {
 	t_token	*temp;
 
@@ -30,21 +30,21 @@ void	create_commands(t_data *data, t_token *token)
 	while (temp->next != NULL)
 	{
 		if (temp == token)
-			lst_add_back_cmd(&data->cmd, lst_new_cmd(false));
+			lst_add_back_cmd(&main_data->cmd, lst_new_cmd(false));
 		if (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
-			parse_word(&data->cmd, &temp);
+			parse_word(&main_data->cmd, &temp);
 		else if (temp->type == INPUT_TOKEN)
-			parse_input(&data->cmd, &temp);
+			parse_input(&main_data->cmd, &temp);
 		else if (temp->type == REDIRECT_TOKEN)
-			parse_trunc(&data->cmd, &temp);
+			parse_trunc(&main_data->cmd, &temp);
 		else if (temp->type == HEREDOC_TOKEN)
-			parse_heredoc(data, &data->cmd, &temp);
+			parse_heredoc(main_data, &main_data->cmd, &temp);
 		else if (temp->type == APPEND_TOKEN)
-			parse_append(&data->cmd, &temp);
+			parse_append(&main_data->cmd, &temp);
 		else if (temp->type == PIPE_TOKEN)
-			parse_pipe(&data->cmd, &temp);
+			parse_pipe(&main_data->cmd, &temp);
 		else if (temp->type == END_TOKEN)
 			break ;
 	}
-	prep_no_arg_commands(data);
+	prep_no_arg_commands(main_data);
 }

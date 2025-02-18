@@ -28,7 +28,7 @@ static char	*make_str_from_tab(char **tab)
 	return (str);
 }
 
-static char	*get_expanded_var_line(t_data *data, char *line)
+static char	*get_expanded_var_line(t_main *main_data, char *line)
 {
 	char	**words;
 	int		i;
@@ -41,7 +41,7 @@ static char	*get_expanded_var_line(t_data *data, char *line)
 	{
 		if (ft_strchr(words[i], '$'))
 		{
-			words[i] = var_expander_heredoc(data, words[i]);
+			words[i] = var_expander_heredoc(main_data, words[i]);
 			if (!words[i])
 				return (NULL);
 		}
@@ -50,7 +50,7 @@ static char	*get_expanded_var_line(t_data *data, char *line)
 	return (make_str_from_tab(words));
 }
 
-static bool	evaluate_heredoc_line(t_data *data, char **line,
+static bool	evaluate_heredoc_line(t_main *main_data, char **line,
 									t_io_fds *io, bool *ret)
 {
 	if (*line == NULL)
@@ -67,7 +67,7 @@ static bool	evaluate_heredoc_line(t_data *data, char **line,
 	}
 	if (io->heredoc_quotes == false && ft_strchr(*line, '$'))
 	{
-		*line = get_expanded_var_line(data, *line);
+		*line = get_expanded_var_line(main_data, *line);
 		if (!(*line))
 		{
 			free_ptr(*line);
@@ -78,7 +78,7 @@ static bool	evaluate_heredoc_line(t_data *data, char **line,
 	return (true);
 }
 
-bool	fill_heredoc(t_data *data, t_io_fds *io, int fd)
+bool	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
 {
 	char	*line;
 	bool	ret;
@@ -90,7 +90,7 @@ bool	fill_heredoc(t_data *data, t_io_fds *io, int fd)
 		set_signals_interactive();
 		line = readline(">");
 		set_signals_noninteractive();
-		if (!evaluate_heredoc_line(data, &line, io, &ret))
+		if (!evaluate_heredoc_line(main_data, &line, io, &ret))
 			break ;
 		ft_putendl_fd(line, fd);
 		free_ptr(line);

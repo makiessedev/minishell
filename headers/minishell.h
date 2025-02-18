@@ -26,7 +26,7 @@
 
 extern int	g_last_exit_code;
 
-void	bootstrap(t_data *data);
+void	bootstrap(t_main *main_data);
 
 #endif
 

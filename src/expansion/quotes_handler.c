@@ -43,11 +43,11 @@ bool	quotes_in_string(char *str)
 	return (false);
 }
 
-int	handle_quotes(t_data *data)
+int	handle_quotes(t_main *main_data)
 {
 	t_token	*temp;
 
-	temp = data->token;
+	temp = main_data->token;
 	while (temp)
 	{
 		if (quotes_in_string(temp->str) == true

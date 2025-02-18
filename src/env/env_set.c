@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-static char	**realloc_env_vars(t_data *data, int size)
+static char	**realloc_env_vars(t_main *main_data, int size)
 {
 	char	**new_env;
 	int		i;
@@ -9,63 +9,63 @@ static char	**realloc_env_vars(t_data *data, int size)
 	if (!new_env)
 		return (NULL);
 	i = 0;
-	while (data->env[i] && i < size)
+	while (main_data->env[i] && i < size)
 	{
-		new_env[i] = ft_strdup(data->env[i]);
-		free_ptr(data->env[i]);
+		new_env[i] = ft_strdup(main_data->env[i]);
+		free_ptr(main_data->env[i]);
 		i++;
 	}
-	free(data->env);
+	free(main_data->env);
 	return (new_env);
 }
 
-bool	set_env_var(t_data *data, char *key, char *value)
+bool	set_env_var(t_main *main_data, char *key, char *value)
 {
 	int		idx;
 	char	*tmp;
 
-	idx = get_env_var_index(data->env, key);
+	idx = get_env_var_index(main_data->env, key);
 	if (value == NULL)
 		value = "";
 	tmp = ft_strjoin("=", value);
 	if (!tmp)
 		return (false);
-	if (idx != -1 && data->env[idx])
+	if (idx != -1 && main_data->env[idx])
 	{
-		free_ptr(data->env[idx]);
-		data->env[idx] = ft_strjoin(key, tmp);
+		free_ptr(main_data->env[idx]);
+		main_data->env[idx] = ft_strjoin(key, tmp);
 	}
 	else
 	{
-		idx = env_var_count(data->env);
-		data->env = realloc_env_vars(data, idx + 1);
-		if (!data->env)
+		idx = env_var_count(main_data->env);
+		main_data->env = realloc_env_vars(main_data, idx + 1);
+		if (!main_data->env)
 			return (false);
-		data->env[idx] = ft_strjoin(key, tmp);
+		main_data->env[idx] = ft_strjoin(key, tmp);
 	}
 	free_ptr(tmp);
 	return (true);
 }
 
-bool	remove_env_var(t_data *data, int idx)
+bool	remove_env_var(t_main *main_data, int idx)
 {
 	int	i;
 	int	count;
 
-	if (idx > env_var_count(data->env))
+	if (idx > env_var_count(main_data->env))
 		return (false);
-	free_ptr(data->env[idx]);
+	free_ptr(main_data->env[idx]);
 	i = idx;
 	count = idx;
-	while (data->env[i + 1])
+	while (main_data->env[i + 1])
 	{
-		data->env[i] = ft_strdup(data->env[i + 1]);
-		free_ptr(data->env[i + 1]);
+		main_data->env[i] = ft_strdup(main_data->env[i + 1]);
+		free_ptr(main_data->env[i + 1]);
 		count++;
 		i++;
 	}
-	data->env = realloc_env_vars(data, count);
-	if (!data->env)
+	main_data->env = realloc_env_vars(main_data, count);
+	if (!main_data->env)
 		return (false);
 	return (true);
 }

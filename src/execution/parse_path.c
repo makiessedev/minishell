@@ -24,19 +24,19 @@ static char	*find_valid_cmd_path(char *cmd, char **paths)
 	return (NULL);
 }
 
-static char	**get_paths_from_env(t_data *data)
+static char	**get_paths_from_env(t_main *main_data)
 {
 	char	**env_paths;
 
-	if (get_env_var_index(data->env, "PATH") == -1)
+	if (get_env_var_index(main_data->env, "PATH") == -1)
 		return (NULL);
-	env_paths = ft_split(get_env_var_value(data->env, "PATH"), ':');
+	env_paths = ft_split(get_env_var_value(main_data->env, "PATH"), ':');
 	if (!env_paths)
 		return (NULL);
 	return (env_paths);
 }
 
-char	*get_cmd_path(t_data *data, char *name)
+char	*get_cmd_path(t_main *main_data, char *name)
 {
 	char	**env_paths;
 	char	*cmd;
@@ -44,7 +44,7 @@ char	*get_cmd_path(t_data *data, char *name)
 
 	if (!name)
 		return (NULL);
-	env_paths = get_paths_from_env(data);
+	env_paths = get_paths_from_env(main_data);
 	if (!env_paths)
 		return (NULL);
 	cmd = ft_strjoin("/", name);

@@ -13,12 +13,12 @@ void	close_pipe_fds(t_command *cmds, t_command *skip_cmd)
 	}
 }
 
-bool	create_pipes(t_data *data)
+bool	create_pipes(t_main *main_data)
 {
 	int			*fd;
 	t_command	*tmp;
 
-	tmp = data->cmd;
+	tmp = main_data->cmd;
 	while (tmp)
 	{
 		if (tmp->pipe_output || (tmp->prev && tmp->prev->pipe_output))
@@ -26,7 +26,7 @@ bool	create_pipes(t_data *data)
 			fd = malloc(sizeof * fd * 2);
 			if (!fd || pipe(fd) != 0)
 			{
-				free_data(data, false);
+				free_data(main_data, false);
 				return (false);
 			}
 			tmp->pipe_fd = fd;

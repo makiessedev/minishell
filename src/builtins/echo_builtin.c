@@ -36,12 +36,12 @@ static void	echo_print_args(char **args, bool n_flag, int i)
 	}
 }
 
-int	echo_builtin(t_data *data, char **args)
+int	echo_builtin(t_main *main_data, char **args)
 {
 	int		i;
 	bool	n_flag;
 
-	(void)data;
+	(void)main_data;
 	n_flag = false;
 	i = 1;
 	while (args[i] && is_n_flag(args[i]))

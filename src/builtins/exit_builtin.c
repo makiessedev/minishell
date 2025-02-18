@@ -61,11 +61,11 @@ static int	get_exit_code(char *arg, bool *error)
 	return (i % 256);
 }
 
-static bool	is_quiet_mode(t_data *data)
+static bool	is_quiet_mode(t_main *main_data)
 {
 	t_command	*cmd;
 
-	cmd = data->cmd;
+	cmd = main_data->cmd;
 	if (!cmd)
 		return (false);
 	if (cmd->next != NULL || cmd->prev != NULL)
@@ -73,15 +73,15 @@ static bool	is_quiet_mode(t_data *data)
 	return (false);
 }
 
-int	exit_builtin(t_data *data, char **args)
+int	exit_builtin(t_main *main_data, char **args)
 {
 	int		exit_code;
 	bool	error;
 	bool	quiet;
 
-	quiet = is_quiet_mode(data);
+	quiet = is_quiet_mode(main_data);
 	error = false;
-	if (!quiet && data->interactive)
+	if (!quiet && main_data->interactive)
 		ft_putendl_fd("exit", 2);
 	if (!args || !args[1])
 		exit_code = g_last_exit_code;
@@ -94,6 +94,6 @@ int	exit_builtin(t_data *data, char **args)
 		else if (args[2])
 			return (errmsg_cmd("exit", NULL, "too many arguments", 1));
 	}
-	exit_shell(data, exit_code);
+	exit_shell(main_data, exit_code);
 	return (2);
 }

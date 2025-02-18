@@ -52,7 +52,7 @@ typedef struct s_command
 	struct s_command	*prev;
 }	t_command;
 
-typedef struct s_data
+typedef struct s_main
 {
 	bool		interactive;
 	t_token		*token;
@@ -62,7 +62,7 @@ typedef struct s_data
 	char		*old_working_dir;
 	t_command	*cmd;
 	pid_t		pid;
-}	t_data;
+}	t_main;
 
 typedef enum {
 	SPACES_TOKEN = 1,

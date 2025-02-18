@@ -1,6 +1,6 @@
 int	check_if_var(t_token **token_lst);
 int	check_consecutives(t_token **token_lst);
-bool	parse_user_input(t_data *data);
+bool	parse_user_input(t_main *data);
 t_token	*insert_lst_between(t_token **head, t_token *to_del, t_token *insert);
 t_token	*lst_new_token(char *str, char *str_backup, int type, int status);
 void	lst_add_back_token(t_token **alst, t_token *new_node);
@@ -10,5 +10,5 @@ int	save_separator(t_token **token_lst, char *str, int index, int type);
 int	save_word(t_token **token_lst, char *str, int index, int start);
 int	is_separator(char *str, int i);
 int	set_status(int status, char *str, int i);
-int	save_word_or_sep(int *i, char *str, int start, t_data *data);
-int	tokenization(t_data *data, char *str);
+int	save_word_or_sep(int *i, char *str, int start, t_main *main_data);
+int	tokenization(t_main *main_data, char *str);

@@ -1,24 +1,24 @@
 #include "minishell.h"
 
-void	free_data(t_data *data, bool clear_history)
+void	free_data(t_main *main_data, bool clear_history)
 {
-	if (data && data->user_input)
+	if (main_data && main_data->user_input)
 	{
-		free_ptr(data->user_input);
-		data->user_input = NULL;
+		free_ptr(main_data->user_input);
+		main_data->user_input = NULL;
 	}
-	if (data && data->token)
-		lstclear_token(&data->token, &free_ptr);
-	if (data && data->cmd)
-		lst_clear_cmd(&data->cmd, &free_ptr);
+	if (main_data && main_data->token)
+		lstclear_token(&main_data->token, &free_ptr);
+	if (main_data && main_data->cmd)
+		lst_clear_cmd(&main_data->cmd, &free_ptr);
 	if (clear_history == true)
 	{
-		if (data && data->working_dir)
-			free_ptr(data->working_dir);
-		if (data && data->old_working_dir)
-			free_ptr(data->old_working_dir);
-		if (data && data->env)
-			free_str_tab(data->env);
+		if (main_data && main_data->working_dir)
+			free_ptr(main_data->working_dir);
+		if (main_data && main_data->old_working_dir)
+			free_ptr(main_data->old_working_dir);
+		if (main_data && main_data->env)
+			free_str_tab(main_data->env);
 		rl_clear_history();
 	}
 }

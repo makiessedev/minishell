@@ -1,12 +1,12 @@
 #include "minishell.h"
 
-void	exit_shell(t_data *data, int exno)
+void	exit_shell(t_main *main_data, int exno)
 {
-	if (data)
+	if (main_data)
 	{
-		if (data->cmd && data->cmd->io_fds)
-			close_fds(data->cmd, true);
-		free_data(data, true);
+		if (main_data->cmd && main_data->cmd->io_fds)
+			close_fds(main_data->cmd, true);
+		free_data(main_data, true);
 	}
 	exit(exno);
 }

@@ -1,13 +1,13 @@
 #include "minishell.h"
 
-bool	get_heredoc(t_data *data, t_io_fds *io)
+bool	get_heredoc(t_main *main_data, t_io_fds *io)
 {
 	int		tmp_fd;
 	bool	ret;
 
 	ret = true;
 	tmp_fd = open(io->infile, O_CREAT | O_WRONLY | O_TRUNC, 0644);
-	ret = fill_heredoc(data, io, tmp_fd);
+	ret = fill_heredoc(main_data, io, tmp_fd);
 	close(tmp_fd);
 	return (ret);
 }
@@ -41,7 +41,7 @@ static char	*get_delim(char *delim, bool *quotes)
 	return (ft_strdup(delim));
 }
 
-void	parse_heredoc(t_data *data, t_command **last_cmd, t_token **token_lst)
+void	parse_heredoc(t_main *main_data, t_command **last_cmd, t_token **token_lst)
 {
 	t_token		*temp;
 	t_command	*cmd;
@@ -55,7 +55,7 @@ void	parse_heredoc(t_data *data, t_command **last_cmd, t_token **token_lst)
 		return ;
 	io->infile = get_heredoc_name();
 	io->heredoc_delimiter = get_delim(temp->next->str, &(io->heredoc_quotes));
-	if (get_heredoc(data, io))
+	if (get_heredoc(main_data, io))
 		io->fd_in = open(io->infile, O_RDONLY);
 	else
 		io->fd_in = -1;

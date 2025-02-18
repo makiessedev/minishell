@@ -1,4 +1,4 @@
-void	free_data(t_data *data, bool clear_history);
+void	free_data(t_main *main_data, bool clear_history);
 void	close_fds(t_command *cmds, bool close_backups);
 void	free_io(t_io_fds *io);
 void	free_str_tab(char **tab);
@@ -7,7 +7,7 @@ char	*join_strs(char *str, char *add);
 int	errmsg_cmd(char *command, char *detail, char *error_message, int error_nb);
 void	errmsg(char *errmsg, char *detail, int quotes);
 bool	usage_message(bool return_val);
-void	exit_shell(t_data *data, int exno);
+void	exit_shell(t_main *main_data, int exno);
 int	ft_isspace(int c);
-bool	init_data(t_data *data, char **env);
+bool	init_data(t_main *main_data, char **env);
 void	init_io(t_command *cmd);

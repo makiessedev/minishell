@@ -1,65 +1,65 @@
 #include "minishell.h"
 
-static bool	init_env(t_data *data, char **env)
+static bool	init_env(t_main *main_data, char **env)
 {
 	int		i;
 
-	data->env = ft_calloc(env_var_count(env) + 1, sizeof * data->env);
-	if (!data->env)
+	main_data->env = ft_calloc(env_var_count(env) + 1, sizeof * main_data->env);
+	if (!main_data->env)
 		return (false);
 	i = 0;
 	while (env[i])
 	{
-		data->env[i] = ft_strdup(env[i]);
-		if (!data->env[i])
+		main_data->env[i] = ft_strdup(env[i]);
+		if (!main_data->env[i])
 			return (false);
 		i++;
 	}
 	return (true);
 }
 
-static bool	init_wds(t_data *data)
+static bool	init_wds(t_main *main_data)
 {
 	char	buff[PATH_MAX];
 	char	*wd;
 
 	wd = getcwd(buff, PATH_MAX);
-	data->working_dir = ft_strdup(wd);
-	if (!data->working_dir)
+	main_data->working_dir = ft_strdup(wd);
+	if (!main_data->working_dir)
 		return (false);
-	if (get_env_var_index(data->env, "OLDPWD") != -1)
+	if (get_env_var_index(main_data->env, "OLDPWD") != -1)
 	{
-		data->old_working_dir = ft_strdup(get_env_var_value(data->env,
+		main_data->old_working_dir = ft_strdup(get_env_var_value(main_data->env,
 					"OLDPWD"));
-		if (!data->old_working_dir)
+		if (!main_data->old_working_dir)
 			return (false);
 	}
 	else
 	{
-		data->old_working_dir = ft_strdup(wd);
-		if (!data->old_working_dir)
+		main_data->old_working_dir = ft_strdup(wd);
+		if (!main_data->old_working_dir)
 			return (false);
 	}
 	return (true);
 }
 
-bool	init_data(t_data *data, char **env)
+bool	init_data(t_main *main_data, char **env)
 {
-	if (!init_env(data, env))
+	if (!init_env(main_data, env))
 	{
 		errmsg_cmd("Fatal", NULL, "Could not initialize environment", 1);
 		return (false);
 	}
-	if (!init_wds(data))
+	if (!init_wds(main_data))
 	{
 		errmsg_cmd("Fatal", NULL, "Could not initialize working directories",
 			1);
 		return (false);
 	}
-	data->token = NULL;
-	data->user_input = NULL;
-	data->cmd = NULL;
-	data->pid = -1;
+	main_data->token = NULL;
+	main_data->user_input = NULL;
+	main_data->cmd = NULL;
+	main_data->pid = -1;
 	g_last_exit_code = 0;
 	return (true);
 }

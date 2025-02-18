@@ -9,10 +9,10 @@ bool	cmd_is_dir(char *cmd)
 	return (S_ISDIR(cmd_stat.st_mode));
 }
 
-int	check_command_not_found(t_data *data, t_command *cmd)
+int	check_command_not_found(t_main *main_data, t_command *cmd)
 {
 	if (ft_strchr(cmd->command, '/') == NULL
-		&& get_env_var_index(data->env, "PATH") != -1)
+		&& get_env_var_index(main_data->env, "PATH") != -1)
 		return (errmsg_cmd(cmd->command, NULL, "command not found",
 				CMD_NOT_FOUND));
 	if (access(cmd->command, F_OK) != 0)

@@ -13,7 +13,7 @@ static char	**get_key_value_pair(char *arg)
 	return (tmp);
 }
 
-int	export_builtin(t_data *data, char **args)
+int	export_builtin(t_main *main_data, char **args)
 {
 	int		i;
 	char	**tmp;
@@ -22,7 +22,7 @@ int	export_builtin(t_data *data, char **args)
 	ret = EXIT_SUCCESS;
 	i = 1;
 	if (!args[i])
-		return (env_builtin(data, NULL));
+		return (env_builtin(main_data, NULL));
 	while (args[i])
 	{
 		if (!is_valid_env_var_key(args[i]))
@@ -33,7 +33,7 @@ int	export_builtin(t_data *data, char **args)
 		else if (ft_strchr(args[i], '=') != NULL)
 		{
 			tmp = get_key_value_pair(args[i]);
-			set_env_var(data, tmp[0], tmp[1]);
+			set_env_var(main_data, tmp[0], tmp[1]);
 			free_str_tab(tmp);
 		}
 		i++;

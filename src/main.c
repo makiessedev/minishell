@@ -8,13 +8,13 @@ static void unused_args(int ac, char **av)
 
 int	main(int ac, char **av, char **env)
 {
-	t_data	data;
+	t_main	main_data;
 
 	unused_args(ac, av);
-	ft_memset(&data, 0, sizeof(t_data));
-	if (!init_data(&data, env))
+	ft_memset(&main_data, 0, sizeof(t_main));
+	if (!init_data(&main_data, env))
 		exit_shell(NULL, EXIT_FAILURE);
-	bootstrap(&data);
-	exit_shell(&data, g_last_exit_code);
+	bootstrap(&main_data);
+	exit_shell(&main_data, g_last_exit_code);
 	return (0);
 }
