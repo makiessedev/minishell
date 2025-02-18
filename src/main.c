@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-static void unused_args(int ac, char **av)
+static void set_unused_args(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
@@ -10,7 +10,7 @@ int	main(int ac, char **av, char **env)
 {
 	t_main	main_data;
 
-	unused_args(ac, av);
+	set_unused_args(ac, av);
 	ft_memset(&main_data, 0, sizeof(t_main));
 	if (!init_data(&main_data, env))
 		exit_shell(NULL, EXIT_FAILURE);
