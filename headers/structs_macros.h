@@ -54,7 +54,6 @@ typedef struct s_command
 
 typedef struct s_main
 {
-	bool		interactive;
 	t_token		*token;
 	char		*user_input;
 	char		**env;

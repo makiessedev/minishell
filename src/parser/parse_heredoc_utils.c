@@ -89,7 +89,6 @@ bool	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
 	{
 		set_signals_interactive();
 		line = readline(">");
-		set_signals_noninteractive();
 		if (!evaluate_heredoc_line(main_data, &line, io, &ret))
 			break ;
 		ft_putendl_fd(line, fd);

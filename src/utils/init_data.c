@@ -45,7 +45,10 @@ static bool	init_wds(t_main *main_data)
 
 bool	init_data(t_main *main_data, char **env)
 {
-	if (!init_env(main_data, env))
+	bool is_seted_end;
+
+	is_seted_end = init_env(main_data, env);
+	if (!is_seted_end)
 	{
 		errmsg_cmd("Fatal", NULL, "Could not initialize environment", 1);
 		return (false);
