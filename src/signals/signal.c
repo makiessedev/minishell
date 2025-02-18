@@ -9,6 +9,15 @@ static void	update_prompt(int signo)
 	rl_redisplay();
 }
 
+static void	ignore_sigquit(void)
+{
+	struct sigaction	act;
+
+	ft_memset(&act, 0, sizeof(act));
+	act.sa_handler = SIG_IGN;
+	sigaction(SIGQUIT, &act, NULL);
+}
+
 void	set_signals_interactive(void)
 {
 	struct sigaction	act;
@@ -19,11 +28,4 @@ void	set_signals_interactive(void)
 	sigaction(SIGINT, &act, NULL);
 }
 
-void	ignore_sigquit(void)
-{
-	struct sigaction	act;
 
-	ft_memset(&act, 0, sizeof(act));
-	act.sa_handler = SIG_IGN;
-	sigaction(SIGQUIT, &act, NULL);
-}
