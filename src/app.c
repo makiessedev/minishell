@@ -34,6 +34,8 @@ void	bootstrap(t_main *main_data)
 	{
     signals_manager();
 		main_data->user_input = readline(PROMPT);
+		if (main_data->user_input == NULL)
+			exit_builtin(main_data, NULL);
 		if (parse_user_input(main_data) == true)
 			g_last_exit_code = execute(main_data);
 		else
