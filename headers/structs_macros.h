@@ -64,14 +64,14 @@ typedef struct s_main
 }	t_main;
 
 typedef enum {
-	SPACES_TOKEN = 1,
-	WORD_TOKEN,
-	VAR_TOKEN,
-	PIPE_TOKEN,
-	INPUT_TOKEN,
-	REDIRECT_TOKEN,
-	HEREDOC_TOKEN,
-	APPEND_TOKEN,
+	SPACES_TOKEN = 1,	// " "
+	WORD_TOKEN,				// ls
+	VAR_TOKEN,				// $PATH
+	PIPE_TOKEN,				// |
+	INPUT_TOKEN,			// <
+	REDIRECT_TOKEN,		// >
+	HEREDOC_TOKEN,		// <<
+	APPEND_TOKEN,			// >>
 	END_TOKEN
 }	e_token_types;
 
