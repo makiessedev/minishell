@@ -56,7 +56,7 @@ int	cd_builtin(t_main *main_data, char **args)
 	char	*path;
 
 	if (!args || !args[1] || ft_isspace(args[1][0])
-		|| args[1][0] == '\0' || ft_strncmp(args[1], "--", 3) == 0)
+		|| args[1][0] == '\0')
 	{
 		path = get_env_var_value(main_data->env, "HOME");
 		if (!path || *path == '\0' || ft_isspace(*path))
