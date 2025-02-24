@@ -6,6 +6,7 @@
     "string_view": "cpp",
     "minishell.h": "c",
     "libft.h": "c",
-    "_lexer_header.h": "c"
+    "_lexer_header.h": "c",
+    "structs_macros.h": "c"
   }
 }

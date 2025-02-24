@@ -23,7 +23,7 @@
 # include "../src/utils/_utils_header.h"
 
 
-extern int	g_last_exit_code;
+extern int	g_exit_code;
 
 void	bootstrap(t_main *main_data);
 void	signals_manager(void);

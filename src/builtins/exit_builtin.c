@@ -41,7 +41,7 @@ static int	get_exit_code(char *arg, bool *error)
 	unsigned long long	i;
 
 	if (!arg)
-		return (g_last_exit_code);
+		return (g_exit_code);
 	i = 0;
 	while (ft_isspace(arg[i]))
 		i++;
@@ -84,7 +84,7 @@ int	exit_builtin(t_main *main_data, char **args)
 	if (!quiet)
 		ft_putendl_fd("exit", 2);
 	if (!args || !args[1])
-		exit_code = g_last_exit_code;
+		exit_code = g_exit_code;
 	else
 	{
 		exit_code = get_exit_code(args[1], &error);

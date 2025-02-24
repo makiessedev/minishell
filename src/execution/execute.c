@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	g_last_exit_code;
+int	g_exit_code;
 
 static int	get_children(t_main *main_data)
 {

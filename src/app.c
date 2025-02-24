@@ -37,9 +37,9 @@ void	bootstrap(t_main *main_data)
 		if (main_data->user_input == NULL)
 			exit_builtin(main_data, NULL);
 		if (parse_user_input(main_data) == true)
-			g_last_exit_code = execute(main_data);
+			g_exit_code = execute(main_data);
 		else
-			g_last_exit_code = 1;
+			g_exit_code = 1;
 		free_data(main_data, false);
 	}
 }

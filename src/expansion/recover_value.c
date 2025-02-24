@@ -47,7 +47,7 @@ char	*recover_val(t_token *token, char *str, t_main *main_data)
 		value = search_env_var(main_data, var);
 	}
 	else if (var && var[0] == '?' && var[1] == '=')
-		value = ft_itoa(g_last_exit_code);
+		value = ft_itoa(g_exit_code);
 	else
 		value = NULL;
 	free_ptr(var);

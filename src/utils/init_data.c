@@ -63,7 +63,7 @@ bool	init_data(t_main *main_data, char **env)
 	main_data->user_input = NULL;
 	main_data->cmd = NULL;
 	main_data->pid = -1;
-	g_last_exit_code = 0;
+	g_exit_code = 0;
 	return (true);
 }
 
