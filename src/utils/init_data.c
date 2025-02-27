@@ -50,12 +50,12 @@ bool	init_data(t_main *main_data, char **env)
 	is_seted_end = init_env(main_data, env);
 	if (!is_seted_end)
 	{
-		errmsg_cmd("Fatal", NULL, "Could not initialize environment", 1);
+		throw_command_error("Fatal", NULL, "Could not initialize environment", 1);
 		return (false);
 	}
 	if (!init_wds(main_data))
 	{
-		errmsg_cmd("Fatal", NULL, "Could not initialize working directories",
+		throw_command_error("Fatal", NULL, "Could not initialize working directories",
 			1);
 		return (false);
 	}

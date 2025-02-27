@@ -27,7 +27,7 @@ int	export_builtin(t_main *main_data, char **args)
 	{
 		if (!is_valid_env_var_key(args[i]))
 		{
-			errmsg_cmd("export", args[i], "not a valid identifier", false);
+			throw_command_error("export", args[i], "not a valid identifier", false);
 			ret = EXIT_FAILURE;
 		}
 		else if (ft_strchr(args[i], '=') != NULL)

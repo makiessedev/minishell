@@ -32,7 +32,7 @@ static int	execute_sys_bin(t_main *main_data, t_command *cmd)
 	if (!cmd->path)
 		return (CMD_NOT_FOUND);
 	if (execve(cmd->path, cmd->args, main_data->env) == -1)
-		errmsg_cmd("execve", NULL, strerror(errno), errno);
+		throw_command_error("execve", NULL, strerror(errno), errno);
 	return (EXIT_FAILURE);
 }
 
@@ -44,7 +44,7 @@ static int	execute_local_bin(t_main *main_data, t_command *cmd)
 	if (ret != 0)
 		return (ret);
 	if (execve(cmd->command, cmd->args, main_data->env) == -1)
-		return (errmsg_cmd("execve", NULL, strerror(errno), errno));
+		return (throw_command_error("execve", NULL, strerror(errno), errno));
 	return (EXIT_FAILURE);
 }
 
@@ -53,7 +53,7 @@ int	execute_command(t_main *main_data, t_command *cmd)
 	int	ret;
 
 	if (!cmd || !cmd->command)
-		exit_shell(main_data, errmsg_cmd("child", NULL,
+		exit_shell(main_data, throw_command_error("child", NULL,
 				"parsing error: no command to execute!", EXIT_FAILURE));
 	if (!check_infile_outfile(cmd->io_fds))
 		exit_shell(main_data, EXIT_FAILURE);

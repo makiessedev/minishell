@@ -24,12 +24,12 @@ int	check_consecutives(t_token **token_lst)
 		if (consecutive_ops(temp) == true)
 		{
 			if (temp->type == END_TOKEN && temp->prev && temp->prev->type > PIPE_TOKEN)
-				errmsg("syntax error near unexpected token", "newline", true);
+				throw_message_error("syntax error near unexpected token", "newline", true);
 			else if (temp->type == END_TOKEN && temp->prev)
-				errmsg("syntax error near unexpected token",
+				throw_message_error("syntax error near unexpected token",
 					temp->prev->str, true);
 			else
-				errmsg("syntax error near unexpected token", temp->str, true);
+				throw_message_error("syntax error near unexpected token", temp->str, true);
 			return (FAILURE);
 		}
 		temp = temp->next;

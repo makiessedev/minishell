@@ -33,16 +33,16 @@ bool	redirect_io(t_io_fds *io)
 		return (ret);
 	io->stdin_backup = dup(STDIN_FILENO);
 	if (io->stdin_backup == -1)
-		ret = errmsg_cmd("dup", "stdin backup", strerror(errno), false);
+		ret = throw_command_error("dup", "stdin backup", strerror(errno), false);
 	io->stdout_backup = dup(STDOUT_FILENO);
 	if (io->stdout_backup == -1)
-		ret = errmsg_cmd("dup", "stdout backup", strerror(errno), false);
+		ret = throw_command_error("dup", "stdout backup", strerror(errno), false);
 	if (io->fd_in != -1)
 		if (dup2(io->fd_in, STDIN_FILENO) == -1)
-			ret = errmsg_cmd("dup2", io->infile, strerror(errno), false);
+			ret = throw_command_error("dup2", io->infile, strerror(errno), false);
 	if (io->fd_out != -1)
 		if (dup2(io->fd_out, STDOUT_FILENO) == -1)
-			ret = errmsg_cmd("dup2", io->outfile, strerror(errno), false);
+			ret = throw_command_error("dup2", io->outfile, strerror(errno), false);
 	return (ret);
 }
 

@@ -5,7 +5,7 @@ int	env_builtin(t_main *main_data, char **args)
 	int	i;
 
 	if (args && args[1])
-		return (errmsg_cmd("env", NULL, "too many arguments", 2));
+		return (throw_command_error("env", NULL, "too many arguments", 2));
 	i = 0;
 	if (!main_data->env)
 		return (EXIT_FAILURE);

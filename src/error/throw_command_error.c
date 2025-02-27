@@ -9,7 +9,7 @@ static bool	add_detail_quotes(char *command)
 }
 
 
-int	errmsg_cmd(char *command, char *detail, char *error_message, int error_nb)
+int	throw_command_error(char *command, char *detail, char *error_message, int error_nb)
 {
 	char	*msg;
 	bool	detail_quotes;

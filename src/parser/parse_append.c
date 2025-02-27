@@ -7,12 +7,12 @@ static void	open_outfile_append(t_io_fds *io, char *file, char *var_filename)
 	io->outfile = ft_strdup(file);
 	if (io->outfile && io->outfile[0] == '\0' && var_filename)
 	{
-		errmsg_cmd(var_filename, NULL, "ambiguous redirect", false);
+		throw_command_error(var_filename, NULL, "ambiguous redirect", false);
 		return ;
 	}
 	io->fd_out = open(io->outfile, O_WRONLY | O_CREAT | O_APPEND, 0664);
 	if (io->fd_out == -1)
-		errmsg_cmd(io->outfile, NULL, strerror(errno), false);
+		throw_command_error(io->outfile, NULL, strerror(errno), false);
 }
 
 void	parse_append(t_command **last_cmd, t_token **token_lst)

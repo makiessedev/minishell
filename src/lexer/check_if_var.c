@@ -25,7 +25,7 @@ int	check_if_var(t_token **token_lst)
 	temp = *token_lst;
 	if (temp->type == PIPE_TOKEN)
 	{
-		errmsg("syntax error near unexpected token", temp->str, true);
+		throw_message_error("syntax error near unexpected token", temp->str, true);
 		return (FAILURE);
 	}
 	while (temp)

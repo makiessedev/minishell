@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void	errmsg(char *errmsg, char *detail, int quotes)
+void	throw_message_error(char *errmsg, char *detail, int quotes)
 {
 	char	*msg;
 

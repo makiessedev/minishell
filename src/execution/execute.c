@@ -36,7 +36,7 @@ static int	create_children(t_main *main_data)
 	{
 		main_data->pid = fork();
 		if (main_data->pid == -1)
-			return (errmsg_cmd("fork", NULL, strerror(errno), EXIT_FAILURE));
+			return (throw_command_error("fork", NULL, strerror(errno), EXIT_FAILURE));
 		else if (main_data->pid == 0)
 			execute_command(main_data, cmd);
 		cmd = cmd->next;

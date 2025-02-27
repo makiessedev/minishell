@@ -21,7 +21,7 @@ static	bool	chdir_errno_mod(char *path)
 {
 	if (errno == ESTALE)
 		errno = ENOENT;
-	errmsg_cmd("cd", path, strerror(errno), errno);
+	throw_command_error("cd", path, strerror(errno), errno);
 	return (false);
 }
 
@@ -37,7 +37,7 @@ static bool	change_dir(t_main *main_data, char *path)
 	ret = getcwd(cwd, PATH_MAX);
 	if (!ret)
 	{
-		errmsg_cmd("cd: error retrieving current directory",
+		throw_command_error("cd: error retrieving current directory",
 			"getcwd: cannot access parent directories",
 			strerror(errno), errno);
 		ret = ft_strjoin(main_data->working_dir, "/");
@@ -60,16 +60,16 @@ int	cd_builtin(t_main *main_data, char **args)
 	{
 		path = get_env_var_value(main_data->env, "HOME");
 		if (!path || *path == '\0' || ft_isspace(*path))
-			return (errmsg_cmd("cd", NULL, "HOME not set", EXIT_FAILURE));
+			return (throw_command_error("cd", NULL, "HOME not set", EXIT_FAILURE));
 		return (!change_dir(main_data, path));
 	}
 	if (args[2])
-		return (errmsg_cmd("cd", NULL, "too many arguments", EXIT_FAILURE));
+		return (throw_command_error("cd", NULL, "too many arguments", EXIT_FAILURE));
 	if (ft_strncmp(args[1], "-", 2) == 0)
 	{
 		path = get_env_var_value(main_data->env, "OLDPWD");
 		if (!path)
-			return (errmsg_cmd("cd", NULL, "OLDPWD not set", EXIT_FAILURE));
+			return (throw_command_error("cd", NULL, "OLDPWD not set", EXIT_FAILURE));
 		return (!change_dir(main_data, path));
 	}
 	return (!change_dir(main_data, args[1]));

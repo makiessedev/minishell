@@ -12,7 +12,7 @@ static char	*find_valid_cmd_path(char *cmd, char **paths)
 		cmd_path = ft_strjoin(paths[i], cmd);
 		if (!cmd_path)
 		{
-			errmsg_cmd("malloc", NULL,
+			throw_command_error("malloc", NULL,
 				"an unexpected error occured", EXIT_FAILURE);
 			return (NULL);
 		}

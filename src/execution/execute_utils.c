@@ -13,15 +13,15 @@ int	check_command_not_found(t_main *main_data, t_command *cmd)
 {
 	if (ft_strchr(cmd->command, '/') == NULL
 		&& get_env_var_index(main_data->env, "PATH") != -1)
-		return (errmsg_cmd(cmd->command, NULL, "command not found",
+		return (throw_command_error(cmd->command, NULL, "command not found",
 				CMD_NOT_FOUND));
 	if (access(cmd->command, F_OK) != 0)
-		return (errmsg_cmd(cmd->command, NULL, strerror(errno), CMD_NOT_FOUND));
+		return (throw_command_error(cmd->command, NULL, strerror(errno), CMD_NOT_FOUND));
 	else if (cmd_is_dir(cmd->command))
-		return (errmsg_cmd(cmd->command, NULL, "Is a directory",
+		return (throw_command_error(cmd->command, NULL, "Is a directory",
 				CMD_NOT_EXECUTABLE));
 	else if (access(cmd->command, F_OK | X_OK) != 0)
-		return (errmsg_cmd(cmd->command, NULL, strerror(errno),
+		return (throw_command_error(cmd->command, NULL, strerror(errno),
 				CMD_NOT_EXECUTABLE));
 	return (EXIT_SUCCESS);
 }

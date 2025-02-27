@@ -55,7 +55,7 @@ static bool	evaluate_heredoc_line(t_main *main_data, char **line,
 {
 	if (*line == NULL)
 	{
-		errmsg_cmd("warning", "here-document delimited by end-of-file: wanted",
+		throw_command_error("warning", "here-document delimited by end-of-file: wanted",
 			io->heredoc_delimiter, true);
 		*ret = true;
 		return (false);

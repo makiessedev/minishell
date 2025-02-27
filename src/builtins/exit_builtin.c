@@ -89,10 +89,10 @@ int	exit_builtin(t_main *main_data, char **args)
 	{
 		exit_code = get_exit_code(args[1], &error);
 		if (error)
-			exit_code = errmsg_cmd("exit", args[1],
+			exit_code = throw_command_error("exit", args[1],
 					"numeric argument required", 2);
 		else if (args[2])
-			return (errmsg_cmd("exit", NULL, "too many arguments", 1));
+			return (throw_command_error("exit", NULL, "too many arguments", 1));
 	}
 	exit_shell(main_data, exit_code);
 	return (2);
