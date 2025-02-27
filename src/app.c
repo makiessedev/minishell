@@ -40,6 +40,6 @@ void	bootstrap(t_main *main_data)
 			g_exit_code = execute(main_data);
 		else
 			g_exit_code = 1;
-		free_data(main_data, false);
+		erase_main_data(main_data, false);
 	}
 }

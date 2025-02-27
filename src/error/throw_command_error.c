@@ -32,6 +32,6 @@ int	throw_command_error(char *command, char *detail, char *error_message, int er
 	}
 	msg = join_strs(msg, error_message);
 	ft_putendl_fd(msg, STDERR_FILENO);
-	free_ptr(msg);
+	erase_pointer(msg);
 	return (error_nb);
 }

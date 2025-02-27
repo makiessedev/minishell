@@ -6,15 +6,15 @@ static void	update_wds(t_main *main_data, char *wd)
 	set_env_var(main_data, "PWD", wd);
 	if (main_data->old_working_dir)
 	{
-		free_ptr(main_data->old_working_dir);
+		erase_pointer(main_data->old_working_dir);
 		main_data->old_working_dir = ft_strdup(main_data->working_dir);
 	}
 	if (main_data->working_dir)
 	{
-		free_ptr(main_data->working_dir);
+		erase_pointer(main_data->working_dir);
 		main_data->working_dir = ft_strdup(wd);
 	}
-	free_ptr(wd);
+	erase_pointer(wd);
 }
 
 static	bool	chdir_errno_mod(char *path)
@@ -43,7 +43,7 @@ static bool	change_dir(t_main *main_data, char *path)
 		ret = ft_strjoin(main_data->working_dir, "/");
 		tmp = ret;
 		ret = ft_strjoin(tmp, path);
-		free_ptr(tmp);
+		erase_pointer(tmp);
 	}
 	else
 		ret = ft_strdup(cwd);

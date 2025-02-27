@@ -50,6 +50,6 @@ char	*recover_val(t_token *token, char *str, t_main *main_data)
 		value = ft_itoa(g_exit_code);
 	else
 		value = NULL;
-	free_ptr(var);
+	erase_pointer(var);
 	return (value);
 }

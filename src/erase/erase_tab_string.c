@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void	free_str_tab(char **tab)
+void	erase_tab_string(char **tab)
 {
 	int	i;
 
@@ -11,7 +11,7 @@ void	free_str_tab(char **tab)
 		{
 			if (tab[i])
 			{
-				free_ptr(tab[i]);
+				erase_pointer(tab[i]);
 				tab[i] = NULL;
 			}
 			i++;

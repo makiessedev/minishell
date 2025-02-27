@@ -5,11 +5,11 @@ void	lst_delone_cmd(t_command *lst, void (*del)(void *))
 	if (lst->command)
 		(*del)(lst->command);
 	if (lst->args)
-		free_str_tab(lst->args);
+		erase_tab_string(lst->args);
 	if (lst->pipe_fd)
 		(*del)(lst->pipe_fd);
 	if (lst->io_fds)
-		free_io(lst->io_fds);
+		erase_input_output(lst->io_fds);
 	(*del)(lst);
 }
 

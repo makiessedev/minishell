@@ -18,7 +18,7 @@ static char	*find_valid_cmd_path(char *cmd, char **paths)
 		}
 		if (access(cmd_path, F_OK | X_OK) == 0)
 			return (cmd_path);
-		free_ptr(cmd_path);
+		erase_pointer(cmd_path);
 		i++;
 	}
 	return (NULL);
@@ -50,14 +50,14 @@ char	*get_cmd_path(t_main *main_data, char *name)
 	cmd = ft_strjoin("/", name);
 	if (!cmd)
 	{
-		free_str_tab(env_paths);
+		erase_tab_string(env_paths);
 		return (NULL);
 	}
 	cmd_path = find_valid_cmd_path(cmd, env_paths);
 	if (!cmd_path)
 	{
-		free_ptr(cmd);
-		free_str_tab(env_paths);
+		erase_pointer(cmd);
+		erase_tab_string(env_paths);
 		return (NULL);
 	}
 	return (cmd_path);

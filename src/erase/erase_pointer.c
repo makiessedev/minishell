@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void	free_ptr(void *ptr)
+void	erase_pointer(void *ptr)
 {
 	if (ptr != NULL)
 	{

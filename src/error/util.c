@@ -10,6 +10,6 @@ char	*join_strs(char *str, char *add)
 		return (ft_strdup(add));
 	tmp = str;
 	str = ft_strjoin(tmp, add);
-	free_ptr(tmp);
+	erase_pointer(tmp);
 	return (str);
 }

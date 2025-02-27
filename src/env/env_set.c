@@ -12,7 +12,7 @@ static char	**realloc_env_vars(t_main *main_data, int size)
 	while (main_data->env[i] && i < size)
 	{
 		new_env[i] = ft_strdup(main_data->env[i]);
-		free_ptr(main_data->env[i]);
+		erase_pointer(main_data->env[i]);
 		i++;
 	}
 	free(main_data->env);
@@ -32,7 +32,7 @@ bool	set_env_var(t_main *main_data, char *key, char *value)
 		return (false);
 	if (idx != -1 && main_data->env[idx])
 	{
-		free_ptr(main_data->env[idx]);
+		erase_pointer(main_data->env[idx]);
 		main_data->env[idx] = ft_strjoin(key, tmp);
 	}
 	else
@@ -43,7 +43,7 @@ bool	set_env_var(t_main *main_data, char *key, char *value)
 			return (false);
 		main_data->env[idx] = ft_strjoin(key, tmp);
 	}
-	free_ptr(tmp);
+	erase_pointer(tmp);
 	return (true);
 }
 
@@ -54,13 +54,13 @@ bool	remove_env_var(t_main *main_data, int idx)
 
 	if (idx > env_var_count(main_data->env))
 		return (false);
-	free_ptr(main_data->env[idx]);
+	erase_pointer(main_data->env[idx]);
 	i = idx;
 	count = idx;
 	while (main_data->env[i + 1])
 	{
 		main_data->env[i] = ft_strdup(main_data->env[i + 1]);
-		free_ptr(main_data->env[i + 1]);
+		erase_pointer(main_data->env[i + 1]);
 		count++;
 		i++;
 	}

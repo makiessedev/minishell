@@ -26,7 +26,7 @@ bool	create_pipes(t_main *main_data)
 			fd = malloc(sizeof * fd * 2);
 			if (!fd || pipe(fd) != 0)
 			{
-				free_data(main_data, false);
+				erase_main_data(main_data, false);
 				return (false);
 			}
 			tmp->pipe_fd = fd;

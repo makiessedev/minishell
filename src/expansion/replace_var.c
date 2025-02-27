@@ -24,7 +24,7 @@ static int	erase_var(t_token **token_node, char *str, int index)
 		new_str[j++] = str[i++];
 	}
 	new_str[j] = '\0';
-	free_ptr((*token_node)->str);
+	erase_pointer((*token_node)->str);
 	(*token_node)->str = new_str;
 	return (0);
 }
@@ -40,7 +40,7 @@ static char	*erase_and_replace(t_token **token_node, char *str,
 	newstr = get_new_token_string(str, var_value, newstr_size, index);
 	if (token_node && *token_node)
 	{
-		free_ptr((*token_node)->str);
+		erase_pointer((*token_node)->str);
 		(*token_node)->str = newstr;
 	}
 	return (newstr);
@@ -52,7 +52,7 @@ int	replace_var(t_token **token_node, char *var_value, int index)
 	{
 		if (erase_var(token_node, (*token_node)->str, index) == 1)
 		{
-			free_ptr(var_value);
+			erase_pointer(var_value);
 			return (1);
 		}
 	}
@@ -61,11 +61,11 @@ int	replace_var(t_token **token_node, char *var_value, int index)
 		if (erase_and_replace(token_node, (*token_node)->str, \
 		var_value, index) == NULL)
 		{
-			free_ptr(var_value);
+			erase_pointer(var_value);
 			return (1);
 		}
 	}
-	free_ptr(var_value);
+	erase_pointer(var_value);
 	return (0);
 }
 
@@ -80,8 +80,8 @@ char	*replace_str_heredoc(char *str, char *var_value, int index)
 	{
 		tmp = str;
 		str = erase_and_replace(NULL, str, var_value, index);
-		free_ptr(tmp);
+		erase_pointer(tmp);
 	}
-	free_ptr(var_value);
+	erase_pointer(var_value);
 	return (str);
 }

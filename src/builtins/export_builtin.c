@@ -34,7 +34,7 @@ int	export_builtin(t_main *main_data, char **args)
 		{
 			tmp = get_key_value_pair(args[i]);
 			set_env_var(main_data, tmp[0], tmp[1]);
-			free_str_tab(tmp);
+			erase_tab_string(tmp);
 		}
 		i++;
 	}

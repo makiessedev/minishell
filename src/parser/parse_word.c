@@ -36,8 +36,8 @@ static void	split_var_cmd_token(t_command *last_cmd, char *cmd_str)
 	lst_add_back_token(&new_tokens,
 		lst_new_token(NULL, NULL, END_TOKEN, NORMAL_MODE));
 	fill_args(&new_tokens, last_cmd);
-	lstclear_token(&tmp, &free_ptr);
-	free_str_tab(strs);
+	lstclear_token(&tmp, &erase_pointer);
+	erase_tab_string(strs);
 }
 
 void	parse_word(t_command **cmd, t_token **token_lst)

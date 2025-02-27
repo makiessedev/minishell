@@ -28,7 +28,7 @@ t_token	*insert_lst_between(t_token **head, t_token *to_del, t_token *insert)
 	}
 	else
 		link_extremities(to_del, temp, insert);
-	free_ptr(to_del->str);
-	free_ptr(to_del);
+	erase_pointer(to_del->str);
+	erase_pointer(to_del);
 	return (insert);
 }

@@ -15,16 +15,16 @@ static char	*make_str_from_tab(char **tab)
 		else
 		{
 			str = ft_strjoin(tmp, tab[i]);
-			free_ptr(tmp);
+			erase_pointer(tmp);
 		}
 		if (tab[i + 1])
 		{
 			tmp = str;
 			str = ft_strjoin(tmp, " ");
-			free_ptr(tmp);
+			erase_pointer(tmp);
 		}
 	}
-	free_str_tab(tab);
+	erase_tab_string(tab);
 	return (str);
 }
 
@@ -70,7 +70,7 @@ static bool	evaluate_heredoc_line(t_main *main_data, char **line,
 		*line = get_expanded_var_line(main_data, *line);
 		if (!(*line))
 		{
-			free_ptr(*line);
+			erase_pointer(*line);
 			*ret = false;
 			return (false);
 		}
@@ -92,8 +92,8 @@ bool	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
 		if (!evaluate_heredoc_line(main_data, &line, io, &ret))
 			break ;
 		ft_putendl_fd(line, fd);
-		free_ptr(line);
+		erase_pointer(line);
 	}
-	free_ptr(line);
+	erase_pointer(line);
 	return (ret);
 }

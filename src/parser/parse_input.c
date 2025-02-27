@@ -8,18 +8,18 @@ bool	remove_old_file_ref(t_io_fds *io, bool infile)
 			return (false);
 		if (io->heredoc_delimiter != NULL)
 		{
-			free_ptr(io->heredoc_delimiter);
+			erase_pointer(io->heredoc_delimiter);
 			io->heredoc_delimiter = NULL;
 			unlink(io->infile);
 		}
-		free_ptr(io->infile);
+		erase_pointer(io->infile);
 		close(io->fd_in);
 	}
 	else if (infile == false && io->outfile)
 	{
 		if (io->fd_out == -1 || (io->infile && io->fd_in == -1))
 			return (false);
-		free_ptr(io->outfile);
+		erase_pointer(io->outfile);
 		close(io->fd_out);
 	}
 	return (true);

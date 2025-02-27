@@ -76,7 +76,7 @@ void	remove_empty_var_args(t_token **tokens)
 			temp = temp->next;
 			if (temp == (*tokens)->next)
 				(*tokens) = (*tokens)->next;
-			lstdelone_token(temp->prev, free_ptr);
+			lstdelone_token(temp->prev, erase_pointer);
 		}
 		else
 			temp = temp->next;

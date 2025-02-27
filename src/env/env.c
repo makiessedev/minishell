@@ -23,12 +23,12 @@ int	get_env_var_index(char **env, char *var)
 	{
 		if (ft_strncmp(tmp, env[i], ft_strlen(tmp)) == 0)
 		{
-			free_ptr(tmp);
+			erase_pointer(tmp);
 			return (i);
 		}
 		i++;
 	}
-	free_ptr(tmp);
+	erase_pointer(tmp);
 	return (-1);
 }
 
@@ -45,12 +45,12 @@ char	*get_env_var_value(char **env, char *var)
 	{
 		if (ft_strncmp(tmp, env[i], ft_strlen(tmp)) == 0)
 		{
-			free_ptr(tmp);
+			erase_pointer(tmp);
 			return (ft_strchr(env[i], '=') + 1);
 		}
 		i++;
 	}
-	free_ptr(tmp);
+	erase_pointer(tmp);
 	return (NULL);
 }
 

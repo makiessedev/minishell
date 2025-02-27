@@ -54,7 +54,7 @@ char	*identify_var(char *str)
 	if (!var)
 		return (NULL);
 	tmp = ft_strjoin(var, "=");
-	free_ptr(var);
+	erase_pointer(var);
 	var = tmp;
 	return (var);
 }

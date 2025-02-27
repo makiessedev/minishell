@@ -1,6 +1,6 @@
-void	free_data(t_main *main_data, bool clear_history);
+void	erase_main_data(t_main *main_data, bool clear_history);
 void	close_fds(t_command *cmds, bool close_backups);
-void	free_io(t_io_fds *io);
-void	free_data(t_main *main_data, bool clear_history);
-void	free_ptr(void *ptr);
-void	free_str_tab(char **tab);
+void	erase_input_output(t_io_fds *io);
+void	erase_main_data(t_main *main_data, bool clear_history);
+void	erase_pointer(void *ptr);
+void	erase_tab_string(char **tab);

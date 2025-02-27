@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void	free_io(t_io_fds *io)
+void	erase_input_output(t_io_fds *io)
 {
 	if (!io)
 		return ;
@@ -8,12 +8,12 @@ void	free_io(t_io_fds *io)
 	if (io->heredoc_delimiter)
 	{
 		unlink(io->infile);
-		free_ptr(io->heredoc_delimiter);
+		erase_pointer(io->heredoc_delimiter);
 	}
 	if (io->infile)
-		free_ptr(io->infile);
+		erase_pointer(io->infile);
 	if (io->outfile)
-		free_ptr(io->outfile);
+		erase_pointer(io->outfile);
 	if (io)
-		free_ptr(io);
+		erase_pointer(io);
 }

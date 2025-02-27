@@ -14,5 +14,5 @@ void	throw_message_error(char *errmsg, char *detail, int quotes)
 	if (quotes)
 		msg = join_strs(msg, "'");
 	ft_putendl_fd(msg, STDERR_FILENO);
-	free_ptr(msg);
+	erase_pointer(msg);
 }

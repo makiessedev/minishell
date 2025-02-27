@@ -53,7 +53,7 @@ void	lstdelone_token(t_token *lst, void (*del)(void *))
 		lst->prev->next = lst->next;
 	if (lst->next)
 		lst->next->prev = lst->prev;
-	free_ptr(lst);
+	erase_pointer(lst);
 }
 
 void	lstclear_token(t_token **lst, void (*del)(void *))
