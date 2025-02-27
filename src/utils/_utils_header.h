@@ -1,8 +1,3 @@
-void	free_data(t_main *main_data, bool clear_history);
-void	close_fds(t_command *cmds, bool close_backups);
-void	free_io(t_io_fds *io);
-void	free_str_tab(char **tab);
-void	free_ptr(void *ptr);
 void	exit_shell(t_main *main_data, int exno);
 int	ft_isspace(int c);
 bool	init_data(t_main *main_data, char **env);

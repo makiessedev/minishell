@@ -54,8 +54,12 @@ SRC		= 	main.c app.c \
 			redirections/pipe.c \
 			redirections/file_io.c \
 			utils/exit.c \
-			utils/cleanup.c \
-			utils/ft_is_space.c
+			utils/ft_is_space.c \
+			erase/close_fds.c \
+			erase/erase_input_output.c \
+			erase/erase_main_data.c \
+			erase/erase_pointer.c \
+			erase/erase_tab_string.c
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
@@ -80,6 +84,7 @@ $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)/redirections
 	mkdir -p $(OBJ_PATH)/signals
 	mkdir -p $(OBJ_PATH)/error
+	mkdir -p $(OBJ_PATH)/erase
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
