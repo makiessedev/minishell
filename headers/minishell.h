@@ -21,6 +21,7 @@
 # include "../src/parser/_parser_header.h"
 # include "../src/redirections/_redirections_header.h"
 # include "../src/utils/_utils_header.h"
+# include "../src/error/_error_header.h"
 
 
 extern int	g_exit_code;

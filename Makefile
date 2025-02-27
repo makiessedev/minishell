@@ -1,6 +1,6 @@
 NAME	= minishell
 
-CC		= gcc
+CC		= cc
 CFLAGS	= -Werror -Wextra -Wall
 
 SRC_PATH = ./src/
@@ -10,6 +10,9 @@ SRC		= 	main.c app.c \
 			utils/init_data.c \
 			env/env.c \
 			env/env_set.c \
+			error/throw_command_error.c \
+			error/throw_message_error.c \
+			error/util.c \
 			lexer/parse_user_input.c \
 			lexer/tokenization.c \
 			lexer/tokenization_utils.c \
@@ -51,9 +54,9 @@ SRC		= 	main.c app.c \
 			redirections/pipe.c \
 			redirections/file_io.c \
 			utils/exit.c \
-			utils/error.c \
 			utils/cleanup.c \
 			utils/ft_is_space.c
+
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
@@ -76,6 +79,7 @@ $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)/utils
 	mkdir -p $(OBJ_PATH)/redirections
 	mkdir -p $(OBJ_PATH)/signals
+	mkdir -p $(OBJ_PATH)/error
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
