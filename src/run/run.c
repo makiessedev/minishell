@@ -38,7 +38,7 @@ static int	create_children(t_main *main_data)
 		if (main_data->pid == -1)
 			return (throw_command_error("fork", NULL, strerror(errno), EXIT_FAILURE));
 		else if (main_data->pid == 0)
-			execute_command(main_data, cmd);
+			run_command(main_data, cmd);
 		cmd = cmd->next;
 	}
 	return (get_children(main_data));
@@ -60,7 +60,7 @@ static int	prep_for_exec(t_main *main_data)
 	return (CMD_NOT_FOUND);
 }
 
-int	execute(t_main *main_data)
+int	run(t_main *main_data)
 {
 	int	ret;
 
@@ -71,7 +71,7 @@ int	execute(t_main *main_data)
 		&& check_infile_outfile(main_data->cmd->io_fds))
 	{
 		redirect_io(main_data->cmd->io_fds);
-		ret = execute_builtin(main_data, main_data->cmd);
+		ret = run_builtin(main_data, main_data->cmd);
 		restore_io(main_data->cmd->io_fds);
 	}
 	if (ret != CMD_NOT_FOUND)

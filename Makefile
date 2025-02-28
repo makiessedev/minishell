@@ -47,10 +47,10 @@ SRC		= 	main.c app.c \
 			commands/pwd_builtin.c \
 			commands/echo_builtin.c \
 			commands/exit_builtin.c \
-			execution/execute.c \
-			execution/execute_cmd.c \
-			execution/execute_utils.c \
-			execution/parse_path.c \
+			run/run.c \
+			run/run_cmd.c \
+			run/run_utils.c \
+			run/parse_path.c \
 			redirections/pipe.c \
 			redirections/file_io.c \
 			utils/exit.c \
@@ -78,7 +78,7 @@ $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)/expansion
 	mkdir -p $(OBJ_PATH)/parser
 	mkdir -p $(OBJ_PATH)/env
-	mkdir -p $(OBJ_PATH)/execution
+	mkdir -p $(OBJ_PATH)/run
 	mkdir -p $(OBJ_PATH)/utils
 	mkdir -p $(OBJ_PATH)/redirections
 	mkdir -p $(OBJ_PATH)/error

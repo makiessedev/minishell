@@ -37,7 +37,7 @@ void	bootstrap(t_main *main_data)
 		if (main_data->user_input == NULL)
 			exit_builtin(main_data, NULL);
 		if (parse_user_input(main_data) == true)
-			g_exit_code = execute(main_data);
+			g_exit_code = run(main_data);
 		else
 			g_exit_code = 1;
 		erase_main_data(main_data, false);

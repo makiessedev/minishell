@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	execute_builtin(t_main *main_data, t_command *cmd)
+int	run_builtin(t_main *main_data, t_command *cmd)
 {
 	int	ret;
 
@@ -22,7 +22,7 @@ int	execute_builtin(t_main *main_data, t_command *cmd)
 	return (ret);
 }
 
-static int	execute_sys_bin(t_main *main_data, t_command *cmd)
+static int	run_sys_bin(t_main *main_data, t_command *cmd)
 {
 	if (!cmd->command || cmd->command[0] == '\0')
 		return (CMD_NOT_FOUND);
@@ -36,7 +36,7 @@ static int	execute_sys_bin(t_main *main_data, t_command *cmd)
 	return (EXIT_FAILURE);
 }
 
-static int	execute_local_bin(t_main *main_data, t_command *cmd)
+static int	run_local_bin(t_main *main_data, t_command *cmd)
 {
 	int	ret;
 
@@ -48,13 +48,13 @@ static int	execute_local_bin(t_main *main_data, t_command *cmd)
 	return (EXIT_FAILURE);
 }
 
-int	execute_command(t_main *main_data, t_command *cmd)
+int	run_command(t_main *main_data, t_command *cmd)
 {
 	int	ret;
 
 	if (!cmd || !cmd->command)
 		erase_and_exit_shell(main_data, throw_command_error("child", NULL,
-				"parsing error: no command to execute!", EXIT_FAILURE));
+				"parsing error: no command to run!", EXIT_FAILURE));
 	if (!check_infile_outfile(cmd->io_fds))
 		erase_and_exit_shell(main_data, EXIT_FAILURE);
 	set_pipe_fds(main_data->cmd, cmd);
@@ -62,14 +62,14 @@ int	execute_command(t_main *main_data, t_command *cmd)
 	close_fds(main_data->cmd, false);
 	if (ft_strchr(cmd->command, '/') == NULL)
 	{
-		ret = execute_builtin(main_data, cmd);
+		ret = run_builtin(main_data, cmd);
 		if (ret != CMD_NOT_FOUND)
 			erase_and_exit_shell(main_data, ret);
-		ret = execute_sys_bin(main_data, cmd);
+		ret = run_sys_bin(main_data, cmd);
 		if (ret != CMD_NOT_FOUND)
 			erase_and_exit_shell(main_data, ret);
 	}
-	ret = execute_local_bin(main_data, cmd);
+	ret = run_local_bin(main_data, cmd);
 	erase_and_exit_shell(main_data, ret);
 	return (ret);
 }
