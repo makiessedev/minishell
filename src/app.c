@@ -36,7 +36,7 @@ void	bootstrap(t_main *main_data)
 		main_data->user_input = readline(PROMPT);
 		if (main_data->user_input == NULL)
 			exit_builtin(main_data, NULL);
-		if (parse_user_input(main_data) == true)
+		if (parse_user_input(main_data))
 			g_exit_code = run(main_data);
 		else
 			g_exit_code = 1;
