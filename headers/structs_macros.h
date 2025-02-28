@@ -8,9 +8,6 @@
 #  define PATH_MAX 4096
 # endif
 
-# define OKAY 0
-# define FAILURE 1
-
 #ifndef STDBOOL_H
 #define STDBOOL_H
 # define bool int

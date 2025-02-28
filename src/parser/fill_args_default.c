@@ -24,7 +24,7 @@ int	create_args_default_mode(t_token **token_node, t_command *last_cmd)
 	nb_args = count_arguments(temp);
 	last_cmd->args = malloc(sizeof(char *) * (nb_args + 2));
 	if (!last_cmd->args)
-		return (FAILURE);
+		return (EXIT_FAILURE);
 	temp = *token_node;
 	i = 0;
 	last_cmd->args[i] = ft_strdup(last_cmd->command);
@@ -37,7 +37,7 @@ int	create_args_default_mode(t_token **token_node, t_command *last_cmd)
 	}
 	last_cmd->args[i] = NULL;
 	*token_node = temp;
-	return (OKAY);
+	return (EXIT_SUCCESS);
 }
 
 static char	**copy_default_in_new_tab(
@@ -82,12 +82,12 @@ int	add_args_default_mode(t_token **token_node, t_command *last_cmd)
 		len++;
 	new_tab = malloc(sizeof(char *) * (i + len + 1));
 	if (!new_tab)
-		return (FAILURE);
+		return (EXIT_FAILURE);
 	new_tab = copy_default_in_new_tab(len, new_tab, last_cmd, token_node);
 	free(last_cmd->args);
 	last_cmd->args = new_tab;
 	*token_node = temp;
-	return (OKAY);
+	return (EXIT_SUCCESS);
 }
 
 int	fill_args(t_token **token_node, t_command *last_cmd)
@@ -106,5 +106,5 @@ int	fill_args(t_token **token_node, t_command *last_cmd)
 		else
 			return (add_args_default_mode(token_node, last_cmd));
 	}
-	return (OKAY);
+	return (EXIT_SUCCESS);
 }

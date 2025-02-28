@@ -30,9 +30,9 @@ int	check_consecutives(t_token **token_lst)
 					temp->prev->str, true);
 			else
 				throw_message_error("syntax error near unexpected token", temp->str, true);
-			return (FAILURE);
+			return (EXIT_FAILURE);
 		}
 		temp = temp->next;
 	}
-	return (OKAY);
+	return (EXIT_SUCCESS);
 }

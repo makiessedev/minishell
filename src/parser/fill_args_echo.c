@@ -11,7 +11,7 @@ int	create_args_echo_mode(t_token **token_node, t_command *last_cmd)
 	nb_args = count_args(temp);
 	last_cmd->args = malloc(sizeof(char *) * (nb_args + 2));
 	if (!last_cmd->args)
-		return (FAILURE);
+		return (EXIT_FAILURE);
 	i = 0;
 	last_cmd->args[i] = ft_strdup(last_cmd->command);
 	i++;
@@ -26,7 +26,7 @@ int	create_args_echo_mode(t_token **token_node, t_command *last_cmd)
 	}
 	last_cmd->args[i] = NULL;
 	*token_node = temp;
-	return (OKAY);
+	return (EXIT_SUCCESS);
 }
 
 int	add_args_echo_mode(t_token **token_node, t_command *last_cmd)
@@ -44,12 +44,12 @@ int	add_args_echo_mode(t_token **token_node, t_command *last_cmd)
 		len++;
 	new_tab = malloc(sizeof(char *) * (nb_args + len + 1));
 	if (!new_tab)
-		return (FAILURE);
+		return (EXIT_FAILURE);
 	new_tab = copy_in_new_tab(len, new_tab, last_cmd, temp);
 	free(last_cmd->args);
 	last_cmd->args = new_tab;
 	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 		temp = temp->next;
 	*token_node = temp;
-	return (OKAY);
+	return (EXIT_SUCCESS);
 }

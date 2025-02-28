@@ -26,14 +26,14 @@ int	check_if_var(t_token **token_lst)
 	if (temp->type == PIPE_TOKEN)
 	{
 		throw_message_error("syntax error near unexpected token", temp->str, true);
-		return (FAILURE);
+		return (EXIT_FAILURE);
 	}
 	while (temp)
 	{
 		variable_check(&temp);
-		if (check_consecutives(&temp) == FAILURE)
-			return (FAILURE);
+		if (check_consecutives(&temp) == EXIT_FAILURE)
+			return (EXIT_FAILURE);
 		temp = temp->next;
 	}
-	return (OKAY);
+	return (EXIT_SUCCESS);
 }
