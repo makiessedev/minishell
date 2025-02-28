@@ -21,11 +21,11 @@ int	storage_word_or_separator_token(int *i, char *str, int start, t_main *main_d
 	if (type)
 	{
 		if ((*i) != 0 && is_separator(str, (*i) - 1) == 0)
-			save_word(&main_data->token, str, (*i), start);
+			storage_word_token(&main_data->token, str, (*i), start);
 		if (type == APPEND_TOKEN || type == HEREDOC_TOKEN || type == PIPE_TOKEN
 			|| type == INPUT_TOKEN || type == REDIRECT_TOKEN || type == END_TOKEN)
 		{
-			save_separator(&main_data->token, str, (*i), type);
+			storage_separator_token(&main_data->token, str, (*i), type);
 			if (type == APPEND_TOKEN || type == HEREDOC_TOKEN)
 				(*i)++;
 		}
@@ -34,7 +34,7 @@ int	storage_word_or_separator_token(int *i, char *str, int start, t_main *main_d
 	return (start);
 }
 
-int	save_separator(t_token **token_lst, char *str, int index, int type)
+int	storage_separator_token(t_token **token_lst, char *str, int index, int type)
 {
 	int		i;
 	char	*sep;
@@ -63,7 +63,7 @@ int	save_separator(t_token **token_lst, char *str, int index, int type)
 	return (0);
 }
 
-int	save_word(t_token **token_lst, char *str, int index, int start)
+int	storage_word_token(t_token **token_lst, char *str, int index, int start)
 {
 	int		i;
 	char	*word;
