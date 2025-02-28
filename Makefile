@@ -15,11 +15,11 @@ SRC		= 	main.c app.c \
 			error/util.c \
 			tokenization/parse_user_input.c \
 			tokenization/tokenization.c \
-			tokenization/tokenization_utils.c \
+			tokenization/utils_1.c \
 			tokenization/check_if_var.c \
 			tokenization/lexer_grammar.c \
-			tokenization/token_lst_utils.c \
-			tokenization/token_lst_utils_2.c \
+			tokenization/lst_utils_1.c \
+			tokenization/lst_utils_2.c \
 			expansion/var_expander.c \
 			expansion/var_expander_utils.c \
 			expansion/identify_var.c \
