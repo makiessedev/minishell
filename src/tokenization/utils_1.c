@@ -1,5 +1,39 @@
 #include "minishell.h"
 
+int	check_status_quote(int status, char *str, int i)
+{
+	if (str[i] == '\'' && status == NORMAL_MODE)
+		status = SINGLE_QUOTE;
+	else if (str[i] == '\"' && status == NORMAL_MODE)
+		status = DOUBLE_QUOTE;
+	else if (str[i] == '\'' && status == SINGLE_QUOTE)
+		status = NORMAL_MODE;
+	else if (str[i] == '\"' && status == DOUBLE_QUOTE)
+		status = NORMAL_MODE;
+	return (status);
+}
+
+int	save_word_or_sep(int *i, char *str, int start, t_main *main_data)
+{
+	int	type;
+
+	type = is_separator(str, (*i));
+	if (type)
+	{
+		if ((*i) != 0 && is_separator(str, (*i) - 1) == 0)
+			save_word(&main_data->token, str, (*i), start);
+		if (type == APPEND_TOKEN || type == HEREDOC_TOKEN || type == PIPE_TOKEN
+			|| type == INPUT_TOKEN || type == REDIRECT_TOKEN || type == END_TOKEN)
+		{
+			save_separator(&main_data->token, str, (*i), type);
+			if (type == APPEND_TOKEN || type == HEREDOC_TOKEN)
+				(*i)++;
+		}
+		start = (*i) + 1;
+	}
+	return (start);
+}
+
 int	save_separator(t_token **token_lst, char *str, int index, int type)
 {
 	int		i;
@@ -68,38 +102,4 @@ int	is_separator(char *str, int i)
 		return (END_TOKEN);
 	else
 		return (0);
-}
-
-int	set_status(int status, char *str, int i)
-{
-	if (str[i] == '\'' && status == NORMAL_MODE)
-		status = SINGLE_QUOTE;
-	else if (str[i] == '\"' && status == NORMAL_MODE)
-		status = DOUBLE_QUOTE;
-	else if (str[i] == '\'' && status == SINGLE_QUOTE)
-		status = NORMAL_MODE;
-	else if (str[i] == '\"' && status == DOUBLE_QUOTE)
-		status = NORMAL_MODE;
-	return (status);
-}
-
-int	save_word_or_sep(int *i, char *str, int start, t_main *main_data)
-{
-	int	type;
-
-	type = is_separator(str, (*i));
-	if (type)
-	{
-		if ((*i) != 0 && is_separator(str, (*i) - 1) == 0)
-			save_word(&main_data->token, str, (*i), start);
-		if (type == APPEND_TOKEN || type == HEREDOC_TOKEN || type == PIPE_TOKEN
-			|| type == INPUT_TOKEN || type == REDIRECT_TOKEN || type == END_TOKEN)
-		{
-			save_separator(&main_data->token, str, (*i), type);
-			if (type == APPEND_TOKEN || type == HEREDOC_TOKEN)
-				(*i)++;
-		}
-		start = (*i) + 1;
-	}
-	return (start);
 }

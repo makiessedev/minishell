@@ -9,6 +9,6 @@ void	lstclear_token(t_token **lst, void (*del)(void *));
 int	save_separator(t_token **token_lst, char *str, int index, int type);
 int	save_word(t_token **token_lst, char *str, int index, int start);
 int	is_separator(char *str, int i);
-int	set_status(int status, char *str, int i);
+int	check_status_quote(int status, char *str, int i);
 int	save_word_or_sep(int *i, char *str, int start, t_main *main_data);
 int	tokenization(t_main *main_data);

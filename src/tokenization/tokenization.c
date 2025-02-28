@@ -13,7 +13,7 @@ int	tokenization(t_main *main_data)
 	status = NORMAL_MODE;
 	while (++i <= end)
 	{
-		status = set_status(status, main_data->user_input, i);
+		status = check_status_quote(status, main_data->user_input, i);
 		if (status == NORMAL_MODE)
 			start = save_word_or_sep(&i, main_data->user_input, start, main_data);
 	}
