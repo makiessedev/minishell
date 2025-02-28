@@ -13,13 +13,13 @@ SRC		= 	main.c app.c \
 			error/throw_command_error.c \
 			error/throw_message_error.c \
 			error/util.c \
-			lexer/parse_user_input.c \
-			lexer/tokenization.c \
-			lexer/tokenization_utils.c \
-			lexer/check_if_var.c \
-			lexer/lexer_grammar.c \
-			lexer/token_lst_utils.c \
-			lexer/token_lst_utils_2.c \
+			tokenization/parse_user_input.c \
+			tokenization/tokenization.c \
+			tokenization/tokenization_utils.c \
+			tokenization/check_if_var.c \
+			tokenization/lexer_grammar.c \
+			tokenization/token_lst_utils.c \
+			tokenization/token_lst_utils_2.c \
 			expansion/var_expander.c \
 			expansion/var_expander_utils.c \
 			expansion/identify_var.c \
@@ -74,7 +74,7 @@ all: $(OBJ_PATH) $(LIBFT) $(NAME)
 $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)
 	mkdir -p $(OBJ_PATH)/commands
-	mkdir -p $(OBJ_PATH)/lexer
+	mkdir -p $(OBJ_PATH)/tokenization
 	mkdir -p $(OBJ_PATH)/expansion
 	mkdir -p $(OBJ_PATH)/parser
 	mkdir -p $(OBJ_PATH)/env

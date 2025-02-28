@@ -15,7 +15,7 @@
 # include "../src/env/_env_header.h"
 # include "../src/run/_run_header.h"
 # include "../src/expansion/_expansion_header.h"
-# include "../src/lexer/_lexer_header.h"
+# include "../src/tokenization/_tokenization_header.h"
 # include "../src/parser/_parser_header.h"
 # include "../src/redirections/_redirections_header.h"
 # include "../src/utils/_utils_header.h"
