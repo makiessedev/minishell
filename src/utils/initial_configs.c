@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-static bool	init_env(t_main *main_data, char **env)
+static bool	start_env(t_main *main_data, char **env)
 {
 	int		i;
 
@@ -47,7 +47,7 @@ bool	init_data(t_main *main_data, char **env)
 {
 	bool is_seted_end;
 
-	is_seted_end = init_env(main_data, env);
+	is_seted_end = start_env(main_data, env);
 	if (!is_seted_end)
 	{
 		throw_command_error("Fatal", NULL, "Could not initialize environment", 1);

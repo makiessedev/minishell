@@ -7,7 +7,7 @@ SRC_PATH = ./src/
 OBJ_PATH = ./temp/
 INC_PATH = ./headers/
 SRC		= 	main.c app.c \
-			utils/init_data.c \
+			utils/initial_configs.c \
 			env/env.c \
 			env/env_set.c \
 			error/throw_command_error.c \
