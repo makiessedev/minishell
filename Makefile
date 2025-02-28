@@ -77,12 +77,10 @@ $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)/lexer
 	mkdir -p $(OBJ_PATH)/expansion
 	mkdir -p $(OBJ_PATH)/parser
-	mkdir -p $(OBJ_PATH)/testing
 	mkdir -p $(OBJ_PATH)/env
 	mkdir -p $(OBJ_PATH)/execution
 	mkdir -p $(OBJ_PATH)/utils
 	mkdir -p $(OBJ_PATH)/redirections
-	mkdir -p $(OBJ_PATH)/signals
 	mkdir -p $(OBJ_PATH)/error
 	mkdir -p $(OBJ_PATH)/erase
 
