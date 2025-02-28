@@ -40,13 +40,13 @@ SRC		= 	main.c app.c \
 			parser/parse_pipe.c \
 			parser/cmd_lst_utils.c \
 			parser/cmd_lst_utils_cleanup.c \
-			builtins/export_builtin.c \
-			builtins/unset_builtin.c \
-			builtins/cd_builtin.c \
-			builtins/env_builtin.c \
-			builtins/pwd_builtin.c \
-			builtins/echo_builtin.c \
-			builtins/exit_builtin.c \
+			commands/export_builtin.c \
+			commands/unset_builtin.c \
+			commands/cd_builtin.c \
+			commands/env_builtin.c \
+			commands/pwd_builtin.c \
+			commands/echo_builtin.c \
+			commands/exit_builtin.c \
 			execution/execute.c \
 			execution/execute_cmd.c \
 			execution/execute_utils.c \
@@ -73,7 +73,7 @@ all: $(OBJ_PATH) $(LIBFT) $(NAME)
 
 $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)
-	mkdir -p $(OBJ_PATH)/builtins
+	mkdir -p $(OBJ_PATH)/commands
 	mkdir -p $(OBJ_PATH)/lexer
 	mkdir -p $(OBJ_PATH)/expansion
 	mkdir -p $(OBJ_PATH)/parser

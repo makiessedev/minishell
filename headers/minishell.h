@@ -11,7 +11,7 @@
 # include "libft.h"
 # include "structs_macros.h"
 
-# include "../src/builtins/_builtins_header.h"
+# include "../src/commands/_commands_header.h"
 # include "../src/env/_env_header.h"
 # include "../src/execution/_execution_header.h"
 # include "../src/expansion/_expansion_header.h"
