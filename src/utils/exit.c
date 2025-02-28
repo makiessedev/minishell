@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void	exit_shell(t_main *main_data, int exno)
+void	erase_and_exit_shell(t_main *main_data, int exno)
 {
 	if (main_data)
 	{

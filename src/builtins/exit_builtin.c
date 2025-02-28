@@ -94,6 +94,6 @@ int	exit_builtin(t_main *main_data, char **args)
 		else if (args[2])
 			return (throw_command_error("exit", NULL, "too many arguments", 1));
 	}
-	exit_shell(main_data, exit_code);
+	erase_and_exit_shell(main_data, exit_code);
 	return (2);
 }

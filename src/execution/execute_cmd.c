@@ -53,10 +53,10 @@ int	execute_command(t_main *main_data, t_command *cmd)
 	int	ret;
 
 	if (!cmd || !cmd->command)
-		exit_shell(main_data, throw_command_error("child", NULL,
+		erase_and_exit_shell(main_data, throw_command_error("child", NULL,
 				"parsing error: no command to execute!", EXIT_FAILURE));
 	if (!check_infile_outfile(cmd->io_fds))
-		exit_shell(main_data, EXIT_FAILURE);
+		erase_and_exit_shell(main_data, EXIT_FAILURE);
 	set_pipe_fds(main_data->cmd, cmd);
 	redirect_io(cmd->io_fds);
 	close_fds(main_data->cmd, false);
@@ -64,12 +64,12 @@ int	execute_command(t_main *main_data, t_command *cmd)
 	{
 		ret = execute_builtin(main_data, cmd);
 		if (ret != CMD_NOT_FOUND)
-			exit_shell(main_data, ret);
+			erase_and_exit_shell(main_data, ret);
 		ret = execute_sys_bin(main_data, cmd);
 		if (ret != CMD_NOT_FOUND)
-			exit_shell(main_data, ret);
+			erase_and_exit_shell(main_data, ret);
 	}
 	ret = execute_local_bin(main_data, cmd);
-	exit_shell(main_data, ret);
+	erase_and_exit_shell(main_data, ret);
 	return (ret);
 }

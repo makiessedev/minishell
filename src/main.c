@@ -13,8 +13,8 @@ int	main(int ac, char **av, char **env)
 	set_unused_args(ac, av);
 	ft_memset(&main_data, 0, sizeof(t_main));
 	if (!init_data(&main_data, env))
-		exit_shell(NULL, EXIT_FAILURE);
+		erase_and_exit_shell(NULL, EXIT_FAILURE);
 	bootstrap(&main_data);
-	exit_shell(&main_data, g_exit_code);
+	erase_and_exit_shell(&main_data, g_exit_code);
 	return (0);
 }
