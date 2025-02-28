@@ -19,10 +19,8 @@ int	tokenization(t_main *main_data)
 	}
 	if (status != NORMAL_MODE)
 	{
-		if (status == DOUBLE_QUOTE)
+		if (status == DOUBLE_QUOTE || status == SINGLE_QUOTE)
 			throw_message_error("unexpected EOF while looking for matching", "\"", true);
-		else if (status == SINGLE_QUOTE)
-			throw_message_error("unexpected EOF while looking for matching", "\'", true);
 		throw_message_error("syntax error", "unexpected end of file", false);
 		return (1);
 	}
