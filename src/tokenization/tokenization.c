@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	tokenization(t_main *main_data, char *str)
+int	tokenization(t_main *main_data)
 {
 	int	i;
 	int	end;
@@ -9,13 +9,13 @@ int	tokenization(t_main *main_data, char *str)
 
 	i = -1;
 	start = 0;
-	end = ft_strlen(str);
+	end = ft_strlen(main_data->user_input);
 	status = NORMAL_MODE;
 	while (++i <= end)
 	{
-		status = set_status(status, str, i);
+		status = set_status(status, main_data->user_input, i);
 		if (status == NORMAL_MODE)
-			start = save_word_or_sep(&i, str, start, main_data);
+			start = save_word_or_sep(&i, main_data->user_input, start, main_data);
 	}
 	if (status != NORMAL_MODE)
 	{

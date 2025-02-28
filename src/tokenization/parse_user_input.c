@@ -19,7 +19,7 @@ bool	parse_user_input(t_main *main_data)
 	if (input_is_space(main_data->user_input))
 		return (true);
 	add_history(main_data->user_input);
-	if (tokenization(main_data, main_data->user_input) == EXIT_FAILURE)
+	if (tokenization(main_data) == EXIT_FAILURE)
 		return (false);
 	if (main_data->token->type == END_TOKEN)
 		return (false);
