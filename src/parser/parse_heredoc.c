@@ -12,7 +12,7 @@ bool	get_heredoc(t_main *main_data, t_io_fds *io)
 	return (ret);
 }
 
-static char	*get_heredoc_name(void)
+static char	*get_PATH_HEREDOC(void)
 {
 	static int	i;
 	char		*name;
@@ -21,7 +21,7 @@ static char	*get_heredoc_name(void)
 	number = ft_itoa(i);
 	if (!number)
 		return (NULL);
-	name = ft_strjoin(HEREDOC_NAME, number);
+	name = ft_strjoin(PATH_HEREDOC, number);
 	free(number);
 	i++;
 	return (name);
@@ -53,7 +53,7 @@ void	parse_heredoc(t_main *main_data, t_command **last_cmd, t_token **token_lst)
 	io = cmd->io_fds;
 	if (!remove_old_file_ref(io, true))
 		return ;
-	io->infile = get_heredoc_name();
+	io->infile = get_PATH_HEREDOC();
 	io->heredoc_delimiter = get_delim(temp->next->str, &(io->heredoc_quotes));
 	if (get_heredoc(main_data, io))
 		io->fd_in = open(io->infile, O_RDONLY);

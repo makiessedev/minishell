@@ -1,5 +1,5 @@
 # define PROMPT "minishell$ "
-# define HEREDOC_NAME "/tmp/.minishell_heredoc_"
+# define PATH_HEREDOC "/tmp/.minishell_heredoc_"
 
 # define CMD_NOT_FOUND 127
 # define CMD_NOT_EXECUTABLE 126
