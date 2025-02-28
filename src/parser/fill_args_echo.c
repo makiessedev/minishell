@@ -26,7 +26,7 @@ int	create_args_echo_mode(t_token **token_node, t_command *last_cmd)
 	}
 	last_cmd->args[i] = NULL;
 	*token_node = temp;
-	return (SUCCESS);
+	return (OKAY);
 }
 
 int	add_args_echo_mode(t_token **token_node, t_command *last_cmd)
@@ -51,5 +51,5 @@ int	add_args_echo_mode(t_token **token_node, t_command *last_cmd)
 	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 		temp = temp->next;
 	*token_node = temp;
-	return (SUCCESS);
+	return (OKAY);
 }

@@ -37,7 +37,7 @@ int	create_args_default_mode(t_token **token_node, t_command *last_cmd)
 	}
 	last_cmd->args[i] = NULL;
 	*token_node = temp;
-	return (SUCCESS);
+	return (OKAY);
 }
 
 static char	**copy_default_in_new_tab(
@@ -87,7 +87,7 @@ int	add_args_default_mode(t_token **token_node, t_command *last_cmd)
 	free(last_cmd->args);
 	last_cmd->args = new_tab;
 	*token_node = temp;
-	return (SUCCESS);
+	return (OKAY);
 }
 
 int	fill_args(t_token **token_node, t_command *last_cmd)
@@ -106,5 +106,5 @@ int	fill_args(t_token **token_node, t_command *last_cmd)
 		else
 			return (add_args_default_mode(token_node, last_cmd));
 	}
-	return (SUCCESS);
+	return (OKAY);
 }

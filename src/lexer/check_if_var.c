@@ -35,5 +35,5 @@ int	check_if_var(t_token **token_lst)
 			return (FAILURE);
 		temp = temp->next;
 	}
-	return (SUCCESS);
+	return (OKAY);
 }

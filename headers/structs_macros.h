@@ -8,7 +8,7 @@
 #  define PATH_MAX 4096
 # endif
 
-# define SUCCESS 0
+# define OKAY 0
 # define FAILURE 1
 
 #ifndef STDBOOL_H

@@ -34,5 +34,5 @@ int	check_consecutives(t_token **token_lst)
 		}
 		temp = temp->next;
 	}
-	return (SUCCESS);
+	return (OKAY);
 }
