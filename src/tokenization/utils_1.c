@@ -13,7 +13,7 @@ int	check_status_quote(int status, char *str, int i)
 	return (status);
 }
 
-int	save_word_or_sep(int *i, char *str, int start, t_main *main_data)
+int	storage_word_or_separator_token(int *i, char *str, int start, t_main *main_data)
 {
 	int	type;
 
