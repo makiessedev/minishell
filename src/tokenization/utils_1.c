@@ -23,29 +23,22 @@ static void	storage_word_token(t_token **token_lst, char *str, int index, int st
 static void	storage_separator_token(t_token **token_lst, char *str, int index, int type)
 {
 	int		i;
-	char	*sep;
+	char	*separator;
+	int		separator_size;
 
 	i = 0;
+	separator_size = 2;
 	if (type == APPEND_TOKEN || type == HEREDOC_TOKEN)
-	{
-		sep = malloc(sizeof(char) * 3);
-		if (!sep)
-			return ;
-		while (i < 2)
-			sep[i++] = str[index++];
-		sep[i] = '\0';
-		lst_add_back_token(token_lst, lst_new_token(sep, NULL, type, NORMAL_MODE));
-	}
-	else
-	{
-		sep = malloc(sizeof(char) * 2);
-		if (!sep)
-			return ;
-		while (i < 1)
-			sep[i++] = str[index++];
-		sep[i] = '\0';
-		lst_add_back_token(token_lst, lst_new_token(sep, NULL, type, NORMAL_MODE));
-	}
+		separator_size = 3;
+
+	separator = malloc(sizeof(char) * separator_size);
+	if (!separator)
+		return ;
+	while (i < 1)
+		separator[i++] = str[index++];
+	separator[i] = '\0';
+	lst_add_back_token(token_lst, lst_new_token(separator, NULL, type, NORMAL_MODE));
+
 	return ;
 }
 
