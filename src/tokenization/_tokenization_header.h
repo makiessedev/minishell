@@ -10,5 +10,5 @@ int	storage_separator_token(t_token **token_lst, char *str, int index, int type)
 int	storage_word_token(t_token **token_lst, char *str, int index, int start);
 int	get_type_separator_token(char *str, int i);
 int	check_status_quote(int status, char *str, int i);
-int	storage_word_or_separator_token(int *i, char *str, int start, t_main *main_data);
+int	storage_word_or_separator_token(int *i, int start, t_main *main_data);
 int	tokenization(t_main *main_data);

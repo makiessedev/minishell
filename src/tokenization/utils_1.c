@@ -13,19 +13,19 @@ int	check_status_quote(int status, char *str, int i)
 	return (status);
 }
 
-int	storage_word_or_separator_token(int *i, char *str, int start, t_main *main_data)
+int	storage_word_or_separator_token(int *i, int start, t_main *main_data)
 {
 	int	type;
 
-	type = get_type_separator_token(str, (*i));
+	type = get_type_separator_token(main_data->user_input, (*i));
 	if (type)
 	{
-		if ((*i) != 0 && get_type_separator_token(str, (*i) - 1) == 0)
-			storage_word_token(&main_data->token, str, (*i), start);
+		if ((*i) != 0 && get_type_separator_token(main_data->user_input, (*i) - 1) == 0)
+			storage_word_token(&main_data->token, main_data->user_input, (*i), start);
 		if (type == APPEND_TOKEN || type == HEREDOC_TOKEN || type == PIPE_TOKEN
 			|| type == INPUT_TOKEN || type == REDIRECT_TOKEN || type == END_TOKEN)
 		{
-			storage_separator_token(&main_data->token, str, (*i), type);
+			storage_separator_token(&main_data->token, main_data->user_input, (*i), type);
 			if (type == APPEND_TOKEN || type == HEREDOC_TOKEN)
 				(*i)++;
 		}

@@ -15,7 +15,7 @@ int	tokenization(t_main *main_data)
 	{
 		status = check_status_quote(status, main_data->user_input, i);
 		if (status == NORMAL_MODE)
-			start = storage_word_or_separator_token(&i, main_data->user_input, start, main_data);
+			start = storage_word_or_separator_token(&i, start, main_data);
 	}
 	if (status != NORMAL_MODE)
 	{
