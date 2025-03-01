@@ -7,8 +7,8 @@ t_token	*lst_new_token(char *str, char *str_backup, int type, int status)
 	new_node = malloc(sizeof(t_token) * 1);
 	if (!(new_node))
 		return (NULL);
-	new_node->str = str;
-	new_node->str_backup = str_backup;
+	new_node->token = str;
+	new_node->backup_token = str_backup;
 	new_node->var_exists = false;
 	new_node->type = type;
 	new_node->status = status;
@@ -39,15 +39,15 @@ void	lst_add_back_token(t_token **alst, t_token *new_node)
 
 void	lstdelone_token(t_token *lst, void (*del)(void *))
 {
-	if (del && lst && lst->str)
+	if (del && lst && lst->token)
 	{
-		(*del)(lst->str);
-		lst->str = NULL;
+		(*del)(lst->token);
+		lst->token = NULL;
 	}
-	if (del && lst && lst->str_backup)
+	if (del && lst && lst->backup_token)
 	{
-		(*del)(lst->str_backup);
-		lst->str_backup = NULL;
+		(*del)(lst->backup_token);
+		lst->backup_token = NULL;
 	}
 	if (lst->prev)
 		lst->prev->next = lst->next;

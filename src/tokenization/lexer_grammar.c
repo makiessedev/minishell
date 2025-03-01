@@ -27,9 +27,9 @@ int	check_consecutives(t_token **token_lst)
 				throw_message_error("syntax error near unexpected token", "newline", true);
 			else if (temp->type == END_TOKEN && temp->prev)
 				throw_message_error("syntax error near unexpected token",
-					temp->prev->str, true);
+					temp->prev->token, true);
 			else
-				throw_message_error("syntax error near unexpected token", temp->str, true);
+				throw_message_error("syntax error near unexpected token", temp->token, true);
 			return (EXIT_FAILURE);
 		}
 		temp = temp->next;

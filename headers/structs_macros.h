@@ -17,8 +17,8 @@
 
 typedef struct s_token
 {
-	char			*str;
-	char			*str_backup;
+	char			*token;
+	char			*backup_token;
 	bool			var_exists;
 	int				type;
 	int				status;

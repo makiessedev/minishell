@@ -43,15 +43,15 @@ int	var_expander(t_main *main_data, t_token **token_lst)
 		if (temp->type == VAR_TOKEN)
 		{
 			i = 0;
-			while (temp->str[i])
+			while (temp->token[i])
 			{
-				update_status(&temp, temp->str[i]);
-				if (temp->str[i] == '$'
-					&& is_next_char_a_sep(temp->str[i + 1]) == false
-					&& var_between_quotes(temp->str, i) == false
+				update_status(&temp, temp->token[i]);
+				if (temp->token[i] == '$'
+					&& is_next_char_a_sep(temp->token[i + 1]) == false
+					&& var_between_quotes(temp->token, i) == false
 					&& (temp->status == NORMAL_MODE || temp->status == DOUBLE_QUOTE))
 					replace_var(&temp,
-						recover_val(temp, temp->str + i, main_data), i);
+						recover_val(temp, temp->token + i, main_data), i);
 				else
 					i++;
 			}

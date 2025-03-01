@@ -52,10 +52,10 @@ void	parse_word(t_command **cmd, t_token **token_lst)
 		if (temp->prev == NULL || (temp->prev && temp->prev->type == PIPE_TOKEN)
 			|| last_cmd->command == NULL)
 		{
-			if (temp->type == VAR_TOKEN && contains_space(temp->str))
-				split_var_cmd_token(last_cmd, temp->str);
+			if (temp->type == VAR_TOKEN && contains_space(temp->token))
+				split_var_cmd_token(last_cmd, temp->token);
 			else
-				last_cmd->command = ft_strdup(temp->str);
+				last_cmd->command = ft_strdup(temp->token);
 			temp = temp->next;
 		}
 		else

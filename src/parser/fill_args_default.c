@@ -31,7 +31,7 @@ int	create_args_default_mode(t_token **token_node, t_command *last_cmd)
 	i++;
 	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 	{
-		last_cmd->args[i] = ft_strdup(temp->str);
+		last_cmd->args[i] = ft_strdup(temp->token);
 		i++;
 		temp = temp->next;
 	}
@@ -55,7 +55,7 @@ static char	**copy_default_in_new_tab(
 	}
 	while (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 	{
-		new_tab[i] = ft_strdup(temp->str);
+		new_tab[i] = ft_strdup(temp->token);
 		i++;
 		temp = temp->next;
 	}

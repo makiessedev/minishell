@@ -20,7 +20,7 @@ int	create_args_echo_mode(t_token **token_node, t_command *last_cmd)
 		if (temp->join == true)
 			last_cmd->args[i] = join_vars(&temp);
 		else
-			last_cmd->args[i] = ft_strdup(temp->str);
+			last_cmd->args[i] = ft_strdup(temp->token);
 		i++;
 		temp = temp->next;
 	}

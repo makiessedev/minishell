@@ -48,7 +48,7 @@ void	parse_input(t_command **last_cmd, t_token **token_lst)
 	temp = *token_lst;
 	cmd = lst_last_cmd(*last_cmd);
 	init_io(cmd);
-	open_infile(cmd->io_fds, temp->next->str, temp->next->str_backup);
+	open_infile(cmd->io_fds, temp->next->token, temp->next->backup_token);
 	if (temp->next->next)
 		temp = temp->next->next;
 	else

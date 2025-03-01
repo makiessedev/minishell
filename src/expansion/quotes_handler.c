@@ -50,7 +50,7 @@ int	handle_quotes(t_main *main_data)
 	temp = main_data->token;
 	while (temp)
 	{
-		if (quotes_in_string(temp->str) == true
+		if (quotes_in_string(temp->token) == true
 			&& (!temp->prev || (temp->prev && temp->prev->type != HEREDOC_TOKEN)))
 			remove_quotes(&temp);
 		temp = temp->next;

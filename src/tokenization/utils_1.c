@@ -16,8 +16,7 @@ static void	storage_word_token(t_token **token_lst, char *str, int index, int st
 		i++;
 	}
 	word[i] = '\0';
-	lst_add_back_token(token_lst, \
-			lst_new_token(word, ft_strdup(word), WORD_TOKEN, NORMAL_MODE));
+	lst_add_back_token(token_lst, lst_new_token(word, ft_strdup(word), WORD_TOKEN, NORMAL_MODE));
 	return ;
 }
 

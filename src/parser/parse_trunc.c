@@ -36,7 +36,7 @@ void	parse_trunc(t_command **last_cmd, t_token **token_lst)
 	temp = *token_lst;
 	cmd = lst_last_cmd(*last_cmd);
 	init_io(cmd);
-	open_outfile_trunc(cmd->io_fds, temp->next->str, temp->next->str_backup);
+	open_outfile_trunc(cmd->io_fds, temp->next->token, temp->next->backup_token);
 	if (temp->next->next)
 		temp = temp->next->next;
 	else

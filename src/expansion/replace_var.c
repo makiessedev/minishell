@@ -24,8 +24,8 @@ static int	erase_var(t_token **token_node, char *str, int index)
 		new_str[j++] = str[i++];
 	}
 	new_str[j] = '\0';
-	erase_pointer((*token_node)->str);
-	(*token_node)->str = new_str;
+	erase_pointer((*token_node)->token);
+	(*token_node)->token = new_str;
 	return (0);
 }
 
@@ -40,8 +40,8 @@ static char	*erase_and_replace(t_token **token_node, char *str,
 	newstr = get_new_token_string(str, var_value, newstr_size, index);
 	if (token_node && *token_node)
 	{
-		erase_pointer((*token_node)->str);
-		(*token_node)->str = newstr;
+		erase_pointer((*token_node)->token);
+		(*token_node)->token = newstr;
 	}
 	return (newstr);
 }
@@ -50,7 +50,7 @@ int	replace_var(t_token **token_node, char *var_value, int index)
 {
 	if (var_value == NULL)
 	{
-		if (erase_var(token_node, (*token_node)->str, index) == 1)
+		if (erase_var(token_node, (*token_node)->token, index) == 1)
 		{
 			erase_pointer(var_value);
 			return (1);
@@ -58,7 +58,7 @@ int	replace_var(t_token **token_node, char *var_value, int index)
 	}
 	else
 	{
-		if (erase_and_replace(token_node, (*token_node)->str, \
+		if (erase_and_replace(token_node, (*token_node)->token, \
 		var_value, index) == NULL)
 		{
 			erase_pointer(var_value);

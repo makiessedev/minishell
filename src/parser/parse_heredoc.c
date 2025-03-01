@@ -54,7 +54,7 @@ void	parse_heredoc(t_main *main_data, t_command **last_cmd, t_token **token_lst)
 	if (!remove_old_file_ref(io, true))
 		return ;
 	io->infile = get_PATH_HEREDOC();
-	io->heredoc_delimiter = get_delim(temp->next->str, &(io->heredoc_quotes));
+	io->heredoc_delimiter = get_delim(temp->next->token, &(io->heredoc_quotes));
 	if (get_heredoc(main_data, io))
 		io->fd_in = open(io->infile, O_RDONLY);
 	else
