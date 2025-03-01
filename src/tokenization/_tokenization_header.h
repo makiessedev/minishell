@@ -1,7 +1,6 @@
 int	check_if_var(t_token **token_lst);
 int	check_consecutives(t_token **token_lst);
 bool	parse_user_input(t_main *data);
-t_token	*insert_lst_between(t_token **head, t_token *to_del, t_token *insert);
 t_token	*lst_new_token(char *str, char *str_backup, int type, int status);
 void	lst_add_back_token(t_token **alst, t_token *new_node);
 void	lstdelone_token(t_token *lst, void (*del)(void *));

@@ -19,7 +19,6 @@ SRC		= 	main.c app.c \
 			tokenization/check_if_var.c \
 			tokenization/lexer_grammar.c \
 			tokenization/lst_utils_1.c \
-			tokenization/lst_utils_2.c \
 			expansion/var_expander.c \
 			expansion/var_expander_utils.c \
 			expansion/identify_var.c \

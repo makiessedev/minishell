@@ -1,14 +1,14 @@
 #include "minishell.h"
 
-t_token	*lst_new_token(char *str, char *str_backup, int type, int status)
+t_token	*lst_new_token(char *token, char *token_backup, int type, int status)
 {
 	t_token	*new_node;
 
 	new_node = malloc(sizeof(t_token) * 1);
 	if (!(new_node))
 		return (NULL);
-	new_node->token = str;
-	new_node->backup_token = str_backup;
+	new_node->token = token;
+	new_node->backup_token = token_backup;
 	new_node->var_exists = false;
 	new_node->type = type;
 	new_node->status = status;
