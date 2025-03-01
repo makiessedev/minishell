@@ -1,5 +1,18 @@
 #include "minishell.h"
 
+static int	check_status_quote(int status, char *str, int i)
+{
+	if (str[i] == '\'' && status == NORMAL_MODE)
+		status = SINGLE_QUOTE;
+	else if (str[i] == '\"' && status == NORMAL_MODE)
+		status = DOUBLE_QUOTE;
+	else if (str[i] == '\'' && status == SINGLE_QUOTE)
+		status = NORMAL_MODE;
+	else if (str[i] == '\"' && status == DOUBLE_QUOTE)
+		status = NORMAL_MODE;
+	return (status);
+}
+
 int	tokenization(t_main *main_data)
 {
 	int	i;

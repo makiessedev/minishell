@@ -1,18 +1,5 @@
 #include "minishell.h"
 
-int	check_status_quote(int status, char *str, int i)
-{
-	if (str[i] == '\'' && status == NORMAL_MODE)
-		status = SINGLE_QUOTE;
-	else if (str[i] == '\"' && status == NORMAL_MODE)
-		status = DOUBLE_QUOTE;
-	else if (str[i] == '\'' && status == SINGLE_QUOTE)
-		status = NORMAL_MODE;
-	else if (str[i] == '\"' && status == DOUBLE_QUOTE)
-		status = NORMAL_MODE;
-	return (status);
-}
-
 static void	storage_word_token(t_token **token_lst, char *str, int index, int start)
 {
 	int		i;
