@@ -13,7 +13,7 @@ SRC		= 	main.c app.c \
 			error/throw_command_error.c \
 			error/throw_message_error.c \
 			error/util.c \
-			tokenization/parse_user_input.c \
+			tokenization/process_user_command.c \
 			tokenization/tokenization.c \
 			tokenization/utils_1.c \
 			tokenization/validate_syntax_and_variables.c \
