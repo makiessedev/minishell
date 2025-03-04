@@ -1,5 +1,5 @@
 int	validate_syntax_and_variables(t_token **token_lst);
-bool	parse_user_input(t_main *data);
+bool	process_user_command(t_main *data);
 t_token	*lst_new_token(char *str, char *str_backup, int type, int status);
 void	lst_add_back_token(t_token **alst, t_token *new_node);
 void	lstdelone_token(t_token *lst, void (*del)(void *));

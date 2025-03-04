@@ -14,7 +14,7 @@ static bool	input_is_space(char *input)
 	return (true);
 }
 
-bool	parse_user_input(t_main *main_data)
+bool	process_user_command(t_main *main_data)
 {
 	if (input_is_space(main_data->user_input))
 		return (true);
