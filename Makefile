@@ -18,7 +18,7 @@ SRC		= 	main.c app.c \
 			tokenization/utils_1.c \
 			tokenization/validate_syntax_and_variables.c \
 			tokenization/lst_utils_1.c \
-			expansion/var_expander.c \
+			expansion/expand_variables.c \
 			expansion/var_expander_utils.c \
 			expansion/identify_var.c \
 			expansion/quotes_handler.c \

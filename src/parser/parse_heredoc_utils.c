@@ -41,7 +41,7 @@ static char	*get_expanded_var_line(t_main *main_data, char *line)
 	{
 		if (ft_strchr(words[i], '$'))
 		{
-			words[i] = var_expander_heredoc(main_data, words[i]);
+			words[i] = expand_variables_in_heredoc(main_data, words[i]);
 			if (!words[i])
 				return (NULL);
 		}

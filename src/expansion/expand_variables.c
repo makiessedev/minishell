@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-static void	update_status(t_token **token_node, char c)
+static void	toggle_quote_mode(t_token **token_node, char c)
 {
 	if (c == '\'' && (*token_node)->status == NORMAL_MODE)
 		(*token_node)->status = SINGLE_QUOTE;
@@ -12,7 +12,7 @@ static void	update_status(t_token **token_node, char c)
 		(*token_node)->status = NORMAL_MODE;
 }
 
-static bool	is_next_char_a_sep(char c)
+static bool	is_separator(char c)
 {
 	if (c == '$' || c == ' ' || c == '=' || c == '\0')
 		return (true);
@@ -20,7 +20,7 @@ static bool	is_next_char_a_sep(char c)
 		return (false);
 }
 
-static bool	var_between_quotes(char *str, int i)
+static bool	is_var_enclosed_in_quotes(char *str, int i)
 {
 	if (i > 0)
 	{
@@ -32,7 +32,7 @@ static bool	var_between_quotes(char *str, int i)
 	return (false);
 }
 
-int	var_expander(t_main *main_data, t_token **token_lst)
+int	expand_variables(t_main *main_data, t_token **token_lst)
 {
 	t_token	*temp;
 	int		i;
@@ -45,10 +45,10 @@ int	var_expander(t_main *main_data, t_token **token_lst)
 			i = 0;
 			while (temp->token[i])
 			{
-				update_status(&temp, temp->token[i]);
+				toggle_quote_mode(&temp, temp->token[i]);
 				if (temp->token[i] == '$'
-					&& is_next_char_a_sep(temp->token[i + 1]) == false
-					&& var_between_quotes(temp->token, i) == false
+					&& is_separator(temp->token[i + 1]) == false
+					&& is_var_enclosed_in_quotes(temp->token, i) == false
 					&& (temp->status == NORMAL_MODE || temp->status == DOUBLE_QUOTE))
 					replace_var(&temp,
 						recover_val(temp, temp->token + i, main_data), i);
@@ -61,7 +61,7 @@ int	var_expander(t_main *main_data, t_token **token_lst)
 	return (0);
 }
 
-char	*var_expander_heredoc(t_main *main_data, char *str)
+char	*expand_variables_in_heredoc(t_main *main_data, char *str)
 {
 	int	i;
 
@@ -69,8 +69,8 @@ char	*var_expander_heredoc(t_main *main_data, char *str)
 	while (str[i])
 	{
 		if (str[i] == '$'
-			&& is_next_char_a_sep(str[i + 1]) == false
-			&& var_between_quotes(str, i) == false)
+			&& is_separator(str[i + 1]) == false
+			&& is_var_enclosed_in_quotes(str, i) == false)
 			str = replace_str_heredoc(str, recover_val(NULL, str + i, main_data), i);
 		else
 			i++;
