@@ -1,4 +1,4 @@
-int	check_if_var(t_token **token_lst);
+int	validate_syntax_and_variables(t_token **token_lst);
 bool	parse_user_input(t_main *data);
 t_token	*lst_new_token(char *str, char *str_backup, int type, int status);
 void	lst_add_back_token(t_token **alst, t_token *new_node);

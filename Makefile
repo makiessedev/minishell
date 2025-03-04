@@ -16,7 +16,7 @@ SRC		= 	main.c app.c \
 			tokenization/parse_user_input.c \
 			tokenization/tokenization.c \
 			tokenization/utils_1.c \
-			tokenization/check_if_var.c \
+			tokenization/validate_syntax_and_variables.c \
 			tokenization/lst_utils_1.c \
 			expansion/var_expander.c \
 			expansion/var_expander_utils.c \

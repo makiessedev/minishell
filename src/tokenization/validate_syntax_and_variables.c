@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-static void	variable_check(t_token **token_node)
+static void	detect_variable(t_token **token_node)
 {
 	int	i;
 
@@ -18,7 +18,7 @@ static void	variable_check(t_token **token_node)
 	}
 }
 
-static bool	consecutive_ops(t_token *token_node)
+static bool	has_consecutive_operators(t_token *token_node)
 {
 	if (token_node->prev)
 	{
@@ -32,14 +32,14 @@ static bool	consecutive_ops(t_token *token_node)
 	return (false);
 }
 
-static int	check_consecutives(t_token **token_lst)
+static int	validate_operator_sequence(t_token **token_lst)
 {
 	t_token	*temp;
 
 	temp = *token_lst;
 	while (temp)
 	{
-		if (consecutive_ops(temp) == true)
+		if (has_consecutive_operators(temp) == true)
 		{
 			if (temp->type == END_TOKEN && temp->prev && temp->prev->type > PIPE_TOKEN)
 				throw_message_error("syntax error near unexpected token", "newline", true);
@@ -56,7 +56,7 @@ static int	check_consecutives(t_token **token_lst)
 }
 
 
-int	check_if_var(t_token **token_lst)
+int	validate_syntax_and_variables(t_token **token_lst)
 {
 	t_token	*temp;
 
@@ -68,8 +68,8 @@ int	check_if_var(t_token **token_lst)
 	}
 	while (temp)
 	{
-		variable_check(&temp);
-		if (check_consecutives(&temp) == EXIT_FAILURE)
+		detect_variable(&temp);
+		if (validate_operator_sequence(&temp) == EXIT_FAILURE)
 			return (EXIT_FAILURE);
 		temp = temp->next;
 	}

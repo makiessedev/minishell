@@ -23,7 +23,7 @@ bool	parse_user_input(t_main *main_data)
 		return (false);
 	if (main_data->token->type == END_TOKEN)
 		return (false);
-	if (check_if_var(&main_data->token) == EXIT_FAILURE)
+	if (validate_syntax_and_variables(&main_data->token) == EXIT_FAILURE)
 		return (false);
 	var_expander(main_data, &main_data->token);
 	handle_quotes(main_data);
