@@ -23,7 +23,7 @@ int	expand_variables(t_main *main_data, t_token **token_lst)
 			{
 				toggle_quote_mode(&temp, temp->token[i]);
 				if (should_expand_var(temp, i))
-					process_variable_replacement(&temp, recover_val(temp, temp->token + i, main_data), i);
+					process_variable_replacement(&temp, resolve_variable_value(temp, temp->token + i, main_data), i);
 				else
 					i++;
 			}
@@ -43,7 +43,7 @@ char	*expand_variables_in_heredoc(t_main *main_data, char *str)
 		if (str[i] == '$'
 			&& is_separator(str[i + 1]) == false
 			&& is_var_enclosed_in_quotes(str, i) == false)
-			str = replace_variable_in_heredoc(str, recover_val(NULL, str + i, main_data), i);
+			str = replace_variable_in_heredoc(str, resolve_variable_value(NULL, str + i, main_data), i);
 		else
 			i++;
 	}

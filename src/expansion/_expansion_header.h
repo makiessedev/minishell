@@ -5,7 +5,7 @@ int	count_len(char *str, int count, int i);
 bool	quotes_in_string(char *str);
 int	handle_quotes(t_main *data);
 int	remove_quotes(t_token **token_node);
-char	*recover_val(t_token *token, char *str, t_main *data);
+char	*resolve_variable_value(t_token *token, char *str, t_main *data);
 int	process_variable_replacement(t_token **token_node, char *var_value, int index);
 char	*replace_variable_in_heredoc(char *str, char *var_value, int index);
 void	copy_var_value(char *new_str, char *var_value, int *j);

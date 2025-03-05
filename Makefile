@@ -23,8 +23,7 @@ SRC		= 	main.c app.c \
 			expansion/identify_var.c \
 			expansion/quotes_handler.c \
 			expansion/quotes_remover.c \
-			expansion/recover_value.c \
-			expansion/replace_var.c \
+			expansion/process_variables.c \
 			expansion/utils.c \
 			parser/create_commands.c \
 			parser/parse_word.c \
