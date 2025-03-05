@@ -1,5 +1,13 @@
 #include "minishell.h"
 
+static bool	should_expand_var(t_token *temp, int i)
+{
+	return (temp->token[i] == '$'
+		&& !is_separator(temp->token[i + 1])
+		&& !is_var_enclosed_in_quotes(temp->token, i)
+		&& (temp->status == NORMAL_MODE || temp->status == DOUBLE_QUOTE));
+}
+
 int	expand_variables(t_main *main_data, t_token **token_lst)
 {
 	t_token	*temp;
@@ -14,12 +22,8 @@ int	expand_variables(t_main *main_data, t_token **token_lst)
 			while (temp->token[i])
 			{
 				toggle_quote_mode(&temp, temp->token[i]);
-				if (temp->token[i] == '$'
-					&& is_separator(temp->token[i + 1]) == false
-					&& is_var_enclosed_in_quotes(temp->token, i) == false
-					&& (temp->status == NORMAL_MODE || temp->status == DOUBLE_QUOTE))
-					replace_var(&temp,
-						recover_val(temp, temp->token + i, main_data), i);
+				if (should_expand_var(temp, i))
+					replace_var(&temp, recover_val(temp, temp->token + i, main_data), i);
 				else
 					i++;
 			}
