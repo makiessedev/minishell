@@ -1,4 +1,4 @@
-bool	is_var_compliant(char c);
+//bool	is_var_compliant(char c);
 int	var_length(char *str);
 char	*identify_var(char *str);
 int	count_len(char *str, int count, int i);
@@ -13,3 +13,6 @@ char	*get_new_token_string(char *oldstr, char *var_value,
 int newstr_size, int index);
 int	expand_variables(t_main *data, t_token **token_lst);
 char	*expand_variables_in_heredoc(t_main *data, char *str);
+void	toggle_quote_mode(t_token **token_node, char c);
+bool	is_separator(char c);
+bool	is_var_enclosed_in_quotes(char *str, int i);
