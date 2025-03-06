@@ -76,3 +76,4 @@ char	*replace_variable(t_token **token_node, char *str, char *var_value, int ind
 	}
 	return (newstr);
 }
+

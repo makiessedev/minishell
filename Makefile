@@ -20,11 +20,11 @@ SRC		= 	main.c app.c \
 			tokenization/lst_utils_1.c \
 			expansion/expand_variables.c \
 			expansion/var_expander_utils.c \
-			expansion/identify_var.c \
 			expansion/quotes_handler.c \
 			expansion/quotes_remover.c \
 			expansion/process_variables.c \
 			expansion/utils.c \
+			expansion/utils2.c \
 			parser/create_commands.c \
 			parser/parse_word.c \
 			parser/fill_args_echo.c \

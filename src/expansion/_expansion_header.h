@@ -1,4 +1,3 @@
-//bool	is_var_compliant(char c);
 int	var_length(char *str);
 char	*identify_var(char *str);
 int	count_len(char *str, int count, int i);

@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-bool	is_valid_var(char c)
+static bool	is_valid_var(char c)
 {
 	if (ft_isalnum(c) == 0 && c != '_')
 		return (false);
