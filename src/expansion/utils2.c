@@ -55,6 +55,5 @@ char	*identify_var(char *str)
 		return (NULL);
 	tmp = ft_strjoin(var, "=");
 	erase_pointer(var);
-	var = tmp;
-	return (var);
+	return (tmp);
 }

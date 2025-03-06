@@ -67,8 +67,7 @@ int	process_variable_replacement(t_token **token_node, char *var_value, int inde
 	}
 	else
 	{
-		if (replace_variable(token_node, (*token_node)->token, \
-		var_value, index) == NULL)
+		if (replace_variable(token_node, (*token_node)->token, var_value, index) == NULL)
 		{
 			erase_pointer(var_value);
 			return (1);
