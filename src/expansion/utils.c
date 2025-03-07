@@ -66,8 +66,7 @@ char	*replace_variable(t_token **token_node, char *str, char *var_value, int ind
 	char	*newstr;
 	int		newstr_size;
 
-	newstr_size = (ft_strlen(str) - var_length(str + index)
-			+ ft_strlen(var_value));
+	newstr_size = (ft_strlen(str) - var_length(str + index) + ft_strlen(var_value));
 	newstr = get_new_token_string(str, var_value, newstr_size, index);
 	if (token_node && *token_node)
 	{
