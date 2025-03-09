@@ -13,8 +13,7 @@ void	copy_var_value(char *new_str, char *var_value, int *j)
 	}
 }
 
-char	*get_new_token_string(char *oldstr, char *var_value,
-		int newstr_size, int index)
+char	*get_new_token_string(char *oldstr, char *var_value, int newstr_size, int index)
 {
 	int		i;
 	int		j;
