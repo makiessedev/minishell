@@ -1,102 +1,72 @@
 NAME	= minishell
 
 CC		= cc
-CFLAGS	= -Werror -Wextra -Wall
-
+CFLAGS	= -Wall -Wextra -Werror
 SRC_PATH = ./src/
 OBJ_PATH = ./temp/
 INC_PATH = ./headers/
-SRC		= 	main.c app.c \
-			utils/initial_configs.c \
-			env/env.c \
-			env/env_set.c \
-			error/throw_command_error.c \
-			error/throw_message_error.c \
-			error/util.c \
-			tokenization/process_user_command.c \
-			tokenization/tokenization.c \
-			tokenization/utils_1.c \
-			tokenization/validate_syntax_and_variables.c \
-			tokenization/lst_utils_1.c \
-			expansion/expand_variables.c \
-			expansion/var_expander_utils.c \
-			expansion/quotes_handler.c \
-			expansion/quotes_remover.c \
-			expansion/process_variables.c \
-			expansion/utils.c \
-			expansion/utils2.c \
-			parser/create_commands.c \
-			parser/parse_word.c \
-			parser/fill_args_echo.c \
-			parser/fill_args_echo_utils.c \
-			parser/fill_args_default.c \
-			parser/parse_input.c \
-			parser/parse_trunc.c \
-			parser/parse_append.c \
-			parser/parse_heredoc.c \
-			parser/parse_heredoc_utils.c \
-			parser/parse_pipe.c \
-			parser/cmd_lst_utils.c \
-			parser/cmd_lst_utils_cleanup.c \
-			commands/export_builtin.c \
-			commands/unset_builtin.c \
-			commands/cd_builtin.c \
-			commands/env_builtin.c \
-			commands/pwd_builtin.c \
-			commands/echo_builtin.c \
-			commands/exit_builtin.c \
-			run/run.c \
-			run/run_cmd.c \
-			run/run_utils.c \
-			run/parse_path.c \
-			redirections/pipe.c \
-			redirections/file_io.c \
-			utils/exit.c \
-			utils/ft_is_space.c \
-			erase/close_fds.c \
-			erase/erase_input_output.c \
-			erase/erase_main_data.c \
-			erase/erase_pointer.c \
-			erase/erase_tab_string.c
-
-SRCS	= $(addprefix $(SRC_PATH), $(SRC))
-OBJ		= $(SRC:.c=.o)
-OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
-INC		= -I $(INC_PATH) -I $(LIBFT_PATH)
-
 LIBFT_PATH = ./libs/libft/
-LIBFT = ./libs/libft/libft.a
+LIBFT = $(LIBFT_PATH)libft.a
+
+# Encontrar todos os arquivos .c automaticamente
+SRC		= $(shell find $(SRC_PATH) -name "*.c")
+OBJ		= $(patsubst $(SRC_PATH)%, $(OBJ_PATH)%, $(SRC:.c=.o))
+
+INC		= -I $(INC_PATH) -I $(LIBFT_PATH)
 
 all: $(OBJ_PATH) $(LIBFT) $(NAME)
 
 $(OBJ_PATH):
-	mkdir -p $(OBJ_PATH)
-	mkdir -p $(OBJ_PATH)/commands
-	mkdir -p $(OBJ_PATH)/tokenization
-	mkdir -p $(OBJ_PATH)/expansion
-	mkdir -p $(OBJ_PATH)/parser
-	mkdir -p $(OBJ_PATH)/env
-	mkdir -p $(OBJ_PATH)/run
-	mkdir -p $(OBJ_PATH)/utils
-	mkdir -p $(OBJ_PATH)/redirections
-	mkdir -p $(OBJ_PATH)/error
-	mkdir -p $(OBJ_PATH)/erase
+	@mkdir -p $(OBJ_PATH)
+	@mkdir -p $(shell find $(SRC_PATH) -type d | sed "s|$(SRC_PATH)|$(OBJ_PATH)|")
 
+# Compila arquivos .c -> .o
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+	@printf "\033[33mCompiling: \033[34m$<\033[33m... \033[0m"
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+	@printf "\033[32mOK!\033[0m\n"
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC) $(LIBFT) -l readline
+# Cria o executável com uma animacao louca no final
+$(NAME): $(OBJ)
+	@printf "\n"
+	@bash -c ' \
+		spin_chars="🔧 🔩 🛠️ ⚙️"; \
+		for i in $$(seq 1 5); do \
+			for char in $$spin_chars; do \
+				printf "\r%s \033[33mLinking \033[34m$(NAME)\033[33m...\033[0m" "$$char"; \
+				sleep 0.2; \
+			done; \
+		done; \
+		printf "\033[K" \
+	'
+	@$(CC) $(CFLAGS) $(OBJ) -o $@ $(INC) $(LIBFT) -l readline
+	@printf "\r✅ \033[32mCompilation Done!\033[0m"
+	@sleep 1
+	@printf "\033c"
 
+# Compila a Libft
 $(LIBFT):
-	make -C $(LIBFT_PATH)
+	@printf "\r📦\033[33m Compiling libft...\033[0m\n"
+	@make -C $(LIBFT_PATH) --no-print-directory
+	@printf "\033c"
 
+# Limpa os arquivos objetos
 clean:
-	rm -rf $(OBJ_PATH)
-	make -C $(LIBFT_PATH) clean
+	@rm -rf $(OBJ_PATH) 2>/dev/null
+	@make -C $(LIBFT_PATH) clean --no-print-directory
+	@sleep 0.5
+	@printf "\033c"
+	@printf "🗑 \033[31mObjects Cleaned...\033[0m\n"
 
+# Limpa completamente (inclui o binário final(obvio))
 fclean: clean
-	rm -f $(NAME)
-	make -C $(LIBFT_PATH) fclean
+	@rm -f $(NAME)
+	@make -C $(LIBFT_PATH) fclean --no-print-directory
+	@sleep 0.5
+	@printf "\033c"
+	@echo "🗑r  \033[1;31mRemoved \033[33m$(NAME)...\033[0m"
 
+# Recompilar tudo
 re: fclean all
+
+.PHONY: all clean fclean re
