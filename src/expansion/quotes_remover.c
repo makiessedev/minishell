@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-static void	change_status_to_quote(t_token **token_node, int *i)
+static void	set_quote_mode(t_token **token_node, int *i)
 {
 	if ((*token_node)->token[*i] == '\'')
 		(*token_node)->status = SINGLE_QUOTE;
@@ -9,7 +9,7 @@ static void	change_status_to_quote(t_token **token_node, int *i)
 	(*i)++;
 }
 
-static bool	if_quotes_and_default(t_token **token_node, int i)
+static bool	is_quotes_and_normal_mode(t_token **token_node, int i)
 {
 	if (((*token_node)->token[i] == '\'' || (*token_node)->token[i] == '\"')
 		&& (*token_node)->status == NORMAL_MODE)
@@ -18,7 +18,7 @@ static bool	if_quotes_and_default(t_token **token_node, int i)
 		return (false);
 }
 
-static bool	change_back_to_default(t_token **token_node, int *i)
+static bool	reset_to_normal_mode(t_token **token_node, int *i)
 {
 	if (((*token_node)->token[*i] == '\'' && (*token_node)->status == SINGLE_QUOTE)
 		|| ((*token_node)->token[*i] == '\"' && (*token_node)->status == DOUBLE_QUOTE))
@@ -44,12 +44,12 @@ int	remove_quotes(t_token **token_node)
 		return (1);
 	while ((*token_node)->token[i])
 	{
-		if (if_quotes_and_default(token_node, i) == true)
+		if (is_quotes_and_normal_mode(token_node, i) == true)
 		{
-			change_status_to_quote(token_node, &i);
+			set_quote_mode(token_node, &i);
 			continue ;
 		}
-		else if (change_back_to_default(token_node, &i) == true)
+		else if (reset_to_normal_mode(token_node, &i) == true)
 			continue ;
 		new_line[j++] = (*token_node)->token[i++];
 	}
