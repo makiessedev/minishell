@@ -1,10 +1,10 @@
 #include "minishell.h"
 
-int	count_len(char *str, int count, int i)
+int	calculate_length_without_quotes(char *str, int count, int i)
 {
 	int	status;
 
-	status = 0;
+	status = NORMAL_MODE;
 	while (str[i])
 	{
 		if ((str[i] == '\'' || str[i] == '\"') && status == NORMAL_MODE)
@@ -16,8 +16,7 @@ int	count_len(char *str, int count, int i)
 			i++;
 			continue ;
 		}
-		else if ((str[i] == '\'' && status == SINGLE_QUOTE)
-			|| (str[i] == '\"' && status == DOUBLE_QUOTE))
+		else if ((str[i] == '\'' && status == SINGLE_QUOTE) || (str[i] == '\"' && status == DOUBLE_QUOTE))
 		{
 			status = NORMAL_MODE;
 			i++;
@@ -29,7 +28,7 @@ int	count_len(char *str, int count, int i)
 	return (count + 1);
 }
 
-bool	quotes_in_string(char *str)
+bool	contains_quotes(char *str)
 {
 	int	i;
 
@@ -43,14 +42,14 @@ bool	quotes_in_string(char *str)
 	return (false);
 }
 
-int	handle_quotes(t_main *main_data)
+int	process_and_remove_quotes(t_main *main_data)
 {
 	t_token	*temp;
 
 	temp = main_data->token;
 	while (temp)
 	{
-		if (quotes_in_string(temp->token) == true && (!temp->prev || (temp->prev && temp->prev->type != HEREDOC_TOKEN)))
+		if (contains_quotes(temp->token) == true && (!temp->prev || (temp->prev && temp->prev->type != HEREDOC_TOKEN)))
 			remove_quotes(&temp);
 		temp = temp->next;
 	}

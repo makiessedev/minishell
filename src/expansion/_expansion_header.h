@@ -1,8 +1,8 @@
 int	var_length(char *str);
 char	*identify_var(char *str);
-int	count_len(char *str, int count, int i);
-bool	quotes_in_string(char *str);
-int	handle_quotes(t_main *data);
+int	calculate_length_without_quotes(char *str, int count, int i);
+bool	contains_quotes(char *str);
+int	process_and_remove_quotes(t_main *data);
 int	remove_quotes(t_token **token_node);
 char	*resolve_variable_value(t_token *token, char *str, t_main *data);
 int	process_variable_replacement(t_token **token_node, char *var_value, int index);

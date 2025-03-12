@@ -26,7 +26,7 @@ bool	process_user_command(t_main *main_data)
 	if (validate_syntax_and_variables(&main_data->token) == EXIT_FAILURE)
 		return (false);
 	expand_variables(main_data, &main_data->token);
-	handle_quotes(main_data);
+	process_and_remove_quotes(main_data);
 	create_commands(main_data, main_data->token);
 	return (true);
 }

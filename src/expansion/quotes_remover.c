@@ -39,7 +39,7 @@ int	remove_quotes(t_token **token_node)
 
 	i = 0;
 	j = 0;
-	new_line = malloc(sizeof(char) * count_len((*token_node)->token, i, i));
+	new_line = malloc(sizeof(char) * calculate_length_without_quotes((*token_node)->token, i, i));
 	if (!new_line)
 		return (1);
 	while ((*token_node)->token[i])
