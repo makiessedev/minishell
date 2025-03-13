@@ -6,19 +6,19 @@ int	run_builtin(t_main *main_data, t_command *cmd)
 
 	ret = CMD_NOT_FOUND;
 	if (ft_strncmp(cmd->command, "cd", 3) == 0)
-		ret = cd_builtin(main_data, cmd->args);
+		ret = cd(main_data, cmd->args);
 	else if (ft_strncmp(cmd->command, "echo", 5) == 0)
-		ret = echo_builtin(main_data, cmd->args);
+		ret = echo(main_data, cmd->args);
 	else if (ft_strncmp(cmd->command, "env", 4) == 0)
-		ret = env_builtin(main_data, cmd->args);
+		ret = env(main_data, cmd->args);
 	else if (ft_strncmp(cmd->command, "export", 7) == 0)
-		ret = export_builtin(main_data, cmd->args);
+		ret = export(main_data, cmd->args);
 	else if (ft_strncmp(cmd->command, "pwd", 4) == 0)
-		ret = pwd_builtin(main_data, cmd->args);
+		ret = pwd(main_data, cmd->args);
 	else if (ft_strncmp(cmd->command, "unset", 6) == 0)
-		ret = unset_builtin(main_data, cmd->args);
+		ret = unset(main_data, cmd->args);
 	else if (ft_strncmp(cmd->command, "exit", 5) == 0)
-		ret = exit_builtin(main_data, cmd->args);
+		ret = exit(main_data, cmd->args);
 	return (ret);
 }
 

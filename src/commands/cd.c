@@ -51,7 +51,7 @@ static bool	change_dir(t_main *main_data, char *path)
 	return (true);
 }
 
-int	cd_builtin(t_main *main_data, char **args)
+int	cd(t_main *main_data, char **args)
 {
 	char	*path;
 
