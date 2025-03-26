@@ -15,7 +15,7 @@ char **copy_in_new_tab(int len, char **new_tab, t_command *last_cmd,
 void remove_empty_var_args(t_token **tokens);
 int create_args_echo_mode(t_token **token_node, t_command *last_cmd);
 int add_args_echo_mode(t_token **token_node, t_command *last_cmd);
-void parse_append(t_command **last_cmd, t_token **token_lst);
+void append_parser(t_command **last_cmd, t_token **token_lst);
 bool fill_heredoc(t_main *main_data, t_io_fds *io, int fd);
 bool get_heredoc(t_main *main_data, t_io_fds *io);
 void parse_heredoc(t_main *main_data, t_command **last_cmd,
@@ -25,7 +25,7 @@ void open_outfile_trunc(t_io_fds *io, char *file, char *var_filename);
 void open_infile(t_io_fds *io, char *file, char *original_filename);
 void open_outfile_append(t_io_fds *io, char *file, char *var_filename);
 
-void parse_input(t_command **last_cmd, t_token **token_lst);
-void parse_pipe(t_command **cmd, t_token **token_lst);
-void parse_trunc(t_command **last_cmd, t_token **token_lst);
-void parse_word(t_command **cmd, t_token **token_lst);
+void input_parser(t_command **last_cmd, t_token **token_lst);
+void pipe_parser(t_command **cmd, t_token **token_lst);
+void redirect_parser(t_command **last_cmd, t_token **token_lst);
+void word_parser(t_command **cmd, t_token **token_lst);

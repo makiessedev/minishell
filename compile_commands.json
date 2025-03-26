@@ -1319,12 +1319,12 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/parse_trunc.o",
-      "src/parser/parse_trunc.c"
+      "temp/parser/heredoc.o",
+      "src/parser/heredoc.c"
     ],
     "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parse_trunc.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parse_trunc.o"
+    "file": "/home/mmorais/root/projects/42/minishell/src/parser/heredoc.c",
+    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/heredoc.o"
   },
   {
     "arguments": [
@@ -1338,12 +1338,50 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/parse_heredoc.o",
-      "src/parser/parse_heredoc.c"
+      "temp/parser/parsers.o",
+      "src/parser/parsers.c"
     ],
     "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parse_heredoc.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parse_heredoc.o"
+    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parsers.c",
+    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parsers.o"
+  },
+  {
+    "arguments": [
+      "/usr/sbin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/parser/heredoc_utils.o",
+      "src/parser/heredoc_utils.c"
+    ],
+    "directory": "/home/mmorais/root/projects/42/minishell",
+    "file": "/home/mmorais/root/projects/42/minishell/src/parser/heredoc_utils.c",
+    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/heredoc_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/sbin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/parser/parsers_util.o",
+      "src/parser/parsers_util.c"
+    ],
+    "directory": "/home/mmorais/root/projects/42/minishell",
+    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parsers_util.c",
+    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parsers_util.o"
   },
   {
     "arguments": [
@@ -1376,69 +1414,12 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/parse_input.o",
-      "src/parser/parse_input.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parse_input.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parse_input.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
       "temp/parser/fill_args_echo.o",
       "src/parser/fill_args_echo.c"
     ],
     "directory": "/home/mmorais/root/projects/42/minishell",
     "file": "/home/mmorais/root/projects/42/minishell/src/parser/fill_args_echo.c",
     "output": "/home/mmorais/root/projects/42/minishell/temp/parser/fill_args_echo.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/parser/parse_pipe.o",
-      "src/parser/parse_pipe.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parse_pipe.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parse_pipe.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/parser/parse_append.o",
-      "src/parser/parse_append.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parse_append.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parse_append.o"
   },
   {
     "arguments": [
@@ -1477,43 +1458,5 @@
     "directory": "/home/mmorais/root/projects/42/minishell",
     "file": "/home/mmorais/root/projects/42/minishell/src/parser/cmd_lst_utils.c",
     "output": "/home/mmorais/root/projects/42/minishell/temp/parser/cmd_lst_utils.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/parser/parse_heredoc_utils.o",
-      "src/parser/parse_heredoc_utils.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parse_heredoc_utils.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parse_heredoc_utils.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/parser/parse_word.o",
-      "src/parser/parse_word.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parse_word.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parse_word.o"
   }
 ]

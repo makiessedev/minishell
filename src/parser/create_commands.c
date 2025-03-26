@@ -32,17 +32,17 @@ void	create_commands(t_main *main_data, t_token *token)
 		if (temp == token)
 			lst_add_back_cmd(&main_data->cmd, lst_new_cmd(false));
 		if (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
-			parse_word(&main_data->cmd, &temp);
+			word_parser(&main_data->cmd, &temp);
 		else if (temp->type == INPUT_TOKEN)
-			parse_input(&main_data->cmd, &temp);
+			input_parser(&main_data->cmd, &temp);
 		else if (temp->type == REDIRECT_TOKEN)
-			parse_trunc(&main_data->cmd, &temp);
+			redirect_parser(&main_data->cmd, &temp);
 		else if (temp->type == HEREDOC_TOKEN)
 			parse_heredoc(main_data, &main_data->cmd, &temp);
 		else if (temp->type == APPEND_TOKEN)
-			parse_append(&main_data->cmd, &temp);
+			append_parser(&main_data->cmd, &temp);
 		else if (temp->type == PIPE_TOKEN)
-			parse_pipe(&main_data->cmd, &temp);
+			pipe_parser(&main_data->cmd, &temp);
 		else if (temp->type == END_TOKEN)
 			break ;
 	}

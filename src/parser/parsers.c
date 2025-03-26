@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void parse_word(t_command **cmd, t_token **token_lst) {
+void word_parser(t_command **cmd, t_token **token_lst) {
   t_token *temp;
   t_command *last_cmd;
 
@@ -17,7 +17,7 @@ void parse_word(t_command **cmd, t_token **token_lst) {
   *token_lst = temp;
 }
 
-void parse_trunc(t_command **last_cmd, t_token **token_lst) {
+void redirect_parser(t_command **last_cmd, t_token **token_lst) {
   t_token *temp;
   t_command *cmd;
 
@@ -32,7 +32,7 @@ void parse_trunc(t_command **last_cmd, t_token **token_lst) {
   *token_lst = temp;
 }
 
-void parse_pipe(t_command **cmd, t_token **token_lst) {
+void pipe_parser(t_command **cmd, t_token **token_lst) {
   t_command *last_cmd;
 
   last_cmd = lst_last_cmd(*cmd);
@@ -41,7 +41,7 @@ void parse_pipe(t_command **cmd, t_token **token_lst) {
   *token_lst = (*token_lst)->next;
 }
 
-void parse_input(t_command **last_cmd, t_token **token_lst) {
+void input_parser(t_command **last_cmd, t_token **token_lst) {
   t_token *temp;
   t_command *cmd;
 
@@ -56,7 +56,7 @@ void parse_input(t_command **last_cmd, t_token **token_lst) {
   *token_lst = temp;
 }
 
-void parse_append(t_command **last_cmd, t_token **token_lst) {
+void append_parser(t_command **last_cmd, t_token **token_lst) {
   t_token *temp;
   t_command *cmd;
 
