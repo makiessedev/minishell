@@ -1,5 +1,3 @@
-void lst_delone_cmd(t_command *lst, void (*del)(void *));
-void lst_clear_cmd(t_command **lst, void (*del)(void *));
 t_command *lst_new_cmd(bool value);
 void lst_add_back_cmd(t_command **alst, t_command *new_node);
 t_command *lst_last_cmd(t_command *cmd);
