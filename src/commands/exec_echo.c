@@ -36,7 +36,7 @@ static void	echo_print_args(char **args, bool n_flag, int i)
 	}
 }
 
-int	echo_builtin(t_main *main_data, char **args)
+int	exec_echo(t_main *main_data, char **args)
 {
 	int		i;
 	bool	n_flag;

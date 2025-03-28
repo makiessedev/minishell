@@ -73,7 +73,7 @@ static bool	is_quiet_mode(t_main *main_data)
 	return (false);
 }
 
-int	exit_builtin(t_main *main_data, char **args)
+int	exec_exit(t_main *main_data, char **args)
 {
 	int		exit_code;
 	bool	error;

@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	unset_builtin(t_main *main_data, char **args)
+int	exec_unset(t_main *main_data, char **args)
 {
 	int	i;
 	int	idx;

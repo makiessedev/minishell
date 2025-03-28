@@ -1,7 +1,7 @@
-int	cd_builtin(t_main *main_data, char **args);
-int	echo_builtin(t_main *main_data, char **args);
-int	env_builtin(t_main *main_data, char **args);
-int	exit_builtin(t_main *main_data, char **args);
-int	export_builtin(t_main *main_data, char **args);
-int	pwd_builtin(t_main *main_data, char **args);
-int	unset_builtin(t_main *main_data, char **args);
+int	exec_cd(t_main *main_data, char **args);
+int	exec_echo(t_main *main_data, char **args);
+int	exec_env(t_main *main_data, char **args);
+int	exec_exit(t_main *main_data, char **args);
+int	exec_export(t_main *main_data, char **args);
+int	exec_pwd(t_main *main_data, char **args);
+int	exec_unset(t_main *main_data, char **args);

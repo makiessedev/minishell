@@ -13,7 +13,7 @@ static char	**get_key_value_pair(char *arg)
 	return (tmp);
 }
 
-int	export_builtin(t_main *main_data, char **args)
+int	exec_export(t_main *main_data, char **args)
 {
 	int		i;
 	char	**tmp;
@@ -22,7 +22,7 @@ int	export_builtin(t_main *main_data, char **args)
 	ret = EXIT_SUCCESS;
 	i = 1;
 	if (!args[i])
-		return (env_builtin(main_data, NULL));
+		return (exec_env(main_data, NULL));
 	while (args[i])
 	{
 		if (!is_valid_env_var_key(args[i]))

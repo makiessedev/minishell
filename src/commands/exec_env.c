@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	env_builtin(t_main *main_data, char **args)
+int	exec_env(t_main *main_data, char **args)
 {
 	int	i;
 
