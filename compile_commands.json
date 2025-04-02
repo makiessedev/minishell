@@ -1,7 +1,7 @@
 [
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -10,13 +10,13 @@
       "ft_atoi.o",
       "ft_atoi.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_atoi.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_atoi.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_atoi.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_atoi.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -25,13 +25,13 @@
       "ft_bzero.o",
       "ft_bzero.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_bzero.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_bzero.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_bzero.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_bzero.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -40,13 +40,13 @@
       "ft_isalnum.o",
       "ft_isalnum.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isalnum.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isalnum.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_isalnum.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_isalnum.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -55,13 +55,13 @@
       "ft_isalpha.o",
       "ft_isalpha.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isalpha.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isalpha.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_isalpha.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_isalpha.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -70,13 +70,13 @@
       "ft_tolower.o",
       "ft_tolower.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_tolower.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_tolower.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_tolower.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_tolower.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -85,13 +85,13 @@
       "ft_isascii.o",
       "ft_isascii.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isascii.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isascii.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_isascii.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_isascii.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -100,13 +100,13 @@
       "ft_isdigit.o",
       "ft_isdigit.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isdigit.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isdigit.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_isdigit.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_isdigit.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -115,13 +115,13 @@
       "ft_isprint.o",
       "ft_isprint.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isprint.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_isprint.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_isprint.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_isprint.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -130,13 +130,13 @@
       "ft_memchr.o",
       "ft_memchr.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memchr.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memchr.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_memchr.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_memchr.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -145,13 +145,13 @@
       "ft_memcpy.o",
       "ft_memcpy.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memcpy.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memcpy.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_memcpy.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_memcpy.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -160,13 +160,13 @@
       "ft_memcmp.o",
       "ft_memcmp.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memcmp.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memcmp.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_memcmp.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_memcmp.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -175,13 +175,13 @@
       "ft_memset.o",
       "ft_memset.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memset.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memset.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_memset.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_memset.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -190,13 +190,13 @@
       "ft_strchr.o",
       "ft_strchr.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strchr.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strchr.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strchr.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strchr.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -205,13 +205,13 @@
       "ft_strlcat.o",
       "ft_strlcat.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strlcat.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strlcat.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strlcat.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strlcat.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -220,13 +220,13 @@
       "ft_toupper.o",
       "ft_toupper.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_toupper.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_toupper.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_toupper.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_toupper.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -235,13 +235,13 @@
       "ft_strlcpy.o",
       "ft_strlcpy.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strlcpy.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strlcpy.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strlcpy.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strlcpy.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -250,13 +250,13 @@
       "ft_strlen.o",
       "ft_strlen.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strlen.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strlen.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strlen.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strlen.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -265,13 +265,13 @@
       "ft_strncmp.o",
       "ft_strncmp.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strncmp.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strncmp.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strncmp.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strncmp.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -280,13 +280,13 @@
       "ft_calloc.o",
       "ft_calloc.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_calloc.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_calloc.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_calloc.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_calloc.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -295,13 +295,13 @@
       "ft_strrchr.o",
       "ft_strrchr.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strrchr.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strrchr.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strrchr.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strrchr.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -310,13 +310,13 @@
       "ft_memmove.o",
       "ft_memmove.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memmove.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_memmove.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_memmove.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_memmove.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -325,13 +325,13 @@
       "ft_strdup.o",
       "ft_strdup.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strdup.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strdup.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strdup.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strdup.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -340,13 +340,13 @@
       "ft_strnstr.o",
       "ft_strnstr.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strnstr.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strnstr.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strnstr.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strnstr.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -355,13 +355,13 @@
       "ft_strjoin.o",
       "ft_strjoin.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strjoin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strjoin.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strjoin.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strjoin.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -370,13 +370,13 @@
       "ft_putchar_fd.o",
       "ft_putchar_fd.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putchar_fd.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putchar_fd.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_putchar_fd.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_putchar_fd.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -385,13 +385,13 @@
       "ft_putstr_fd.o",
       "ft_putstr_fd.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putstr_fd.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putstr_fd.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_putstr_fd.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_putstr_fd.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -400,13 +400,13 @@
       "ft_putendl_fd.o",
       "ft_putendl_fd.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putendl_fd.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putendl_fd.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_putendl_fd.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_putendl_fd.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -415,13 +415,13 @@
       "ft_putnbr_fd.o",
       "ft_putnbr_fd.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putnbr_fd.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_putnbr_fd.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_putnbr_fd.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_putnbr_fd.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -430,13 +430,13 @@
       "ft_strmapi.o",
       "ft_strmapi.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strmapi.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strmapi.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strmapi.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strmapi.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -445,13 +445,13 @@
       "ft_strtrim.o",
       "ft_strtrim.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strtrim.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_strtrim.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_strtrim.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_strtrim.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -460,13 +460,13 @@
       "ft_substr.o",
       "ft_substr.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_substr.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_substr.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_substr.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_substr.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -475,13 +475,13 @@
       "ft_split.o",
       "ft_split.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_split.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_split.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_split.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_split.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -490,13 +490,13 @@
       "ft_itoa.o",
       "ft_itoa.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_itoa.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_itoa.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_itoa.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_itoa.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -505,716 +505,13 @@
       "ft_striteri.o",
       "ft_striteri.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell/libs/libft",
-    "file": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_striteri.c",
-    "output": "/home/mmorais/root/projects/42/minishell/libs/libft/ft_striteri.o"
+    "directory": "/home/mmorais/projects/42/minishell/libs/libft",
+    "file": "/home/mmorais/projects/42/minishell/libs/libft/ft_striteri.c",
+    "output": "/home/mmorais/projects/42/minishell/libs/libft/ft_striteri.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/tokenization/tokenization.o",
-      "src/tokenization/tokenization.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/tokenization/tokenization.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/tokenization/tokenization.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/tokenization/process_user_command.o",
-      "src/tokenization/process_user_command.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/tokenization/process_user_command.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/tokenization/process_user_command.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/tokenization/validate_syntax_and_variables.o",
-      "src/tokenization/validate_syntax_and_variables.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/tokenization/validate_syntax_and_variables.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/tokenization/validate_syntax_and_variables.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/tokenization/lst_utils_1.o",
-      "src/tokenization/lst_utils_1.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/tokenization/lst_utils_1.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/tokenization/lst_utils_1.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/tokenization/utils_1.o",
-      "src/tokenization/utils_1.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/tokenization/utils_1.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/tokenization/utils_1.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/commands/echo_builtin.o",
-      "src/commands/echo_builtin.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/commands/echo_builtin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/commands/echo_builtin.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/commands/pwd_builtin.o",
-      "src/commands/pwd_builtin.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/commands/pwd_builtin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/commands/pwd_builtin.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/commands/cd_builtin.o",
-      "src/commands/cd_builtin.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/commands/cd_builtin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/commands/cd_builtin.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/commands/env_builtin.o",
-      "src/commands/env_builtin.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/commands/env_builtin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/commands/env_builtin.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/commands/export_builtin.o",
-      "src/commands/export_builtin.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/commands/export_builtin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/commands/export_builtin.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/commands/unset_builtin.o",
-      "src/commands/unset_builtin.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/commands/unset_builtin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/commands/unset_builtin.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/commands/exit_builtin.o",
-      "src/commands/exit_builtin.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/commands/exit_builtin.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/commands/exit_builtin.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/main.o",
-      "src/main.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/main.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/main.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/utils/initial_configs.o",
-      "src/utils/initial_configs.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/utils/initial_configs.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/utils/initial_configs.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/utils/ft_is_space.o",
-      "src/utils/ft_is_space.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/utils/ft_is_space.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/utils/ft_is_space.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/utils/exit.o",
-      "src/utils/exit.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/utils/exit.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/utils/exit.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/redirections/pipe.o",
-      "src/redirections/pipe.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/redirections/pipe.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/redirections/pipe.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/redirections/file_io.o",
-      "src/redirections/file_io.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/redirections/file_io.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/redirections/file_io.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/app.o",
-      "src/app.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/app.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/app.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/run/run.o",
-      "src/run/run.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/run/run.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/run/run.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/run/parse_path.o",
-      "src/run/parse_path.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/run/parse_path.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/run/parse_path.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/run/run_utils.o",
-      "src/run/run_utils.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/run/run_utils.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/run/run_utils.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/run/run_cmd.o",
-      "src/run/run_cmd.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/run/run_cmd.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/run/run_cmd.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/env/env.o",
-      "src/env/env.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/env/env.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/env/env.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/env/env_set.o",
-      "src/env/env_set.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/env/env_set.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/env/env_set.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/quotes_remover/quotes_remover.o",
-      "src/quotes_remover/quotes_remover.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/quotes_remover/quotes_remover.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/quotes_remover/quotes_remover.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/quotes_remover/utils.o",
-      "src/quotes_remover/utils.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/quotes_remover/utils.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/quotes_remover/utils.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/erase/erase_input_output.o",
-      "src/erase/erase_input_output.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/erase/erase_input_output.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/erase/erase_input_output.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/erase/erase_main_data.o",
-      "src/erase/erase_main_data.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/erase/erase_main_data.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/erase/erase_main_data.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/erase/erase_tab_string.o",
-      "src/erase/erase_tab_string.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/erase/erase_tab_string.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/erase/erase_tab_string.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/erase/erase_pointer.o",
-      "src/erase/erase_pointer.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/erase/erase_pointer.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/erase/erase_pointer.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/erase/close_fds.o",
-      "src/erase/close_fds.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/erase/close_fds.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/erase/close_fds.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/error/throw_command_error.o",
-      "src/error/throw_command_error.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/error/throw_command_error.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/error/throw_command_error.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/error/throw_message_error.o",
-      "src/error/throw_message_error.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/error/throw_message_error.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/error/throw_message_error.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/error/util.o",
-      "src/error/util.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/error/util.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/error/util.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/expansion/expand_variables.o",
-      "src/expansion/expand_variables.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/expansion/expand_variables.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/expansion/expand_variables.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/expansion/utils3.o",
-      "src/expansion/utils3.c"
-    ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/expansion/utils3.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/expansion/utils3.o"
-  },
-  {
-    "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1227,13 +524,32 @@
       "temp/expansion/utils.o",
       "src/expansion/utils.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/expansion/utils.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/expansion/utils.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/expansion/utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/expansion/utils.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/expansion/utils3.o",
+      "src/expansion/utils3.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/expansion/utils3.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/expansion/utils3.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1246,13 +562,13 @@
       "temp/expansion/process_variables.o",
       "src/expansion/process_variables.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/expansion/process_variables.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/expansion/process_variables.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/expansion/process_variables.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/expansion/process_variables.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1265,13 +581,13 @@
       "temp/expansion/utils2.o",
       "src/expansion/utils2.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/expansion/utils2.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/expansion/utils2.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/expansion/utils2.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/expansion/utils2.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1281,16 +597,16 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/cmd_lst_utils_cleanup.o",
-      "src/parser/cmd_lst_utils_cleanup.c"
+      "temp/expansion/expand_variables.o",
+      "src/expansion/expand_variables.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/cmd_lst_utils_cleanup.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/cmd_lst_utils_cleanup.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/expansion/expand_variables.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/expansion/expand_variables.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1300,16 +616,16 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/create_commands.o",
-      "src/parser/create_commands.c"
+      "temp/utils/exit.o",
+      "src/utils/exit.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/create_commands.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/create_commands.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/utils/exit.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/utils/exit.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1319,16 +635,339 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/heredoc.o",
-      "src/parser/heredoc.c"
+      "temp/utils/initial_configs.o",
+      "src/utils/initial_configs.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/heredoc.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/heredoc.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/utils/initial_configs.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/utils/initial_configs.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/utils/ft_is_space.o",
+      "src/utils/ft_is_space.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/utils/ft_is_space.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/utils/ft_is_space.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/erase/erase_pointer.o",
+      "src/erase/erase_pointer.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/erase/erase_pointer.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/erase/erase_pointer.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/erase/erase_command.o",
+      "src/erase/erase_command.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/erase/erase_command.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/erase/erase_command.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/erase/erase_input_output.o",
+      "src/erase/erase_input_output.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/erase/erase_input_output.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/erase/erase_input_output.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/erase/erase_main_data.o",
+      "src/erase/erase_main_data.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/erase/erase_main_data.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/erase/erase_main_data.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/erase/close_fds.o",
+      "src/erase/close_fds.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/erase/close_fds.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/erase/close_fds.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/erase/erase_tab_string.o",
+      "src/erase/erase_tab_string.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/erase/erase_tab_string.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/erase/erase_tab_string.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/env/env.o",
+      "src/env/env.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/env/env.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/env/env.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/env/env2.o",
+      "src/env/env2.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/env/env2.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/env/env2.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/app.o",
+      "src/app.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/app.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/app.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/run/run_utils.o",
+      "src/run/run_utils.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/run/run_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/run/run_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/run/run.o",
+      "src/run/run.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/run/run.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/run/run.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/run/parse_path.o",
+      "src/run/parse_path.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/run/parse_path.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/run/parse_path.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/run/run_cmd.o",
+      "src/run/run_cmd.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/run/run_cmd.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/run/run_cmd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/main.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/redirections/pipe.o",
+      "src/redirections/pipe.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/redirections/pipe.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/redirections/pipe.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/redirections/file_io.o",
+      "src/redirections/file_io.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/redirections/file_io.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/redirections/file_io.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1341,13 +980,13 @@
       "temp/parser/parsers.o",
       "src/parser/parsers.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parsers.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parsers.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/parsers.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/parsers.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1357,16 +996,54 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/heredoc_utils.o",
-      "src/parser/heredoc_utils.c"
+      "temp/parser/heredoc_parser.o",
+      "src/parser/heredoc_parser.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/heredoc_utils.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/heredoc_utils.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/heredoc_parser.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/heredoc_parser.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/parser/echo_args_utils.o",
+      "src/parser/echo_args_utils.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/echo_args_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/echo_args_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/parser/parse_tokens_to_args_echo.o",
+      "src/parser/parse_tokens_to_args_echo.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/parse_tokens_to_args_echo.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/parse_tokens_to_args_echo.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1379,13 +1056,13 @@
       "temp/parser/parsers_util.o",
       "src/parser/parsers_util.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/parsers_util.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/parsers_util.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/parsers_util.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/parsers_util.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1395,16 +1072,16 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/fill_args_default.o",
-      "src/parser/fill_args_default.c"
+      "temp/parser/command_utils.o",
+      "src/parser/command_utils.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/fill_args_default.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/fill_args_default.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/command_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/command_utils.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1414,16 +1091,16 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/fill_args_echo.o",
-      "src/parser/fill_args_echo.c"
+      "temp/parser/heredoc_utils.o",
+      "src/parser/heredoc_utils.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/fill_args_echo.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/fill_args_echo.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/heredoc_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/heredoc_utils.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1433,16 +1110,16 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/fill_args_echo_utils.o",
-      "src/parser/fill_args_echo_utils.c"
+      "temp/parser/create_commands.o",
+      "src/parser/create_commands.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/fill_args_echo_utils.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/fill_args_echo_utils.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/create_commands.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/create_commands.o"
   },
   {
     "arguments": [
-      "/usr/sbin/cc",
+      "/usr/bin/cc",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -1452,11 +1129,334 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/parser/cmd_lst_utils.o",
-      "src/parser/cmd_lst_utils.c"
+      "temp/parser/parse_tokens_to_args.o",
+      "src/parser/parse_tokens_to_args.c"
     ],
-    "directory": "/home/mmorais/root/projects/42/minishell",
-    "file": "/home/mmorais/root/projects/42/minishell/src/parser/cmd_lst_utils.c",
-    "output": "/home/mmorais/root/projects/42/minishell/temp/parser/cmd_lst_utils.o"
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/parser/parse_tokens_to_args.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/parser/parse_tokens_to_args.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/quotes_remover/utils.o",
+      "src/quotes_remover/utils.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/quotes_remover/utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/quotes_remover/utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/quotes_remover/quotes_remover.o",
+      "src/quotes_remover/quotes_remover.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/quotes_remover/quotes_remover.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/quotes_remover/quotes_remover.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_cd.o",
+      "src/commands/exec_cd.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_cd.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_cd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_pwd.o",
+      "src/commands/exec_pwd.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_pwd.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_pwd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_exit.o",
+      "src/commands/exec_exit.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_exit.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_exit.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_unset.o",
+      "src/commands/exec_unset.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_unset.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_unset.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_export.o",
+      "src/commands/exec_export.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_export.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_export.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_echo.o",
+      "src/commands/exec_echo.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_echo.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_echo.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_env.o",
+      "src/commands/exec_env.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_env.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_env.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/tokenization/lst_utils_1.o",
+      "src/tokenization/lst_utils_1.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/tokenization/lst_utils_1.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/tokenization/lst_utils_1.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/tokenization/utils_1.o",
+      "src/tokenization/utils_1.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/tokenization/utils_1.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/tokenization/utils_1.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/tokenization/process_user_command.o",
+      "src/tokenization/process_user_command.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/tokenization/process_user_command.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/tokenization/process_user_command.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/tokenization/validate_syntax_and_variables.o",
+      "src/tokenization/validate_syntax_and_variables.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/tokenization/validate_syntax_and_variables.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/tokenization/validate_syntax_and_variables.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/tokenization/tokenization.o",
+      "src/tokenization/tokenization.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/tokenization/tokenization.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/tokenization/tokenization.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/error/throw_message_error.o",
+      "src/error/throw_message_error.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/error/throw_message_error.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/error/throw_message_error.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/error/throw_command_error.o",
+      "src/error/throw_command_error.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/error/throw_command_error.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/error/throw_command_error.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/error/util.o",
+      "src/error/util.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/error/util.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/error/util.o"
   }
 ]
