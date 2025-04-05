@@ -6,7 +6,6 @@ int count_arguments(t_token *temp);
 int create_args_default_mode(t_token **token_node, t_command *last_cmd);
 int add_args_default_mode(t_token **token_node, t_command *last_cmd);
 int fill_args(t_token **token_node, t_command *last_cmd);
-char *join_vars(t_token **token_node);
 int count_args(t_token *temp);
 char **copy_in_new_tab(int len, char **new_tab, t_command *last_cmd,
                        t_token *tmp);
