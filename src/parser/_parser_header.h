@@ -5,11 +5,11 @@ void create_commands(t_main *main_data, t_token *token);
 int count_arguments(t_token *temp);
 int create_args_default_mode(t_token **token_node, t_command *last_cmd);
 int add_args_default_mode(t_token **token_node, t_command *last_cmd);
-int fill_args(t_token **token_node, t_command *last_cmd);
+int populate_command_args(t_token **token_node, t_command *last_cmd);
 int count_args(t_token *temp);
 char **copy_in_new_tab(int len, char **new_tab, t_command *last_cmd,
                        t_token *tmp);
-void remove_empty_var_args(t_token **tokens);
+void remove_empty_variable_arguments(t_token **tokens);
 int create_args_echo_mode(t_token **token_node, t_command *last_cmd);
 int add_args_echo_mode(t_token **token_node, t_command *last_cmd);
 void append_parser(t_command **last_cmd, t_token **token_lst);

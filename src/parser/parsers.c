@@ -12,7 +12,7 @@ void word_parser(t_command **cmd, t_token **token_lst) {
       last_cmd->command = ft_strdup(temp->token);
       temp = temp->next;
     } else
-      fill_args(&temp, last_cmd);
+      populate_command_args(&temp, last_cmd);
   }
   *token_lst = temp;
 }

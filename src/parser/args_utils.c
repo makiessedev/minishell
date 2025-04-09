@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int count_args(t_token *temp) {
+int count_arguments(t_token *temp) {
   int i;
 
   i = 0;
@@ -11,25 +11,7 @@ int count_args(t_token *temp) {
   return (i);
 }
 
-char **copy_in_new_tab(int len, char **new_tab, t_command *last_cmd,
-                       t_token *tmp) {
-  int i;
-
-  i = 0;
-  while (i < len) {
-    new_tab[i] = last_cmd->args[i];
-    i++;
-  }
-  while (tmp->type == WORD_TOKEN || tmp->type == VAR_TOKEN) {
-    new_tab[i] = ft_strdup(tmp->token);
-    i++;
-    tmp = tmp->next;
-  }
-  new_tab[i] = NULL;
-  return (new_tab);
-}
-
-void remove_empty_var_args(t_token **tokens) {
+void remove_empty_variable_arguments(t_token **tokens) {
   t_token *temp;
 
   temp = *tokens;
