@@ -1,18 +1,17 @@
+#ifndef STDBOOL_H
+#define STDBOOL_H
+#define bool int
+#define true 1
+#define false 0
+#endif
+
 #define PROMPT "minishell$ "
-#define PATH_HEREDOC "/tmp/.minishell_heredoc_"
 
 #define CMD_NOT_FOUND 127
 #define CMD_NOT_EXECUTABLE 126
 
 #ifndef PATH_MAX
 #define PATH_MAX 4096
-#endif
-
-#ifndef STDBOOL_H
-#define STDBOOL_H
-#define bool int
-#define true 1
-#define false 0
 #endif
 
 typedef struct s_token {
