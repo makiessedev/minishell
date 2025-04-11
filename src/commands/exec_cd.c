@@ -14,21 +14,17 @@ static void update_wds(t_main *main_data, char *wd) {
   erase_pointer(wd);
 }
 
-static bool chdir_errno_mod(char *path) {
-  if (errno == ESTALE)
-    errno = ENOENT;
-  throw_command_error("cd", path, strerror(errno), errno);
-  return (false);
-}
-
 static bool change_dir(t_main *main_data, char *path) {
   char *ret;
   char *tmp;
   char cwd[PATH_MAX];
 
   ret = NULL;
-  if (chdir(path) != 0)
-    return (chdir_errno_mod(path));
+  if (chdir(path) != 0) {
+    throw_command_error("cd", path, "chdir error", CHDIR_ERROR);
+    return (false);
+  }
+
   ret = getcwd(cwd, PATH_MAX);
   if (!ret) {
     ret = ft_strjoin(main_data->working_dir, "/");

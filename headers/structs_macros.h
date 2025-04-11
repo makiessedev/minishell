@@ -7,6 +7,7 @@
 
 #define PROMPT "minishell$ "
 
+#define CHDIR_ERROR -1
 #define CMD_NOT_FOUND 127
 #define CMD_NOT_EXECUTABLE 126
 
