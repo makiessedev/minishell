@@ -3,7 +3,6 @@
 
 #include "libft.h"
 #include "structs_macros.h"
-#include <errno.h>
 #include <fcntl.h>
 #include <limits.h>
 #include <readline/history.h>

@@ -10,7 +10,7 @@ void open_outfile_trunc(t_io_fds *io, char *file, char *var_filename) {
   }
   io->fd_out = open(io->outfile, O_WRONLY | O_CREAT | O_TRUNC, 0664);
   if (io->fd_out == -1)
-    throw_command_error(io->outfile, NULL, strerror(errno), false);
+    throw_command_error(io->outfile, NULL, "open failure", false);
 }
 
 bool remove_old_file_ref(t_io_fds *io, bool infile) {
@@ -43,7 +43,7 @@ void open_infile(t_io_fds *io, char *file, char *original_filename) {
   }
   io->fd_in = open(io->infile, O_RDONLY);
   if (io->fd_in == -1)
-    throw_command_error(io->infile, NULL, strerror(errno), false);
+    throw_command_error(io->infile, NULL, "open failure", false);
 }
 
 void open_outfile_append(t_io_fds *io, char *file, char *var_filename) {
@@ -56,5 +56,5 @@ void open_outfile_append(t_io_fds *io, char *file, char *var_filename) {
   }
   io->fd_out = open(io->outfile, O_WRONLY | O_CREAT | O_APPEND, 0664);
   if (io->fd_out == -1)
-    throw_command_error(io->outfile, NULL, strerror(errno), false);
+    throw_command_error(io->outfile, NULL, "open failure", false);
 }
