@@ -12,15 +12,8 @@ static int get_children(t_main *main_data) {
     wpid = waitpid(-1, &status, 0);
     if (wpid == main_data->pid)
       save_status = status;
-    continue;
   }
-  if (WIFSIGNALED(save_status))
-    status = 128 + WTERMSIG(save_status);
-  else if (WIFEXITED(save_status))
-    status = WEXITSTATUS(save_status);
-  else
-    status = save_status;
-  return (status);
+  return (save_status);
 }
 
 static int create_children(t_main *main_data) {
