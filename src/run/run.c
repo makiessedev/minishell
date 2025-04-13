@@ -39,7 +39,7 @@ static int prep_for_exec(t_main *main_data) {
       return (EXIT_FAILURE);
     return (EXIT_SUCCESS);
   }
-  if (!create_pipes(main_data))
+  if (!initialize_command_pipes(main_data))
     return (EXIT_FAILURE);
   return (CMD_NOT_FOUND);
 }
@@ -52,9 +52,9 @@ int run(t_main *main_data) {
     return (ret);
   if (!main_data->cmd->pipe_output && !main_data->cmd->prev &&
       check_infile_outfile(main_data->cmd->io_fds)) {
-    redirect_io(main_data->cmd->io_fds);
+    redirect_standard_streams(main_data->cmd->io_fds);
     ret = run_builtin(main_data, main_data->cmd);
-    restore_io(main_data->cmd->io_fds);
+    restore_standard_streams(main_data->cmd->io_fds);
   }
   if (ret != CMD_NOT_FOUND)
     return (ret);

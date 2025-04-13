@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void	close_pipe_fds(t_command *cmds, t_command *skip_cmd)
+void	close_unused_pipes(t_command *cmds, t_command *skip_cmd)
 {
 	while (cmds)
 	{
@@ -13,7 +13,7 @@ void	close_pipe_fds(t_command *cmds, t_command *skip_cmd)
 	}
 }
 
-bool	create_pipes(t_main *main_data)
+bool	initialize_command_pipes(t_main *main_data)
 {
 	int			*fd;
 	t_command	*tmp;
@@ -36,7 +36,7 @@ bool	create_pipes(t_main *main_data)
 	return (true);
 }
 
-bool	set_pipe_fds(t_command *cmds, t_command *c)
+bool	connect_command_pipes(t_command *cmds, t_command *c)
 {
 	if (!c)
 		return (false);
@@ -44,6 +44,6 @@ bool	set_pipe_fds(t_command *cmds, t_command *c)
 		dup2(c->prev->pipe_fd[0], STDIN_FILENO);
 	if (c->pipe_output)
 		dup2(c->pipe_fd[1], STDOUT_FILENO);
-	close_pipe_fds(cmds, c);
+	close_unused_pipes(cmds, c);
 	return (true);
 }

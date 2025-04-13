@@ -1,8 +1,8 @@
 #include "minishell.h"
 
 void update_wds(t_main *main_data, char *wd) {
-  set_env_var(main_data, "OLDPWD", get_env_var_value(main_data->env, "PWD"));
-  set_env_var(main_data, "PWD", wd);
+  update_or_create_env_variable(main_data, "OLDPWD", get_env_var_value(main_data->env, "PWD"));
+  update_or_create_env_variable(main_data, "PWD", wd);
   if (main_data->old_working_dir) {
     erase_pointer(main_data->old_working_dir);
     main_data->old_working_dir = ft_strdup(main_data->working_dir);

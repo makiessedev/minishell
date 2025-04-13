@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-bool restore_io(t_io_fds *io) {
+bool restore_standard_streams(t_io_fds *io) {
   int ret;
 
   ret = true;
@@ -21,7 +21,7 @@ bool restore_io(t_io_fds *io) {
   return (ret);
 }
 
-bool redirect_io(t_io_fds *io) {
+bool redirect_standard_streams(t_io_fds *io) {
   int ret;
 
   ret = true;

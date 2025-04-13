@@ -58,8 +58,8 @@ int run_command(t_main *main_data, t_command *cmd) {
                             EXIT_FAILURE));
   if (!check_infile_outfile(cmd->io_fds))
     erase_and_exit_shell(main_data, EXIT_FAILURE);
-  set_pipe_fds(main_data->cmd, cmd);
-  redirect_io(cmd->io_fds);
+  connect_command_pipes(main_data->cmd, cmd);
+  redirect_standard_streams(cmd->io_fds);
   close_fds(main_data->cmd, false);
   if (ft_strchr(cmd->command, '/') == NULL) {
     ret = run_builtin(main_data, cmd);

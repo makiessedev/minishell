@@ -8,7 +8,7 @@ int exec_unset(t_main *main_data, char **args) {
   ret = EXIT_SUCCESS;
   i = 1;
   while (args[i]) {
-    if (!is_valid_env_var_key(args[i]) || ft_strchr(args[i], '=') != NULL)
+    if (!validate_env_var_name(args[i]) || ft_strchr(args[i], '=') != NULL)
       ret = EXIT_FAILURE;
     else {
       idx = get_env_var_index(main_data->env, args[i]);

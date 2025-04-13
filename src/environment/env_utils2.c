@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-static char	**realloc_env_vars(t_main *main_data, int size)
+static char	**resize_environment_buffer(t_main *main_data, int size)
 {
 	char	**new_env;
 	int		i;
@@ -19,7 +19,7 @@ static char	**realloc_env_vars(t_main *main_data, int size)
 	return (new_env);
 }
 
-bool	set_env_var(t_main *main_data, char *key, char *value)
+bool	update_or_create_env_variable(t_main *main_data, char *key, char *value)
 {
 	int		idx;
 	char	*tmp;
@@ -37,8 +37,8 @@ bool	set_env_var(t_main *main_data, char *key, char *value)
 	}
 	else
 	{
-		idx = env_var_count(main_data->env);
-		main_data->env = realloc_env_vars(main_data, idx + 1);
+		idx = count_env_vars(main_data->env);
+		main_data->env = resize_environment_buffer(main_data, idx + 1);
 		if (!main_data->env)
 			return (false);
 		main_data->env[idx] = ft_strjoin(key, tmp);
@@ -52,7 +52,7 @@ bool	remove_env_var(t_main *main_data, int idx)
 	int	i;
 	int	count;
 
-	if (idx > env_var_count(main_data->env))
+	if (idx > count_env_vars(main_data->env))
 		return (false);
 	erase_pointer(main_data->env[idx]);
 	i = idx;
@@ -64,7 +64,7 @@ bool	remove_env_var(t_main *main_data, int idx)
 		count++;
 		i++;
 	}
-	main_data->env = realloc_env_vars(main_data, count);
+	main_data->env = resize_environment_buffer(main_data, count);
 	if (!main_data->env)
 		return (false);
 	return (true);

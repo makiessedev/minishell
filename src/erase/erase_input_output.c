@@ -4,7 +4,7 @@ void	erase_input_output(t_io_fds *io)
 {
 	if (!io)
 		return ;
-	restore_io(io);
+	restore_standard_streams(io);
 	if (io->heredoc_delimiter)
 	{
 		unlink(io->infile);

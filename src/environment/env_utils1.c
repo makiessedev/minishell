@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	env_var_count(char **env)
+int	count_env_vars(char **env)
 {
 	int	i;
 
@@ -54,7 +54,7 @@ char	*get_env_var_value(char **env, char *var)
 	return (NULL);
 }
 
-bool	is_valid_env_var_key(char *var)
+bool	validate_env_var_name(char *var)
 {
 	int	i;
 

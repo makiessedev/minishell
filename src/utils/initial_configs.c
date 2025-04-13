@@ -4,7 +4,7 @@ static bool	start_env(t_main *main_data, char **env)
 {
 	int		i;
 
-	main_data->env = ft_calloc(env_var_count(env) + 1, sizeof(main_data->env));
+	main_data->env = ft_calloc(count_env_vars(env) + 1, sizeof(main_data->env));
 	if (!main_data->env)
 		return (false);
 	i = 0;
