@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   exec_cd_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 17:52:54 by mmorais           #+#    #+#             */
+/*   Updated: 2025/04/14 17:57:41 by mmorais          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 void update_wds(t_main *main_data, char *wd) {
-  update_or_create_env_variable(main_data, "OLDPWD", get_env_var_value(main_data->env, "PWD"));
+  update_or_create_env_variable(main_data, "OLDPWD",
+                                get_env_var_value(main_data->env, "PWD"));
   update_or_create_env_variable(main_data, "PWD", wd);
   if (main_data->old_working_dir) {
     erase_pointer(main_data->old_working_dir);

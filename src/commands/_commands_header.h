@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   _commands_header.h                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 17:52:45 by mmorais           #+#    #+#             */
+/*   Updated: 2025/04/14 17:57:35 by mmorais          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int exec_cd(t_main *main_data, char **args);
 int exec_echo(t_main *main_data, char **args);
 int exec_env(t_main *main_data, char **args);

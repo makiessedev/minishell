@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   _parser_header.h                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 17:55:34 by mmorais           #+#    #+#             */
+/*   Updated: 2025/04/14 17:58:39 by mmorais          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 t_command *lst_new_cmd(bool value);
 void lst_add_back_cmd(t_command **alst, t_command *new_node);
 t_command *lst_last_cmd(t_command *cmd);
