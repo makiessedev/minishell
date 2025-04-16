@@ -6,11 +6,12 @@
 /*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:29 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/14 17:59:03 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/16 15:36:06 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+#include <signal.h>
 
 static int get_children(t_main *main_data) {
   pid_t wpid;
@@ -28,16 +29,40 @@ static int get_children(t_main *main_data) {
   return (save_status);
 }
 
+void setup_shell_signals() {
+  struct sigaction sa_int, sa_quit;
+
+  sa_int.sa_handler = SIG_IGN;
+  sigemptyset(&sa_int.sa_mask);
+  sa_int.sa_flags = SA_RESTART;
+  sigaction(SIGINT, &sa_int, NULL);
+
+  sa_quit.sa_handler = SIG_IGN;
+  sigaction(SIGQUIT, &sa_quit, NULL);
+}
+
 static int create_children(t_main *main_data) {
   t_command *cmd;
 
   cmd = main_data->cmd;
   while (main_data->pid != 0 && cmd) {
     main_data->pid = fork();
+
     if (main_data->pid == -1)
       return (throw_command_error("fork", NULL, "error on fork", EXIT_FAILURE));
-    else if (main_data->pid == 0)
+    else if (main_data->pid == 0) {
+      // Restaura handlers padrão (SIG_DFL)
+      signal(SIGINT, SIG_DFL);
+      signal(SIGQUIT, SIG_DFL);
+
       run_command(main_data, cmd);
+    } else {
+      // Ignora SIGINT/SIGQUIT enquanto espera o filho
+      signal(SIGINT, SIG_IGN);
+      signal(SIGQUIT, SIG_IGN);
+
+      setup_shell_signals();
+    }
     cmd = cmd->next;
   }
   return (get_children(main_data));
