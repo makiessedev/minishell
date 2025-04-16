@@ -6,7 +6,7 @@
 /*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:29 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/16 15:36:06 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/16 15:40:20 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,11 @@ static int create_children(t_main *main_data) {
     if (main_data->pid == -1)
       return (throw_command_error("fork", NULL, "error on fork", EXIT_FAILURE));
     else if (main_data->pid == 0) {
-      // Restaura handlers padrão (SIG_DFL)
       signal(SIGINT, SIG_DFL);
       signal(SIGQUIT, SIG_DFL);
 
       run_command(main_data, cmd);
     } else {
-      // Ignora SIGINT/SIGQUIT enquanto espera o filho
       signal(SIGINT, SIG_IGN);
       signal(SIGQUIT, SIG_IGN);
 
