@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_cmd.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
+/*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:33 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/14 17:59:05 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/19 23:23:57 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,20 @@ static int run_sys_bin(t_main *main_data, t_command *cmd) {
   return (EXIT_FAILURE);
 }
 
-static int run_local_bin(t_main *main_data, t_command *cmd) {
+static int run_local_bin(t_main *main_data, t_command *cmd)
+{
   int ret;
+  int shell_level;
+  char *shell_level_str;
 
+  shell_level_str = getenv("SHLVL");
+  if(shell_level_str && ft_strncmp(cmd->command, "./minishell", ft_strlen("./minishell")) == 0)
+  {
+    shell_level = ft_atoi(shell_level_str);
+    update_or_create_env_variable(main_data, "SHLVL", ft_itoa((++shell_level)));
+  }
+  else
+    update_or_create_env_variable(main_data, "SHLVL", "1");
   ret = check_command_not_found(main_data, cmd);
   if (ret != 0)
     return (ret);

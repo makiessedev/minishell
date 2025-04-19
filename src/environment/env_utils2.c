@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env_utils2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
+/*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:54 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/14 17:58:00 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/19 22:18:10 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ static char **resize_environment_buffer(t_main *main_data, int size) {
   return (new_env);
 }
 
-bool update_or_create_env_variable(t_main *main_data, char *key, char *value) {
+bool update_or_create_env_variable(t_main *main_data, char *key, char *value)
+{
   int idx;
   char *tmp;
 
