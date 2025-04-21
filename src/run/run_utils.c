@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:39 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:41 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:51:33 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ bool	cmd_is_dir(char *cmd)
 	return (S_ISDIR(cmd_stat.st_mode));
 }
 
-void	set_break(void)
+void	set_break(int sig)
 {
 	char	*shell_level;
 
+	(void)sig;
 	shell_level = getenv("SHLVL");
 	if (shell_level && ft_atoi(shell_level) >= 2)
 		printf("\n");

@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:17 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:20 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:16:08 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	set_quote_mode(t_token **token_node, int *i)
 bool	is_quotes_and_normal_mode(t_token **token_node, int i)
 {
 	if (((*token_node)->token[i] == '\'' || (*token_node)->token[i] == '\"')
-			&& (*token_node)->status == NORMAL_MODE)
+		&& (*token_node)->status == NORMAL_MODE)
 		return (true);
 	else
 		return (false);
@@ -77,7 +77,7 @@ bool	reset_to_normal_mode(t_token **token_node, int *i)
 {
 	if (((*token_node)->token[*i] == '\''
 			&& (*token_node)->status == SINGLE_QUOTE)
-			|| ((*token_node)->token[*i] == '\"'
+		|| ((*token_node)->token[*i] == '\"'
 			&& (*token_node)->status == DOUBLE_QUOTE))
 	{
 		(*token_node)->status = NORMAL_MODE;

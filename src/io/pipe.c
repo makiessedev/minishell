@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:28 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:23:18 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:17:55 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ bool	initialize_command_pipes(t_main *main_data)
 	{
 		if (tmp->pipe_output || (tmp->prev && tmp->prev->pipe_output))
 		{
-			fd = malloc(sizeof *fd * 2);
+			fd = malloc(sizeof(fd) * 2);
 			if (!fd || pipe(fd) != 0)
 			{
 				erase_main_data(main_data, false);

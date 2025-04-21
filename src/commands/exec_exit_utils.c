@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:18 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:20:18 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:30:01 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 bool	check_out_of_range(int neg, unsigned long long num, bool *error)
 {
-	if ((neg == 1 && num > LONG_MAX) || (neg == -1 && num >
-			-(unsigned long)LONG_MIN))
+	if ((neg == 1 && num > LONG_MAX) || (neg == -1
+			&& num > -(unsigned long)LONG_MIN))
 		*error = true;
 	return (*error);
 }
