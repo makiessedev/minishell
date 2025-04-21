@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:28 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:17:55 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	close_unused_pipes(t_command *cmds, t_command *skip_cmd)
 	}
 }
 
-bool	initialize_command_pipes(t_main *main_data)
+int	initialize_command_pipes(t_main *main_data)
 {
 	int			*fd;
 	t_command	*tmp;
@@ -38,24 +38,24 @@ bool	initialize_command_pipes(t_main *main_data)
 			fd = malloc(sizeof(fd) * 2);
 			if (!fd || pipe(fd) != 0)
 			{
-				erase_main_data(main_data, false);
-				return (false);
+				erase_main_data(main_data, FALSE);
+				return (FALSE);
 			}
 			tmp->pipe_fd = fd;
 		}
 		tmp = tmp->next;
 	}
-	return (true);
+	return (TRUE);
 }
 
-bool	connect_command_pipes(t_command *cmds, t_command *c)
+int	connect_command_pipes(t_command *cmds, t_command *c)
 {
 	if (!c)
-		return (false);
+		return (FALSE);
 	if (c->prev && c->prev->pipe_output)
 		dup2(c->prev->pipe_fd[0], STDIN_FILENO);
 	if (c->pipe_output)
 		dup2(c->pipe_fd[1], STDOUT_FILENO);
 	close_unused_pipes(cmds, c);
-	return (true);
+	return (TRUE);
 }

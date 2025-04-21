@@ -6,18 +6,18 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:04 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:20:05 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:16:49 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-bool	is_n_flag(char *arg)
+int	is_n_flag(char *arg)
 {
-	int		i;
-	bool	n_flag;
+	int	i;
+	int	n_flag;
 
-	n_flag = false;
+	n_flag = FALSE;
 	i = 0;
 	if (arg[i] != '-')
 		return (n_flag);
@@ -25,11 +25,11 @@ bool	is_n_flag(char *arg)
 	while (arg[i] && arg[i] == 'n')
 		i++;
 	if (arg[i] == '\0')
-		n_flag = true;
+		n_flag = TRUE;
 	return (n_flag);
 }
 
-void	echo_print_args(char **args, bool n_flag, int i)
+void	echo_print_args(char **args, int n_flag, int i)
 {
 	if (!args[i])
 	{

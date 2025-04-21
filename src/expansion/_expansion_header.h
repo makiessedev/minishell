@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:54:52 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:22:39 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:14:08 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*get_new_token_string(char *oldstr, char *var_value, int newstr_size,
 int		expand_variables(t_main *data, t_token **token_lst);
 char	*expand_variables_in_heredoc(t_main *data, char *str);
 void	toggle_quote_mode(t_token **token_node, char c);
-bool	is_separator(char c);
-bool	is_var_enclosed_in_quotes(char *str, int i);
+int		is_separator(char c);
+int		is_var_enclosed_in_quotes(char *str, int i);
 char	*replace_variable(t_token **token_node, char *str, char *var_value,
 			int index);
 int		remove_variable(t_token **token_node, char *str, int index);

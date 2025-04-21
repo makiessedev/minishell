@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:57:02 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:25:21 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ static void	detect_variable(t_token **token_node)
 	}
 }
 
-static bool	has_consecutive_operators(t_token *token_node)
+static int	has_consecutive_operators(t_token *token_node)
 {
 	if (token_node->prev)
 	{
 		if (token_node->type == PIPE_TOKEN
 			&& token_node->prev->type == PIPE_TOKEN)
-			return (true);
+			return (TRUE);
 		if (token_node->type > PIPE_TOKEN
 			&& token_node->prev->type > PIPE_TOKEN)
-			return (true);
+			return (TRUE);
 		if (token_node->type == END_TOKEN
 			&& token_node->prev->type >= PIPE_TOKEN)
-			return (true);
+			return (TRUE);
 	}
-	return (false);
+	return (FALSE);
 }
 
 static int	validate_operator_sequence(t_token **token_lst)
@@ -55,18 +55,18 @@ static int	validate_operator_sequence(t_token **token_lst)
 	temp = *token_lst;
 	while (temp)
 	{
-		if (has_consecutive_operators(temp) == true)
+		if (has_consecutive_operators(temp) == TRUE)
 		{
 			if (temp->type == END_TOKEN && temp->prev
 				&& temp->prev->type > PIPE_TOKEN)
 				throw_message_error("syntax error near unexpected token",
-					"newline", true);
+					"newline", TRUE);
 			else if (temp->type == END_TOKEN && temp->prev)
 				throw_message_error("syntax error near unexpected token",
-					temp->prev->token, true);
+					temp->prev->token, TRUE);
 			else
 				throw_message_error("syntax error near unexpected token",
-					temp->token, true);
+					temp->token, TRUE);
 			return (EXIT_FAILURE);
 		}
 		temp = temp->next;
@@ -82,7 +82,7 @@ int	validate_syntax_and_variables(t_token **token_lst)
 	if (temp->type == PIPE_TOKEN)
 	{
 		throw_message_error("syntax error near unexpected token", temp->token,
-			true);
+			TRUE);
 		return (EXIT_FAILURE);
 	}
 	while (temp)

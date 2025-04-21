@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:33 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:42 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	run_command(t_main *main_data, t_command *cmd)
 		erase_and_exit_shell(main_data, EXIT_FAILURE);
 	connect_command_pipes(main_data->cmd, cmd);
 	redirect_standard_streams(cmd->io_fds);
-	close_fds(main_data->cmd, false);
+	close_fds(main_data->cmd, FALSE);
 	if (ft_strchr(cmd->command, '/') == NULL)
 	{
 		ret = run_builtin(main_data, cmd);

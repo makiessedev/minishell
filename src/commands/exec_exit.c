@@ -6,13 +6,13 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:14 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:46:47 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:17:11 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static int	handle_exit_code(char **args, bool *error)
+static int	handle_exit_code(char **args, int *error)
 {
 	int	exit_code;
 
@@ -23,8 +23,7 @@ static int	handle_exit_code(char **args, bool *error)
 		return (throw_command_error("exit", args[1],
 				"numeric argument required", 2));
 	if (args[2])
-		return (throw_command_error("exit", NULL,
-				"too many arguments", 1));
+		return (throw_command_error("exit", NULL, "too many arguments", 1));
 	return (exit_code);
 }
 
@@ -44,11 +43,11 @@ static void	update_shell_level(t_main *main_data)
 
 int	exec_exit(t_main *main_data, char **args)
 {
-	int		exit_code;
-	bool	error;
-	bool	quiet;
+	int	exit_code;
+	int	error;
+	int	quiet;
 
-	error = false;
+	error = FALSE;
 	quiet = is_quiet_mode(main_data);
 	if (!quiet)
 		ft_putendl_fd("exit", 2);

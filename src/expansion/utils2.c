@@ -6,18 +6,18 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:09 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:22:55 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static bool	is_valid_var(char c)
+static int	is_valid_var(char c)
 {
 	if (ft_isalnum(c) == 0 && c != '_')
-		return (false);
+		return (FALSE);
 	else
-		return (true);
+		return (TRUE);
 }
 
 int	var_length(char *str)
@@ -34,7 +34,7 @@ int	var_length(char *str)
 		return (count + 1);
 	while (str[i])
 	{
-		if (is_valid_var(str[i]) == false)
+		if (is_valid_var(str[i]) == FALSE)
 			break ;
 		count++;
 		i++;

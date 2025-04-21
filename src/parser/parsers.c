@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:01 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:07 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	pipe_parser(t_command **cmd, t_token **token_lst)
 	t_command	*last_cmd;
 
 	last_cmd = lst_last_cmd(*cmd);
-	last_cmd->pipe_output = true;
-	lst_add_back_cmd(&last_cmd, lst_new_cmd(false));
+	last_cmd->pipe_output = TRUE;
+	lst_add_back_cmd(&last_cmd, lst_new_cmd(FALSE));
 	*token_lst = (*token_lst)->next;
 }
 

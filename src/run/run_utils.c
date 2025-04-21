@@ -6,13 +6,13 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:39 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:51:33 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-bool	cmd_is_dir(char *cmd)
+int	cmd_is_dir(char *cmd)
 {
 	struct stat	cmd_stat;
 

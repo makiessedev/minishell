@@ -6,32 +6,33 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:52:35 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:14:56 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:20:31 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STDBOOL_H
-# define STDBOOL_H
-# define bool int
-# define true 1
-# define false 0
-#endif
+#ifndef STRUCTS_MACROS_H
+# define STRUCTS_MACROS_H
+# ifndef STDBOOL_H
+#  define STDBOOL_H
+#  define TRUE 1
+#  define FALSE 0
+# endif
 
-#define PROMPT "minishell$ "
+# define PROMPT "minishell$ "
 
-#define CHDIR_ERROR -1
-#define CMD_NOT_FOUND 127
-#define CMD_NOT_EXECUTABLE 126
+# define CHDIR_ERROR -1
+# define CMD_NOT_FOUND 127
+# define CMD_NOT_EXECUTABLE 126
 
-#ifndef PATH_MAX
-# define PATH_MAX 4096
-#endif
+# ifndef PATH_MAX
+#  define PATH_MAX 4096
+# endif
 
 typedef struct s_token
 {
 	char				*token;
 	char				*backup_token;
-	bool				var_exists;
+	int					var_exists;
 	int					type;
 	int					status;
 	struct s_token		*prev;
@@ -42,7 +43,7 @@ typedef struct s_io_fds
 	char				*infile;
 	char				*outfile;
 	char				*heredoc_delimiter;
-	bool				heredoc_quotes;
+	int					heredoc_quotes;
 	int					fd_in;
 	int					fd_out;
 	int					stdin_backup;
@@ -53,7 +54,7 @@ typedef struct s_command
 	char				*command;
 	char				*path;
 	char				**args;
-	bool				pipe_output;
+	int					pipe_output;
 	int					*pipe_fd;
 	t_io_fds			*io_fds;
 	struct s_command	*next;
@@ -90,3 +91,4 @@ typedef enum e_quoting_status
 	DOUBLE_QUOTE,
 	SINGLE_QUOTE,
 }						t_quoting_status;
+#endif

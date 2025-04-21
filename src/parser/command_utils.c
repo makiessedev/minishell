@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:43 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:42 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ static void	initialize_cmd(t_command **cmd)
 	(*cmd)->command = NULL;
 	(*cmd)->path = NULL;
 	(*cmd)->args = NULL;
-	(*cmd)->pipe_output = false;
+	(*cmd)->pipe_output = FALSE;
 	(*cmd)->pipe_fd = 0;
 	(*cmd)->prev = NULL;
 	(*cmd)->next = NULL;
 }
 
-t_command	*lst_new_cmd(bool value)
+t_command	*lst_new_cmd(int value)
 {
 	t_command	*new_node;
 

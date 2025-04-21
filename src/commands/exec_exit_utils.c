@@ -6,21 +6,21 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:18 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:30:01 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:27 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-bool	check_out_of_range(int neg, unsigned long long num, bool *error)
+int	check_out_of_range(int neg, unsigned long long num, int *error)
 {
 	if ((neg == 1 && num > LONG_MAX) || (neg == -1
 			&& num > -(unsigned long)LONG_MIN))
-		*error = true;
+		*error = TRUE;
 	return (*error);
 }
 
-int	ft_atoi_long(const char *str, bool *error)
+int	ft_atoi_long(const char *str, int *error)
 {
 	unsigned long long	num;
 	int					neg;
@@ -48,7 +48,7 @@ int	ft_atoi_long(const char *str, bool *error)
 	return (num * neg);
 }
 
-int	get_exit_code(char *arg, bool *error)
+int	get_exit_code(char *arg, int *error)
 {
 	unsigned long long	i;
 
@@ -58,29 +58,29 @@ int	get_exit_code(char *arg, bool *error)
 	while (ft_isspace(arg[i]))
 		i++;
 	if (arg[i] == '\0')
-		*error = true;
+		*error = TRUE;
 	if (arg[i] == '-' || arg[i] == '+')
 		i++;
 	if (!ft_isdigit(arg[i]))
-		*error = true;
+		*error = TRUE;
 	while (arg[i])
 	{
 		if (!isdigit(arg[i]) && !ft_isspace(arg[i]))
-			*error = true;
+			*error = TRUE;
 		i++;
 	}
 	i = ft_atoi_long(arg, error);
 	return (i % 256);
 }
 
-bool	is_quiet_mode(t_main *main_data)
+int	is_quiet_mode(t_main *main_data)
 {
 	t_command	*cmd;
 
 	cmd = main_data->cmd;
 	if (!cmd)
-		return (false);
+		return (FALSE);
 	if (cmd->next != NULL || cmd->prev != NULL)
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }

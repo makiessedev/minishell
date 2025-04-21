@@ -6,13 +6,13 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:54:56 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:22:43 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static bool	should_expand_var(t_token *temp, int i)
+static int	should_expand_var(t_token *temp, int i)
 {
 	return (temp->token[i] == '$' && !is_separator(temp->token[i + 1])
 		&& !is_var_enclosed_in_quotes(temp->token, i)
@@ -53,8 +53,8 @@ char	*expand_variables_in_heredoc(t_main *main_data, char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '$' && is_separator(str[i + 1]) == false
-			&& is_var_enclosed_in_quotes(str, i) == false)
+		if (str[i] == '$' && is_separator(str[i + 1]) == FALSE
+			&& is_var_enclosed_in_quotes(str, i) == FALSE)
 			str = replace_variable_in_heredoc(str, resolve_variable_value(NULL,
 						str + i, main_data), i);
 		else

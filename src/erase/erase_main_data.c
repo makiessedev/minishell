@@ -6,13 +6,13 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:54:21 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:21:39 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	erase_main_data(t_main *main_data, bool clear_history)
+void	erase_main_data(t_main *main_data, int clear_history)
 {
 	if (main_data && main_data->user_input)
 	{
@@ -23,7 +23,7 @@ void	erase_main_data(t_main *main_data, bool clear_history)
 		lstclear_token(&main_data->token, &erase_pointer);
 	if (main_data && main_data->cmd)
 		lst_clear_cmd(&main_data->cmd, &erase_pointer);
-	if (clear_history == true)
+	if (clear_history == TRUE)
 	{
 		if (main_data && main_data->working_dir)
 			erase_pointer(main_data->working_dir);

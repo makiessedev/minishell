@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:54 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:28:48 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:27 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	**resize_environment_buffer(t_main *main_data, int size)
 	return (new_env);
 }
 
-bool	update_or_create_env_variable(t_main *main_data, char *key, char *value)
+int	update_or_create_env_variable(t_main *main_data, char *key, char *value)
 {
 	int		idx;
 	char	*tmp;
@@ -41,7 +41,7 @@ bool	update_or_create_env_variable(t_main *main_data, char *key, char *value)
 		value = "";
 	tmp = ft_strjoin("=", value);
 	if (!tmp)
-		return (false);
+		return (FALSE);
 	if (idx != -1 && main_data->env[idx])
 	{
 		erase_pointer(main_data->env[idx]);
@@ -52,20 +52,20 @@ bool	update_or_create_env_variable(t_main *main_data, char *key, char *value)
 		idx = count_env_vars(main_data->env);
 		main_data->env = resize_environment_buffer(main_data, idx + 1);
 		if (!main_data->env)
-			return (false);
+			return (FALSE);
 		main_data->env[idx] = ft_strjoin(key, tmp);
 	}
 	erase_pointer(tmp);
-	return (true);
+	return (TRUE);
 }
 
-bool	remove_env_var(t_main *main_data, int idx)
+int	remove_env_var(t_main *main_data, int idx)
 {
 	int	i;
 	int	count;
 
 	if (idx > count_env_vars(main_data->env))
-		return (false);
+		return (FALSE);
 	erase_pointer(main_data->env[idx]);
 	i = idx;
 	count = idx;
@@ -78,6 +78,6 @@ bool	remove_env_var(t_main *main_data, int idx)
 	}
 	main_data->env = resize_environment_buffer(main_data, count);
 	if (!main_data->env)
-		return (false);
-	return (true);
+		return (FALSE);
+	return (TRUE);
 }

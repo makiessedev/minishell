@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:52:54 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:23:28 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	update_wds(t_main *main_data, char *wd)
 	erase_pointer(wd);
 }
 
-bool	change_dir(t_main *main_data, char *path)
+int	change_dir(t_main *main_data, char *path)
 {
 	char	*ret;
 	char	*tmp;
@@ -40,7 +40,7 @@ bool	change_dir(t_main *main_data, char *path)
 	if (chdir(path) != 0)
 	{
 		throw_command_error("cd", path, "chdir error", CHDIR_ERROR);
-		return (false);
+		return (FALSE);
 	}
 	ret = getcwd(cwd, PATH_MAX);
 	if (!ret)
@@ -53,5 +53,5 @@ bool	change_dir(t_main *main_data, char *path)
 	else
 		ret = ft_strdup(cwd);
 	update_wds(main_data, ret);
-	return (true);
+	return (TRUE);
 }

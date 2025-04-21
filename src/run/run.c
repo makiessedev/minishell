@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:29 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:42 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	get_children(t_main *main_data)
 	int		status;
 	int		save_status;
 
-	close_fds(main_data->cmd, false);
+	close_fds(main_data->cmd, FALSE);
 	save_status = 0;
 	wpid = 0;
 	while (wpid != -1)

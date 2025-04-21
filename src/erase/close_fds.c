@@ -6,13 +6,13 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:54:07 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:21:27 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	close_fds(t_command *cmds, bool close_backups)
+void	close_fds(t_command *cmds, int close_backups)
 {
 	if (cmds->io_fds)
 	{

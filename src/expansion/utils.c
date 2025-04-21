@@ -6,30 +6,30 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:05 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:23:28 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-bool	is_var_enclosed_in_quotes(char *str, int i)
+int	is_var_enclosed_in_quotes(char *str, int i)
 {
 	if (i > 0)
 	{
 		if (str[i - 1] == '\"' && str[i + 1] == '\"')
-			return (true);
+			return (TRUE);
 		else
-			return (false);
+			return (FALSE);
 	}
-	return (false);
+	return (FALSE);
 }
 
-bool	is_separator(char c)
+int	is_separator(char c)
 {
 	if (c == '$' || c == ' ' || c == '=' || c == '\0')
-		return (true);
+		return (TRUE);
 	else
-		return (false);
+		return (FALSE);
 }
 
 void	toggle_quote_mode(t_token **token_node, char c)

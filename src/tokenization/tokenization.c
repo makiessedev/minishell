@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:54 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:25:15 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	tokenization(t_main *main_data)
 	{
 		if (status == DOUBLE_QUOTE || status == SINGLE_QUOTE)
 			throw_message_error("unexpected EOF while looking for matching",
-				"\"", true);
-		throw_message_error("syntax error", "unexpected end of file", false);
+				"\"", TRUE);
+		throw_message_error("syntax error", "unexpected end of file", FALSE);
 		return (1);
 	}
 	return (0);

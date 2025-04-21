@@ -6,31 +6,31 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:57:17 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:22:27 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static bool	start_env(t_main *main_data, char **env)
+static int	start_env(t_main *main_data, char **env)
 {
 	int	i;
 
 	main_data->env = ft_calloc(count_env_vars(env) + 1, sizeof(main_data->env));
 	if (!main_data->env)
-		return (false);
+		return (FALSE);
 	i = 0;
 	while (env[i])
 	{
 		main_data->env[i] = ft_strdup(env[i]);
 		if (!main_data->env[i])
-			return (false);
+			return (FALSE);
 		i++;
 	}
-	return (true);
+	return (TRUE);
 }
 
-static bool	init_wds(t_main *main_data)
+static int	init_wds(t_main *main_data)
 {
 	char	buff[PATH_MAX];
 	char	*wd;
@@ -38,46 +38,46 @@ static bool	init_wds(t_main *main_data)
 	wd = getcwd(buff, PATH_MAX);
 	main_data->working_dir = ft_strdup(wd);
 	if (!main_data->working_dir)
-		return (false);
+		return (FALSE);
 	if (get_env_var_index(main_data->env, "OLDPWD") != -1)
 	{
 		main_data->old_working_dir = ft_strdup(get_env_var_value(main_data->env,
 					"OLDPWD"));
 		if (!main_data->old_working_dir)
-			return (false);
+			return (FALSE);
 	}
 	else
 	{
 		main_data->old_working_dir = ft_strdup(wd);
 		if (!main_data->old_working_dir)
-			return (false);
+			return (FALSE);
 	}
-	return (true);
+	return (TRUE);
 }
 
-bool	init_data(t_main *main_data, char **env)
+int	init_data(t_main *main_data, char **env)
 {
-	bool	is_seted_end;
+	int	is_seted_end;
 
 	is_seted_end = start_env(main_data, env);
 	if (!is_seted_end)
 	{
 		throw_command_error("Fatal", NULL, "Could not initialize environment",
 			1);
-		return (false);
+		return (FALSE);
 	}
 	if (!init_wds(main_data))
 	{
 		throw_command_error("Fatal", NULL,
 			"Could not initialize working directories", 1);
-		return (false);
+		return (FALSE);
 	}
 	main_data->token = NULL;
 	main_data->user_input = NULL;
 	main_data->cmd = NULL;
 	main_data->pid = -1;
 	g_exit_code = 0;
-	return (true);
+	return (TRUE);
 }
 
 void	init_io(t_command *cmd)
@@ -90,7 +90,7 @@ void	init_io(t_command *cmd)
 		cmd->io_fds->infile = NULL;
 		cmd->io_fds->outfile = NULL;
 		cmd->io_fds->heredoc_delimiter = NULL;
-		cmd->io_fds->heredoc_quotes = false;
+		cmd->io_fds->heredoc_quotes = FALSE;
 		cmd->io_fds->fd_in = -1;
 		cmd->io_fds->fd_out = -1;
 		cmd->io_fds->stdin_backup = -1;

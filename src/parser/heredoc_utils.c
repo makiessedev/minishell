@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:54 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:42 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:17:42 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,42 +62,42 @@ static char	*get_expanded_var_line(t_main *main_data, char *line)
 	return (make_str_from_tab(words));
 }
 
-static bool	evaluate_heredoc_line(t_main *main_data, char **line, t_io_fds *io,
-		bool *ret)
+static int	evaluate_heredoc_line(t_main *main_data, char **line, t_io_fds *io,
+		int *ret)
 {
 	if (*line == NULL)
 	{
 		throw_command_error("warning",
 			"here-document delimited by end-of-file: wanted",
-			io->heredoc_delimiter, true);
-		*ret = true;
-		return (false);
+			io->heredoc_delimiter, TRUE);
+		*ret = TRUE;
+		return (FALSE);
 	}
 	if (ft_strncmp(*line, io->heredoc_delimiter,
 			(ft_strlen(io->heredoc_delimiter) + 1)) == 0)
 	{
-		*ret = true;
-		return (false);
+		*ret = TRUE;
+		return (FALSE);
 	}
-	if (io->heredoc_quotes == false && ft_strchr(*line, '$'))
+	if (io->heredoc_quotes == FALSE && ft_strchr(*line, '$'))
 	{
 		*line = get_expanded_var_line(main_data, *line);
 		if (!(*line))
 		{
 			erase_pointer(*line);
-			*ret = false;
-			return (false);
+			*ret = FALSE;
+			return (FALSE);
 		}
 	}
-	return (true);
+	return (TRUE);
 }
 
-bool	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
+int	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
 {
 	char	*line;
-	bool	ret;
+	int		ret;
 
-	ret = false;
+	ret = FALSE;
 	line = NULL;
 	while (1)
 	{

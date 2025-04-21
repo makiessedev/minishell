@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:47 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:26:23 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	create_commands(t_main *main_data, t_token *token)
 	while (temp->next != NULL)
 	{
 		if (temp == token)
-			lst_add_back_cmd(&main_data->cmd, lst_new_cmd(false));
+			lst_add_back_cmd(&main_data->cmd, lst_new_cmd(FALSE));
 		if (temp->type == WORD_TOKEN || temp->type == VAR_TOKEN)
 			word_parser(&main_data->cmd, &temp);
 		else if (temp->type == INPUT_TOKEN)

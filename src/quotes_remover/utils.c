@@ -6,13 +6,13 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:17 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:16:08 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:26 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-bool	contains_quotes(char *str)
+int	contains_quotes(char *str)
 {
 	int	i;
 
@@ -20,10 +20,10 @@ bool	contains_quotes(char *str)
 	while (str[i])
 	{
 		if (str[i] == '\'' || str[i] == '\"')
-			return (true);
+			return (TRUE);
 		i++;
 	}
-	return (false);
+	return (FALSE);
 }
 
 int	calculate_length_without_quotes(char *str, int count, int i)
@@ -64,16 +64,16 @@ void	set_quote_mode(t_token **token_node, int *i)
 	(*i)++;
 }
 
-bool	is_quotes_and_normal_mode(t_token **token_node, int i)
+int	is_quotes_and_normal_mode(t_token **token_node, int i)
 {
 	if (((*token_node)->token[i] == '\'' || (*token_node)->token[i] == '\"')
 		&& (*token_node)->status == NORMAL_MODE)
-		return (true);
+		return (TRUE);
 	else
-		return (false);
+		return (FALSE);
 }
 
-bool	reset_to_normal_mode(t_token **token_node, int *i)
+int	reset_to_normal_mode(t_token **token_node, int *i)
 {
 	if (((*token_node)->token[*i] == '\''
 			&& (*token_node)->status == SINGLE_QUOTE)
@@ -82,8 +82,8 @@ bool	reset_to_normal_mode(t_token **token_node, int *i)
 	{
 		(*token_node)->status = NORMAL_MODE;
 		(*i)++;
-		return (true);
+		return (TRUE);
 	}
 	else
-		return (false);
+		return (FALSE);
 }

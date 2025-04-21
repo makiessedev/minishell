@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:49 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 21:23:50 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:05:27 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,19 @@ char	*get_env_var_value(char **env, char *var)
 	return (NULL);
 }
 
-bool	validate_env_var_name(char *var)
+int	validate_env_var_name(char *var)
 {
 	int	i;
 
 	i = 0;
 	if (ft_isalpha(var[i]) == 0 && var[i] != '_')
-		return (false);
+		return (FALSE);
 	i++;
 	while (var[i] && var[i] != '=')
 	{
 		if (ft_isalnum(var[i]) == 0 && var[i] != '_')
-			return (false);
+			return (FALSE);
 		i++;
 	}
-	return (true);
+	return (TRUE);
 }

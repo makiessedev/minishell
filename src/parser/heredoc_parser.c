@@ -6,18 +6,18 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:50 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:41 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:17:52 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-bool	get_heredoc(t_main *main_data, t_io_fds *io)
+int	get_heredoc(t_main *main_data, t_io_fds *io)
 {
-	int		tmp_fd;
-	bool	ret;
+	int	tmp_fd;
+	int	ret;
 
-	ret = true;
+	ret = TRUE;
 	tmp_fd = open(io->infile, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	ret = fill_heredoc(main_data, io, tmp_fd);
 	close(tmp_fd);
@@ -39,7 +39,7 @@ static char	*generate_heredoc_path(void)
 	return (name);
 }
 
-static char	*get_delimiter(char *delim, bool *quotes)
+static char	*get_delimiter(char *delim, int *quotes)
 {
 	int	len;
 
@@ -47,7 +47,7 @@ static char	*get_delimiter(char *delim, bool *quotes)
 	if ((delim[0] == '\"' && delim[len] == '\"') || (delim[0] == '\''
 			&& delim[len] == '\''))
 	{
-		*quotes = true;
+		*quotes = TRUE;
 		return (ft_strtrim(delim, "\'\""));
 	}
 	return (ft_strdup(delim));
@@ -64,7 +64,7 @@ void	parse_heredoc(t_main *main_data, t_command **last_cmd,
 	cmd = lst_last_cmd(*last_cmd);
 	init_io(cmd);
 	io = cmd->io_fds;
-	if (!remove_old_file_ref(io, true))
+	if (!remove_old_file_ref(io, TRUE))
 		return ;
 	io->infile = generate_heredoc_path();
 	io->heredoc_delimiter = get_delimiter(temp->next->token,

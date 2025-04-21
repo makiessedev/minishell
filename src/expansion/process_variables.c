@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:55:02 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:23:28 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:59:38 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*resolve_variable_value(t_token *token, char *str, t_main *main_data)
 	if (var && env_variable_exists(main_data, var) == 0)
 	{
 		if (token != NULL)
-			token->var_exists = true;
+			token->var_exists = TRUE;
 		value = get_env_variable_value(main_data, var);
 	}
 	else if (var && var[0] == '?' && var[1] == '=')

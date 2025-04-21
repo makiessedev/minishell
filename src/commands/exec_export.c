@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:21 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:23:44 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	exec_export(t_main *main_data, char **args)
 		if (!validate_env_var_name(args[i]))
 		{
 			throw_command_error("export", args[i], "not a valid identifier",
-				false);
+				FALSE);
 			ret = EXIT_FAILURE;
 		}
 		else if (ft_strchr(args[i], '=') != NULL)

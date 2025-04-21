@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:46 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:26:36 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_token	*lst_new_token(char *token, char *token_backup, int type, int status)
 		return (NULL);
 	new_node->token = token;
 	new_node->backup_token = token_backup;
-	new_node->var_exists = false;
+	new_node->var_exists = FALSE;
 	new_node->type = type;
 	new_node->status = status;
 	new_node->prev = NULL;

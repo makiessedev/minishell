@@ -6,12 +6,12 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:43 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:26:36 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:11:34 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		validate_syntax_and_variables(t_token **token_lst);
-bool	process_user_command(t_main *data);
+int		process_user_command(t_main *data);
 t_token	*lst_new_token(char *str, char *str_backup, int type, int status);
 void	lst_add_back_token(t_token **alst, t_token *new_node);
 void	lstdelone_token(t_token *lst, void (*del)(void *));

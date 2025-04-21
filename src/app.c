@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:57:22 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 20:25:31 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ void	bootstrap(t_main *main_data)
 			g_exit_code = run(main_data);
 		else
 			g_exit_code = 1;
-		erase_main_data(main_data, false);
+		erase_main_data(main_data, FALSE);
 	}
 }
