@@ -6,7 +6,7 @@
 /*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:39 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/14 17:59:07 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/21 10:38:22 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ bool cmd_is_dir(char *cmd) {
   ft_memset(&cmd_stat, 0, sizeof(cmd_stat));
   stat(cmd, &cmd_stat);
   return (S_ISDIR(cmd_stat.st_mode));
+}
+
+void set_break() {
+  char *shell_level;
+  shell_level = getenv("SHLVL");
+  if (shell_level && ft_atoi(shell_level) >= 2)
+    printf("\n");
 }
 
 int check_command_not_found(t_main *main_data, t_command *cmd) {

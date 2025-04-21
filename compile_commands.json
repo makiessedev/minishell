@@ -673,6 +673,44 @@
       "-I",
       "./libs/libft/",
       "-o",
+      "temp/environment/env_utils1.o",
+      "src/environment/env_utils1.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/environment/env_utils1.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/environment/env_utils1.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/environment/env_utils2.o",
+      "src/environment/env_utils2.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/environment/env_utils2.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/environment/env_utils2.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
       "temp/erase/erase_pointer.o",
       "src/erase/erase_pointer.c"
     ],
@@ -774,44 +812,6 @@
     "directory": "/home/mmorais/projects/42/minishell",
     "file": "/home/mmorais/projects/42/minishell/src/erase/erase_tab_string.c",
     "output": "/home/mmorais/projects/42/minishell/temp/erase/erase_tab_string.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/env/env.o",
-      "src/env/env.c"
-    ],
-    "directory": "/home/mmorais/projects/42/minishell",
-    "file": "/home/mmorais/projects/42/minishell/src/env/env.c",
-    "output": "/home/mmorais/projects/42/minishell/temp/env/env.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/cc",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-c",
-      "-I",
-      "./headers/",
-      "-I",
-      "./libs/libft/",
-      "-o",
-      "temp/env/env2.o",
-      "src/env/env2.c"
-    ],
-    "directory": "/home/mmorais/projects/42/minishell",
-    "file": "/home/mmorais/projects/42/minishell/src/env/env2.c",
-    "output": "/home/mmorais/projects/42/minishell/temp/env/env2.o"
   },
   {
     "arguments": [
@@ -939,12 +939,12 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/redirections/pipe.o",
-      "src/redirections/pipe.c"
+      "temp/io/file.o",
+      "src/io/file.c"
     ],
     "directory": "/home/mmorais/projects/42/minishell",
-    "file": "/home/mmorais/projects/42/minishell/src/redirections/pipe.c",
-    "output": "/home/mmorais/projects/42/minishell/temp/redirections/pipe.o"
+    "file": "/home/mmorais/projects/42/minishell/src/io/file.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/io/file.o"
   },
   {
     "arguments": [
@@ -958,12 +958,12 @@
       "-I",
       "./libs/libft/",
       "-o",
-      "temp/redirections/file_io.o",
-      "src/redirections/file_io.c"
+      "temp/io/pipe.o",
+      "src/io/pipe.c"
     ],
     "directory": "/home/mmorais/projects/42/minishell",
-    "file": "/home/mmorais/projects/42/minishell/src/redirections/file_io.c",
-    "output": "/home/mmorais/projects/42/minishell/temp/redirections/file_io.o"
+    "file": "/home/mmorais/projects/42/minishell/src/io/pipe.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/io/pipe.o"
   },
   {
     "arguments": [
@@ -1205,12 +1205,69 @@
       "-I",
       "./libs/libft/",
       "-o",
+      "temp/commands/exec_cd_utils.o",
+      "src/commands/exec_cd_utils.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_cd_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_cd_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
       "temp/commands/exec_exit.o",
       "src/commands/exec_exit.c"
     ],
     "directory": "/home/mmorais/projects/42/minishell",
     "file": "/home/mmorais/projects/42/minishell/src/commands/exec_exit.c",
     "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_exit.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_echo_utils.o",
+      "src/commands/exec_echo_utils.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_echo_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_echo_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_export_utils.o",
+      "src/commands/exec_export_utils.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_export_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_export_utils.o"
   },
   {
     "arguments": [
@@ -1249,6 +1306,25 @@
     "directory": "/home/mmorais/projects/42/minishell",
     "file": "/home/mmorais/projects/42/minishell/src/commands/exec_export.c",
     "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_export.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-I",
+      "./headers/",
+      "-I",
+      "./libs/libft/",
+      "-o",
+      "temp/commands/exec_exit_utils.o",
+      "src/commands/exec_exit_utils.c"
+    ],
+    "directory": "/home/mmorais/projects/42/minishell",
+    "file": "/home/mmorais/projects/42/minishell/src/commands/exec_exit_utils.c",
+    "output": "/home/mmorais/projects/42/minishell/temp/commands/exec_exit_utils.o"
   },
   {
     "arguments": [

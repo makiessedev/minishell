@@ -6,14 +6,13 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:29 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/19 23:47:45 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/21 10:39:18 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static int get_children(t_main *main_data)
-{
+static int get_children(t_main *main_data) {
   pid_t wpid;
   int status;
   int save_status;
@@ -29,19 +28,10 @@ static int get_children(t_main *main_data)
   return (save_status);
 }
 
-void set_break()
-{
-  char *shell_level;
-  shell_level = getenv("SHLVL");
-  if(shell_level && ft_atoi(shell_level) >= 2)
-    printf("\n");
-}
-
-void setup_shell_signals(t_command *cmd)
-{
+void setup_shell_signals(t_command *cmd) {
   struct sigaction sa_int;
 
-  if(strncmp(cmd->command, "./minishell", ft_strlen("./minishell")) == 0)
+  if (strncmp(cmd->command, "./minishell", ft_strlen("./minishell")) == 0)
     sa_int.sa_handler = SIG_IGN;
   else
     sa_int.sa_handler = &set_break;
