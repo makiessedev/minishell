@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   erase_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorais <makiesse.dev@gmail.com>           +#+  +:+       +#+        */
+/*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:54:25 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/14 17:58:11 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/21 20:21:43 by zombunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void erase_pointer(void *ptr) {
-  if (ptr != NULL) {
-    free(ptr);
-    ptr = NULL;
-  }
+void	erase_pointer(void *ptr)
+{
+	if (ptr != NULL)
+	{
+		free(ptr);
+		ptr = NULL;
+	}
 }
