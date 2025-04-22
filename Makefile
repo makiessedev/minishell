@@ -9,7 +9,60 @@ LIBFT_PATH = ./libs/libft/
 LIBFT = $(LIBFT_PATH)libft.a
 
 # Encontrar todos os arquivos .c automaticamente
-SRC		= $(shell find $(SRC_PATH) -name "*.c")
+SRC		= ./src/app.c			\
+		./src/commands/exec_cd.c				\
+		./src/commands/exec_cd_utils.c			\
+		./src/commands/exec_echo.c			\
+		./src/commands/exec_echo_utils.c			\
+		./src/commands/exec_env.c			\
+		./src/commands/exec_exit.c			\
+		./src/commands/exec_exit_utils.c			\
+		./src/commands/exec_export.c			\
+		./src/commands/exec_export_utils.c			\
+		./src/commands/exec_pwd.c			\
+		./src/commands/exec_unset.c			\
+		./src/environment/env_utils1.c			\
+		./src/environment/env_utils2.c			\
+		./src/erase/close_fds.c			\
+		./src/erase/erase_command.c			\
+		./src/erase/erase_input_output.c			\
+		./src/erase/erase_main_data.c			\
+		./src/erase/erase_pointer.c			\
+		./src/erase/erase_tab_string.c			\
+		./src/error/throw_command_error.c			\
+		./src/error/throw_message_error.c			\
+		./src/error/util.c			\
+		./src/expansion/expand_variables.c			\
+		./src/expansion/process_variables.c			\
+		./src/expansion/utils.c			\
+		./src/expansion/utils2.c			\
+		./src/expansion/utils3.c			\
+		./src/io/file.c			\
+		./src/io/pipe.c			\
+		./src/main.c			\
+		./src/parser/args_utils.c			\
+		./src/parser/command_utils.c			\
+		./src/parser/create_commands.c			\
+		./src/parser/heredoc_parser.c			\
+		./src/parser/heredoc_utils.c			\
+		./src/parser/parse_tokens_to_args.c			\
+		./src/parser/parsers.c			\
+		./src/parser/parsers_util.c			\
+		./src/quotes_remover/quotes_remover.c			\
+		./src/quotes_remover/utils.c			\
+		./src/run/parse_path.c			\
+		./src/run/run.c			\
+		./src/run/run_cmd.c			\
+		./src/run/run_utils.c			\
+		./src/tokenization/lst_utils_1.c			\
+		./src/tokenization/process_user_command.c			\
+		./src/tokenization/tokenization.c			\
+		./src/tokenization/utils_1.c			\
+		./src/tokenization/validate_syntax_and_variables.c			\
+		./src/utils/exit.c			\
+		./src/utils/ft_is_space.c			\
+		./src/utils/initial_configs.c
+
 OBJ		= $(patsubst $(SRC_PATH)%, $(OBJ_PATH)%, $(SRC:.c=.o))
 
 INC		= -I $(INC_PATH) -I $(LIBFT_PATH)
