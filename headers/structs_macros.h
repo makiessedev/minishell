@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:52:35 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 22:20:31 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/22 07:47:00 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ typedef struct s_main
 
 typedef enum e_token_types
 {
-	SPACES_TOKEN = 1, // " "
-	WORD_TOKEN, // ls
-	VAR_TOKEN, // $PATH
-	PIPE_TOKEN, // |
-	INPUT_TOKEN, // <
-	REDIRECT_TOKEN, // >
-	HEREDOC_TOKEN, // <<
-	APPEND_TOKEN, // >>
+	SPACES_TOKEN = 1,
+	WORD_TOKEN,
+	VAR_TOKEN,
+	PIPE_TOKEN,
+	INPUT_TOKEN,
+	REDIRECT_TOKEN,
+	HEREDOC_TOKEN,
+	APPEND_TOKEN,
 	END_TOKEN
 }						t_token_types;
 
