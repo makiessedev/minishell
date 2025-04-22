@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef QUOTES_REMOVER_H
+# define QUOTES_REMOVER_H
+
 int		remove_quotes(t_token **token_node);
 int		process_and_remove_quotes(t_main *main_data);
 int		contains_quotes(char *str);
@@ -17,3 +20,4 @@ int		calculate_length_without_quotes(char *str, int count, int i);
 void	set_quote_mode(t_token **token_node, int *i);
 int		is_quotes_and_normal_mode(t_token **token_node, int i);
 int		reset_to_normal_mode(t_token **token_node, int *i);
+#endif

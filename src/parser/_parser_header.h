@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _PARSER_HEADER_H
+# define _PARSER_HEADER_H
+
 t_command	*lst_new_cmd(int value);
 void		lst_add_back_cmd(t_command **alst, t_command *new_node);
 t_command	*lst_last_cmd(t_command *cmd);
@@ -38,3 +41,4 @@ void		input_parser(t_command **last_cmd, t_token **token_lst);
 void		pipe_parser(t_command **cmd, t_token **token_lst);
 void		redirect_parser(t_command **last_cmd, t_token **token_lst);
 void		word_parser(t_command **cmd, t_token **token_lst);
+#endif

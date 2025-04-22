@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _REDIRECTIONS_HEADER_H
+# define _REDIRECTIONS_HEADER_H
+
 int		restore_standard_streams(t_io_fds *io);
 int		redirect_standard_streams(t_io_fds *io);
 int		check_infile_outfile(t_io_fds *io);
 void	close_unused_pipes(t_command *cmds, t_command *skip_cmd);
 int		initialize_command_pipes(t_main *data);
 int		connect_command_pipes(t_command *cmds, t_command *c);
+#endif

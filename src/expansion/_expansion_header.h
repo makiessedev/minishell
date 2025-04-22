@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _EXPANSION_HEADER_H
+# define _EXPANSION_HEADER_H
+
 int		var_length(char *str);
 char	*identify_var(char *str);
 char	*resolve_variable_value(t_token *token, char *str, t_main *data);
@@ -27,3 +30,4 @@ int		is_var_enclosed_in_quotes(char *str, int i);
 char	*replace_variable(t_token **token_node, char *str, char *var_value,
 			int index);
 int		remove_variable(t_token **token_node, char *str, int index);
+#endif

@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _COMMANDS_HEADER_H
+# define _COMMANDS_HEADER_H
+
 int		exec_cd(t_main *main_data, char **args);
 int		exec_echo(t_main *main_data, char **args);
 int		exec_env(t_main *main_data, char **args);
@@ -26,3 +29,4 @@ int		ft_atoi_long(const char *str, int *error);
 int		get_exit_code(char *arg, int *error);
 int		is_quiet_mode(t_main *main_data);
 char	**get_key_value_pair(char *arg);
+#endif
