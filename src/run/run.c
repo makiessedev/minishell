@@ -6,7 +6,7 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:56:29 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/21 22:00:15 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/22 05:06:53 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ static int	get_children(t_main *main_data)
 		if (wpid == main_data->pid)
 			save_status = status;
 	}
-	return (save_status);
+	if (WIFSIGNALED(save_status))
+		status = 128 + WTERMSIG(save_status);
+	else if (WIFEXITED(save_status))
+		status = WEXITSTATUS(save_status);
+	else
+		status = save_status;
+	return (status);
 }
 
 void	setup_shell_signals(t_command *cmd)
