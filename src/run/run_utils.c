@@ -27,7 +27,7 @@ void	set_break(int sig)
 
 	(void)sig;
 	shell_level = getenv("SHLVL");
-	if (shell_level && ft_atoi(shell_level) >= 2)
+	if (shell_level && ft_atoi(shell_level) >= 1)
 		write(1, "\n", 1);
 }
 
