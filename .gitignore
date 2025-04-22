@@ -1,6 +1,0 @@
-*/**/*.o
-.vscode
-.vscode/
-libs/libft/libft.a
-minishell
-/temp
