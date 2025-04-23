@@ -1,0 +1,6 @@
+*/**/*.o
+.vscode
+.vscode/
+/libft/libft.a
+minishell
+/temp
