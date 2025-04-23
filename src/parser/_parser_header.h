@@ -41,4 +41,5 @@ void		input_parser(t_command **last_cmd, t_token **token_lst);
 void		pipe_parser(t_command **cmd, t_token **token_lst);
 void		redirect_parser(t_command **last_cmd, t_token **token_lst);
 void		word_parser(t_command **cmd, t_token **token_lst);
+void	heredoc_signal_manager(void);
 #endif

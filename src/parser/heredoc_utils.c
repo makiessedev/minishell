@@ -92,22 +92,82 @@ static int	evaluate_heredoc_line(t_main *main_data, char **line, t_io_fds *io,
 	return (TRUE);
 }
 
-int	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
+
+void	handle_heredoc_sigint(int signo)
+{
+	(void)signo;
+	write(STDOUT_FILENO, "\n", 1);
+	rl_replace_line("", 0);
+	rl_on_new_line();
+	rl_redisplay();
+}
+
+void	setup_heredoc_signals(void)
+{
+	struct sigaction	act;
+
+	sigemptyset(&act.sa_mask);
+	act.sa_flags = 0;
+	act.sa_handler = handle_heredoc_sigint;
+	sigaction(SIGINT, &act, NULL);
+
+	act.sa_handler = SIG_IGN;
+	sigaction(SIGQUIT, &act, NULL);
+}
+
+int	heredoc_child(t_main *main_data, t_io_fds *io, int fd)
 {
 	char	*line;
-	int		ret;
 
-	ret = FALSE;
-	line = NULL;
+	signal(SIGINT, SIG_DFL);   // Comportamento padrão: Ctrl-C encerra
+	signal(SIGQUIT, SIG_IGN);  // Ignora Ctrl-\"
+
 	while (1)
 	{
-		signals_manager();
 		line = readline(">");
-		if (!evaluate_heredoc_line(main_data, &line, io, &ret))
+		if (line == NULL)
+		{
+			write(1, "\n", 1);
+			break ;
+		}
+		if (!evaluate_heredoc_line(main_data, &line, io, NULL))
 			break ;
 		ft_putendl_fd(line, fd);
 		erase_pointer(line);
 	}
 	erase_pointer(line);
-	return (ret);
+	close(fd);
+	return (0); // sucesso
+}
+
+int	fill_heredoc(t_main *main_data, t_io_fds *io, int fd)
+{
+	(void)fd;
+	pid_t	pid;
+	int		status;
+	int		ret_pipe[2];
+
+	pipe(ret_pipe); // pipe para comunicação
+	pid = fork();
+	if (pid == 0)
+	{
+		// Filho: executa o heredoc real
+		close(ret_pipe[0]);
+		exit(heredoc_child(main_data, io, ret_pipe[1]));
+	}
+	else if (pid > 0)
+	{
+		// Pai: espera o filho terminar
+		int	ret = FALSE;
+		close(ret_pipe[1]);
+		waitpid(pid, &status, 0);
+		if (WIFSIGNALED(status))
+			ret = TRUE; // foi interrompido com Ctrl-C
+		return (ret);
+	}
+	else
+	{
+		perror("fork");
+		return (TRUE);
+	}
 }

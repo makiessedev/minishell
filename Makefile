@@ -47,6 +47,7 @@ SRC		= ./src/app.c			\
 		./src/parser/parse_tokens_to_args.c			\
 		./src/parser/parsers.c			\
 		./src/parser/parsers_util.c			\
+		./src/parser/heredoc_signal_manager.c \
 		./src/quotes_remover/quotes_remover.c			\
 		./src/quotes_remover/utils.c			\
 		./src/run/parse_path.c			\
