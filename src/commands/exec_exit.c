@@ -33,7 +33,7 @@ static void	update_shell_level(t_main *main_data)
 	char	*new_lvl;
 
 	shell_level = ft_atoi(getenv("SHLVL"));
-	if (shell_level <= 2)
+	if (shell_level == 1)
 		return ;
 	new_lvl = ft_itoa(--shell_level);
 	if (new_lvl)
