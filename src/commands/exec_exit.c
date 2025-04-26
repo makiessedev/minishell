@@ -6,12 +6,11 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:14 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/26 21:30:56 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/26 21:43:49 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-#include <stdlib.h>
 
 static void update_shell_level(t_main *main_data) {
   int shell_level;
@@ -43,27 +42,6 @@ static int num_is_numeric(char *str) {
     i++;
   }
   return (TRUE);
-}
-
-int builtin_exit(t_main *main_data, int argc, char **argv) {
-  int exit_num;
-  int quiet;
-
-  quiet = is_quiet_mode(main_data);
-  if (!quiet)
-    ft_putendl_fd("exit", 2);
-  exit_num = g_exit_code;
-  if (argc >= 2 && num_is_numeric(argv[1]) == FALSE)
-    exit_num = 255;
-  else if (argc == 2)
-    exit_num = ft_atoi(argv[1]);
-  else if (argc > 2) {
-    throw_command_error("exit", NULL, "too many arguments", 1);
-    return (EXIT_FAILURE);
-  }
-  update_shell_level(main_data);
-  erase_and_exit_shell(main_data, exit_num);
-  return (EXIT_FAILURE);
 }
 
 int exec_exit(t_main *main_data, char **argv) {
