@@ -6,59 +6,11 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:14 by mmorais           #+#    #+#             */
-/*   Updated: 2025/04/26 18:29:32 by mmorais          ###   ########.fr       */
+/*   Updated: 2025/04/26 21:03:01 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-#include <errno.h>
-#include <stdlib.h>
-
-static int split_count(char **split) {
-  int i;
-
-  i = 0;
-  while (split && split[i])
-    i++;
-  return (i);
-}
-
-static int print_error(char *s1, char *s2, char *s3, char *message) {
-  if (s1)
-    ft_putstr_fd(s1, 2);
-  if (s2) {
-    if (s1)
-      ft_putstr_fd(": ", 2);
-    ft_putstr_fd(s2, 2);
-  }
-  if (s3) {
-    if (s1 || s2)
-      ft_putstr_fd(": ", 2);
-    ft_putstr_fd(s3, 2);
-  }
-  if (message) {
-    if (s1 || s2 || s3)
-      ft_putstr_fd(": ", 2);
-    ft_putstr_fd(message, 2);
-  }
-  ft_putchar_fd('\n', 2);
-  return (EXIT_FAILURE);
-}
-
-/*static int print_error_errno(char *s1, char *s2, char *s3) {
-  print_error(s1, s2, s3, strerror(errno));
-  e errno = 0;
-  return (EXIT_FAILURE);
-}*/
-
-/*static int split_count(char **split) {
-  int i;
-
-  i = 0;
-  while (split && split[i])
-    i++;
-  return (i);
-}*/
 
 /*static int handle_exit_code(char **args, int *error) {
   int exit_code;
@@ -108,13 +60,13 @@ static int num_is_numeric(char *str) {
 
   i = 0;
   if (str[0] == '\0') {
-    print_error("minishell", "exit", str, "numeric argument required");
+    throw_command_error("exit", str, "numeric argument required", 2);
     return (FALSE);
   } else if ((str[0] == '-' || str[0] == '+') && str[1] != '\0')
     i++;
   while (str[i]) {
     if (!ft_isdigit(str[i])) {
-      print_error("minishell", "exit", str, "numeric argument required");
+      throw_command_error("exit", str, "numeric argument required", 2);
       return (FALSE);
     }
     i++;
@@ -134,7 +86,7 @@ int builtin_exit(int argc, char **argv) {
   else if (argc == 2)
     exit_num = ft_atoi(argv[1]);
   else if (argc > 2) {
-    print_error("minishell", "exit", NULL, "too many arguments");
+    throw_command_error("exit", NULL, "too many arguments", 1);
     return (EXIT_FAILURE);
   }
   exit(exit_num);
@@ -155,6 +107,6 @@ int exec_exit(t_main *main_data, char **args) {
   update_shell_level(main_data);
   erase_and_exit_shell(main_data, exit_code);*/
   (void)main_data;
-  return (builtin_exit(split_count(args), args));
+  return (builtin_exit(count_tab(args), args));
   // return (2);
 }

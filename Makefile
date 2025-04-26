@@ -61,7 +61,8 @@ SRC		= ./src/app.c			\
 		./src/tokenization/validate_syntax_and_variables.c			\
 		./src/utils/exit.c			\
 		./src/utils/ft_is_space.c			\
-		./src/utils/initial_configs.c
+		./src/utils/initial_configs.c \
+		./src/utils/count_tab.c
 
 OBJ		= $(patsubst $(SRC_PATH)%, $(OBJ_PATH)%, $(SRC:.c=.o))
 

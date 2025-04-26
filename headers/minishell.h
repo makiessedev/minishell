@@ -21,6 +21,7 @@
 # include <readline/readline.h>
 # include <sys/stat.h>
 # include <sys/wait.h>
+# include <errno.h>
 # include "../src/commands/_commands_header.h"
 # include "../src/environment/_env_header.h"
 # include "../src/erase/_erase_header.h"
