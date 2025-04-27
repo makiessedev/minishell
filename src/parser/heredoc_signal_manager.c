@@ -12,20 +12,23 @@
 
 #include "minishell.h"
 
-void signal_ctlc_heredoc(int sig) {
-  if (sig == SIGINT) {
-    close(STDIN_FILENO);
-    write(STDERR_FILENO, "\n", 1);
-  }
+void	signal_ctlc_heredoc(int sig)
+{
+	if (sig == SIGINT)
+	{
+		close(STDIN_FILENO);
+		write(STDERR_FILENO, "\n", 1);
+	}
 }
 
-int check_error(int stdin) {
-
-  if (errno == EBADF) {
-    dup2(stdin, STDIN_FILENO);
-    close(stdin);
-    errno = 0;
-    return (FALSE);
-  }
-  return (TRUE);
+int	check_error(int stdin)
+{
+	if (errno == EBADF)
+	{
+		dup2(stdin, STDIN_FILENO);
+		close(stdin);
+		errno = 0;
+		return (FALSE);
+	}
+	return (TRUE);
 }
