@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   heredoc_signal_manager.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/27 01:10:30 by zombunga          #+#    #+#             */
+/*   Updated: 2025/04/27 01:10:33 by zombunga         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 static void	update_prompt(int signo)
 {
 	(void)signo;
-    exit(0);
+	exit(0);
 }
 
 static void	ignore_sigquit(void)
