@@ -6,33 +6,26 @@
 /*   By: zombunga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 01:10:30 by zombunga          #+#    #+#             */
-/*   Updated: 2025/04/27 01:10:33 by zombunga         ###   ########.fr       */
+/*   Updated: 2025/04/27 01:42:22 by mmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	update_prompt(int signo)
-{
-	(void)signo;
-	exit(0);
+void signal_ctlc_heredoc(int sig) {
+  if (sig == SIGINT) {
+    close(STDIN_FILENO);
+    write(STDERR_FILENO, "\n", 1);
+  }
 }
 
-static void	ignore_sigquit(void)
-{
-	struct sigaction	act;
+int check_error(int stdin) {
 
-	ft_memset(&act, 0, sizeof(act));
-	act.sa_handler = SIG_DFL;
-	sigaction(SIGQUIT, &act, NULL);
-}
-
-void	heredoc_signal_manager(void)
-{
-	struct sigaction	act;
-
-	ignore_sigquit();
-	ft_memset(&act, 0, sizeof(act));
-	act.sa_handler = &update_prompt;
-	sigaction(SIGINT, &act, NULL);
+  if (errno == EBADF) {
+    dup2(stdin, STDIN_FILENO);
+    close(stdin);
+    errno = 0;
+    return (FALSE);
+  }
+  return (TRUE);
 }
